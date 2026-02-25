@@ -1,0 +1,70 @@
+
+
+Rever Hestia Espaço ocupao
+
+Accipiens ?
+Jurisflow ? porque é que está aqui ?
+
+Listar todas as tabelas com respectivo espaço em disco do hestia
+
+
+
+
+
+USE [LUSIADAS]
+GO
+/****** Object:  Index [PK_DL_Fact_Contactos]    Script Date: 01/09/2022 16:55:01 ******/
+ALTER TABLE [dbo].[DL_Fact_Contactos] DROP CONSTRAINT [PK_DL_Fact_Contactos] WITH ( ONLINE = OFF )
+GO
+
+INSERT INTO [DL_Fact_Contactos] 
+SELECT  [IdCampanha]
+      ,[IdContacto]
+      ,[IdLista]
+      ,[IdTarefa]
+      ,[NumDossier]
+      ,[IdLarRecuperacao]
+      ,[IdCarteira]
+      ,[PrimNome]
+      ,[UltNome]
+      ,[IdFase]
+      ,[TipoChamada]
+      ,[ResultadoContacto]
+      ,[StatusContacto]
+      ,[NumTentativasChamada]
+      ,[DtInicioChamada]
+      ,[DtFimChamada]
+      ,[DtUltAcesso]
+      ,[ValidFrom]
+      ,[ValidTo]
+      ,[CreatedDate]
+  FROM [LUSIADAS].[dbo].[DL_Fact_Contactos]
+  WHERE idcontacto= 1356672 AND idcampanha=375 AND validfrom = 20180608 AND ValidTo = 20220831
+  
+  
+  USE [LUSIADAS]
+GO
+
+-- 1ª parte
+CREATE VIEW [dbo].[vw_DL_Fact_Contactos] WITH SCHEMABINDING
+AS SELECT IdCampanha,IdContacto ,ValidFrom, ValidTo
+FROM dbo.DL_Fact_Contactos
+GO
+
+CREATE UNIQUE CLUSTERED INDEX NCIX_DL_Fact_Contactos ON dbo.vw_DL_Fact_Contactos 
+(IdCampanha,IdContacto ,ValidFrom, ValidTo);
+GO
+
+--
+-- 2ª PARTE
+DROP INDEX PK_DL_Fact_Contactos ON DL_Fact_Contactos;
+GO
+DROP INDEX IX_DL_sp_load_Fact_Contactos_Integracao_Diaria_jteles_20150924 ON DL_Fact_Contactos;
+GO
+
+--
+-- 3ª PARTE CRIAR O CLUSTERED COLUMNSTORE INDEX
+CREATE CLUSTERED COLUMNSTORE INDEX [CCIX_T_DL_Fact_Contactos] ON [dbo].[DL_Fact_Contactos] WITH (DROP_EXISTING = OFF, COMPRESSION_DELAY = 0)
+go
+
+sp_spaceused DL_Fact_Contactos

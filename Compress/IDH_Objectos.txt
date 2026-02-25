@@ -1,0 +1,6770 @@
+-- IDH
+
+
+ALTER INDEX [PK_COF_ProcessoRefADC_1] ON [dbo].[COF_ProcessoRefADC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoFinanceira] ON [dbo].[COF_ProcessoFinanceira]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoFinanceira_21] ON [dbo].[COF_ProcessoFinanceira]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Processo_Financeira] ON [dbo].[COF_ProcessoFinanceira]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoFinanceira_6007_FO] ON [dbo].[COF_ProcessoFinanceira]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoFichaFine] ON [dbo].[COF_ProcessoFichaFine]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Idprocesso] ON [dbo].[COF_ProcessoFichaFine]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_Financiamento] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Teste] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossierIDOperacao] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_CodAccaoIdOperacao] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1677] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Camp] ON [dbo].[GE_Financiamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Uplo__235B9775E71EA520] ON [dbo].[COF_UploadDocumentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UploadDocumentos_23928_FO] ON [dbo].[COF_UploadDocumentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UploadDocumentos_105586_FO] ON [dbo].[COF_UploadDocumentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UploadDocumentos_498_FO] ON [dbo].[COF_UploadDocumentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UploadDocumentos_1409_FO] ON [dbo].[COF_UploadDocumentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ChangeLog] ON [dbo].[ChangeLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoProdutoSuplementarSimulacao] ON [dbo].[COF_ProcessoProdutoSuplementarSimulacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_ProcessoSituacoesAnomalas] ON [dbo].[COF_ProcessoSituacoesAnomalas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ProcessoSituacoesAnomalas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_PagamentoIni] ON [dbo].[TRA_PagamentoIni]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_Dossier] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_Idprocesso] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_Dossier_IDEmpresasCobrancasExternas] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_Dossier_NumeroDossier] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_Dossier_ObterEmpresas] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CarteiraDossier_1] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [dba_ncix_VG_CarteiraDossier_assig_idfase] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_CarteiraDossier] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CarteiraDossier_522] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_CarteiraDOSSIER_FO_2] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Carteira_Dossier_Processo_Pari_Persi_jteles] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CarteiraDossier_3401_FO] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CarteiraDossier_8601_FO] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CarteiraDossier_244_FO] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_CARTEIRA_SEPA_AMOSTRA_FO] ON [dbo].[VG_CarteiraDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_OfertaMontante] ON [dbo].[COF_OfertaMontante]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_HistoricoFicheiroInsolvente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[Auxiliar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_PagamentoDetalheIni] ON [dbo].[TRA_PagamentoDetalheIni]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoEstados] ON [dbo].[COF_HistoricoEstados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_HistoricoEstados2] ON [dbo].[COF_HistoricoEstados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_HistoricoEstados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CBR_PagamentoLojaUtilizador] ON [dbo].[CBR_PagamentoLojaUtilizador]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_OfertaPrazoClassico] ON [dbo].[COF_OfertaPrazo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_IDOfertaMontante] ON [dbo].[COF_OfertaPrazo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[FFNCO1]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_FFNCO1] ON [dbo].[FFNCO1]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_ComunicacaoParceiros] ON [dbo].[PAC_ComunicacaoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_PAC_ComunicacaoParceiros_97] ON [dbo].[PAC_ComunicacaoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_Accao_IDAccao] ON [dbo].[VG_Accao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_CometLogs] ON [dbo].[COF_CometLogs]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_BancoPortugal_23_892634323__K22_K1_10_11_13_14_16_17_19_20] ON [dbo].[COF_BancoPortugal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cofBancoportugal_333_fo] ON [dbo].[COF_BancoPortugal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_BancoPortugal_166760_FO] ON [dbo].[COF_BancoPortugal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PariPersi] ON [dbo].[COF_PariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20130207-150940_FO] ON [dbo].[COF_PariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_pari_processo_FO_2] ON [dbo].[COF_PariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_PariPersi_4788_FO] ON [dbo].[COF_PariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_TransferenciaIni] ON [dbo].[TRA_TransferenciaIni]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CRC_DSLDOnline] ON [dbo].[COF_BancoPortugalNovaCRCOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_nifNipc] ON [dbo].[COF_BancoPortugalNovaCRCOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__tmp_ms_x__3214EC27CE6BA3C2] ON [dbo].[CSD_AnaliseSolvabilidade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CSD_AnaliseSolvabilidade_26929_FO] ON [dbo].[CSD_AnaliseSolvabilidade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CSD_AnaliseSolvabilidade_43786_FO] ON [dbo].[CSD_AnaliseSolvabilidade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[clientesdistinct]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__9C713FCFA32BFC41] ON [dbo].[COF_ProcessoEstudoScoreAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ProcessoEstudoScoreAuto_IDProcessoEstudoScoreAuto] ON [dbo].[COF_ProcessoEstudoScoreAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoHistorico] ON [dbo].[COF_ProcessoEstudoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudoHistorico_376] ON [dbo].[COF_ProcessoEstudoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_Historico] ON [dbo].[TRA_Historico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [ix_TraHist_Idtransferencia] ON [dbo].[TRA_Historico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ADG_AssinaturaSAML] ON [dbo].[ADG_AssinaturaSAML]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_Teste__COF_ConversaoCartaoCredito] ON [dbo].[Teste__COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_WSRP_LOG] ON [dbo].[WSRP_LOG]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_ContaEstatisticasSemTelefone] ON [dbo].[GE_ContaEstatisticasSemTelefone]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BancoPortugalOnline] ON [dbo].[COF_BancoPortugalOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_RetornoAdeptra] ON [dbo].[COF_RetornoAdeptra]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_Numdossier] ON [dbo].[COF_RetornoAdeptra]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__5EFA23A4492FD285] ON [dbo].[COF_ProcessoEstudoScoreClassico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[PAC_DocumentacaoParceiro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogRegrasRP] ON [dbo].[COF_LogRegrasRP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_DLR_Campanha_Historico] ON [dbo].[DLR_Campanha_Historico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Scor__AA042AA02E465187] ON [dbo].[COF_ScoreAutoNIF]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ScoreAutoNIF_IDProcessoEstudoScoreAuto] ON [dbo].[COF_ScoreAutoNIF]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_EstadoContratoPRD] ON [dbo].[VG_EstadoContratoPRD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LitigioJudicial] ON [dbo].[COF_LitigioJudicial]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoRefADCPrevStep]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoRefADCPrevStep_5676_FO] ON [dbo].[COF_ProcessoRefADCPrevStep]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Numdossier] ON [dbo].[COF_ExtractoA4]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_MsoAgendamentoDossier] ON [dbo].[COF_MsoAgendamentoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_MsoAgendamentoDossier_7516] ON [dbo].[COF_MsoAgendamentoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_EnvioSDD] ON [dbo].[COF_EnvioSDD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_GE_ProcessoEstudo] ON [dbo].[GE_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_ProcessoEstudo] ON [dbo].[GE_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BaseRiscoDAH] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumdossierActive] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_BaseRiscoDAH_1319] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_BaseRiscoDAH_6047_FO] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_NumDossierActive] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Cof_baseRiscoDAH_FO_02072022] ON [dbo].[COF_BaseRiscoDAH]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoFinanceiraHistorico] ON [dbo].[COF_ProcessoFinanceiraHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_Outros] ON [dbo].[GE_Outros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[GE_Outros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_Planos] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_Planos_Dossier] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NCIX_VG_Planos_pago_cancelado_proc] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_vg_planos_01] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Planos_1184_FO] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Planos_27743_FO] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Planos_48433_FO] ON [dbo].[VG_Planos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Pedi__1D789E87BAEDABAF] ON [dbo].[COF_Pedido_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [jb_API_GET_COF_Documentacao_2_2912] ON [dbo].[COF_Pedido_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_Documentacao_10556300] ON [dbo].[COF_Pedido_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TaskForceComparacao] ON [dbo].[TaskForceComparacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoGarantiaAval] ON [dbo].[COF_Avaliacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Avaliacao_28150_FO] ON [dbo].[COF_Avaliacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoScoreFID_AA] ON [dbo].[COF_ProcessoEstudoScoreFID_AA]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudoScoreFID_AA_195_FO] ON [dbo].[COF_ProcessoEstudoScoreFID_AA]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CRC5G] ON [dbo].[COF_BancoPortugalCRC5G]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_IdEnt] ON [dbo].[COF_BancoPortugalCRC5G]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_nifpc_activo] ON [dbo].[COF_BancoPortugalCRC5G]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_BancoPortugalCRC5G_28176_FO] ON [dbo].[COF_BancoPortugalCRC5G]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_Seguro] ON [dbo].[GE_Seguro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDosssier] ON [dbo].[GE_Seguro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC2790BCE33A] ON [dbo].[COF_ProcessoEstudoProbDefault]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC27A0DD90EA] ON [dbo].[COF_ProcessoEstudoScoreMoto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TMP_FILABASERISCO] ON [dbo].[TMP_FilaBaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_RulesDistribDossier] ON [dbo].[VG_RulesDistribDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_RulesDistribDossier] ON [dbo].[VG_RulesDistribDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_RulesDistribDossier_Proc] ON [dbo].[VG_RulesDistribDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_PlanosMensalidades] ON [dbo].[VG_PlanosMensalidades]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[GE_Tarefa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_GE_Tarefa_1132] ON [dbo].[GE_Tarefa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CRC] ON [dbo].[COF_BancoPortugalCRC_old]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NifNipc] ON [dbo].[COF_BancoPortugalCRC_old]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IdFicheiro_Index] ON [dbo].[COF_BancoPortugalCRC_old]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoContraPropostas] ON [dbo].[COF_ProcessoContraPropostas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdProcesso] ON [dbo].[COF_ProcessoContraPropostas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ComunicacaoLog] ON [dbo].[COM_ComunicacaoLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_uploaddocumentos26032021]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_InformacaoEmFalta] ON [dbo].[COF_InformacaoEmFalta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IdPRocesso_IDTabulador] ON [dbo].[COF_InformacaoEmFalta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoOferta] ON [dbo].[COF_ProcessoOferta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoOferta_5] ON [dbo].[COF_ProcessoOferta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoMudancaEmpresas] ON [dbo].[VG_HistoricoMudancaEmpresas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_Numdossier] ON [dbo].[VG_HistoricoMudancaEmpresas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_ComunicacaoTransferenciaDetalhe] ON [dbo].[COM_ComunicacaoTransferenciaDetalhe_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CSD_AnaliseTitular] ON [dbo].[CSD_AnaliseTitular]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CSD_AnaliseTitular_361264] ON [dbo].[CSD_AnaliseTitular]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_ScoreCRCModalidades] ON [dbo].[BASEL_ScoreCRCModalidades]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[TMP_CampanhasEmBruto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoParceirosPAC] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ProcessoParceiros64] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ProcessoParceiros_23_471008759__K2_K1_K3] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoParceiros_16_471008759_K3_K2] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20170607-115909_FO_07062017] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDPAARTNER_TIPOPARTNER_FO_090719] ON [dbo].[COF_ProcessoParceiros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_ProcessoDocAnalise] ON [dbo].[IDH_ProcessoDocAnalise]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_PAR_Partner] ON [dbo].[PACPartner]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_ProcessoDocAnaliseHistorico] ON [dbo].[IDH_ProcessoDocAnaliseHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ConsultaVTXRM_Log] ON [dbo].[COF_ConsultaVTXRM_Log]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_LOG_LarRecuperacao_bck202105]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Key6] ON [dbo].[TRA_Garantia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_BASEL_CalculoComportamental] ON [dbo].[BASEL_CalculoComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_CalculoComportamental] ON [dbo].[BASEL_CalculoComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[IDH_ProcessoDocImagem]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_ProcessoDocImagem] ON [dbo].[IDH_ProcessoDocImagem]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IDH_ProcessoDocImagem_303_FO] ON [dbo].[IDH_ProcessoDocImagem]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDH_ProcessoDocImagem_IDArquivo] ON [dbo].[IDH_ProcessoDocImagem]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IDH_ProcessoDocImagem_34841_FO] ON [dbo].[IDH_ProcessoDocImagem]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ConversaoCartaoCredito] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ConversaoCartaoCredito_49_FO] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UPD_ConversaoCartaoCreditoAcao_Titular1_Titular2_jteles_20170804] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ConversaoCartaoCredito_83938_FO] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ConversaoCartaoCredito_133_fo] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ConversaoCartaoCredito_28666_FO] ON [dbo].[COF_ConversaoCartaoCredito]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAG_SEG_Audit] ON [dbo].[PACAudit]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PerfisCompetenciasHist] ON [dbo].[COF_PerfisCompetenciasHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_BASEL_PMPP] ON [dbo].[BASEL_PMPP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_PMPP] ON [dbo].[BASEL_PMPP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PACPartnerIncentives] ON [dbo].[PACPartnerIncentives]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ProcessamentoNCR] ON [dbo].[VG_ProcessamentoNCR]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_RefLoteProcessamentoNCR] ON [dbo].[VG_ProcessamentoNCR]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_TarefaIncompletosHistorico] ON [dbo].[IDH_TarefaIncompletosHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_IDH_TarefaIncompletosHistorico_23_557245040__K3_K5_K12_K6] ON [dbo].[IDH_TarefaIncompletosHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[MIG_Entidades]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoRaz] ON [dbo].[VG_HistoricoRaz]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_HistoricoRaz_Dossier] ON [dbo].[VG_HistoricoRaz]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__OCR_LogD__7635E0F6C0AC7F9C] ON [dbo].[OCR_LogDocumentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_Emissao_Doc] ON [dbo].[COM_Emissao_Doc]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdPRocesso] ON [dbo].[COM_Emissao_Doc]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogExecucaoServico] ON [dbo].[COF_LogExecucaoServico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_SMSMensagemRecebida] ON [dbo].[SMS_MensagemRecebida]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TMP_RISCO] ON [dbo].[TMP_RISCO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoCorrespondencia] ON [dbo].[VG_HistoricoCorrespondencia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogPortal] ON [dbo].[COF_LogPortal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_EXTRACTOA4] ON [dbo].[COF_ExtractoA4Detalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoAlteracaoManualFase] ON [dbo].[VG_HistoricoAlteracaoManualFase]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [VG_Dossier] ON [dbo].[VG_HistoricoAlteracaoManualFase]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CBR_Operacao] ON [dbo].[CBR_Operacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoModalidadeHistorico] ON [dbo].[COF_ProcessoModalidadeHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CRC_DSLD] ON [dbo].[COF_BancoPortugalNovaCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IdFicheiro_Index] ON [dbo].[COF_BancoPortugalNovaCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NifNipc] ON [dbo].[COF_BancoPortugalNovaCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogPortalDetalhe] ON [dbo].[COF_LogPortalDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoAuto] ON [dbo].[COF_ProcessoAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoAuto_30845_FO] ON [dbo].[COF_ProcessoAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [jteles_11022014_IDProcesso] ON [dbo].[COF_ProcessoAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoAuto_323_FO] ON [dbo].[COF_ProcessoAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteContactoMail] ON [dbo].[COF_ClienteContactoMail]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [TEMP_IdCliente_iAtivo] ON [dbo].[COF_ClienteContactoMail]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteContactoMail_27013_FO] ON [dbo].[COF_ClienteContactoMail]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_ControloTAEG] ON [dbo].[COM_ControloTAEG]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ControloTAEG_2537_FO] ON [dbo].[COM_ControloTAEG]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ControloTAEG_50312_FO] ON [dbo].[COM_ControloTAEG]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_TarefaDetalhe] ON [dbo].[VG_TarefaDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_ReferenciaComunicacao_Versoes] ON [dbo].[COM_ReferenciaComunicacao_Versoes_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[OLD_CampanhaAumentoPlafond_MegaAccao_18]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_LogMotorRegras] ON [dbo].[PAC_LogMotorRegras]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_999] ON [dbo].[PAC_LogMotorRegras]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoScoreCRC] ON [dbo].[COF_ProcessoEstudoScoreCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_TarefaFlow]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_TarefaFlow_7454_FO] ON [dbo].[COF_TarefaFlow]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_TarefaFlow_12418_FO] ON [dbo].[COF_TarefaFlow]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_UploadDocumentosHist] ON [dbo].[COF_UploadDocumentosReclassificacaoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_UploadDocumentosReclassificacaoHist_148187_FO] ON [dbo].[COF_UploadDocumentosReclassificacaoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IDTipoDocumento_20160427_jteles] ON [dbo].[COF_UploadDocumentosReclassificacaoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_LackDoc] ON [dbo].[TRA_LackDoc]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_TRA_LackDoc_130523_FO] ON [dbo].[TRA_LackDoc]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_STA_FinanciamentoSiclid] ON [dbo].[STA_FinanciamentoSiclid]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Moti__675EE78986CD8F33] ON [dbo].[COF_MotivoDificuldade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_MotDifNumDossier] ON [dbo].[COF_MotivoDificuldade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteDadoBancario] ON [dbo].[COF_ClienteDadoBancario]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteDadoBancario_27022_FO] ON [dbo].[COF_ClienteDadoBancario]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_ProcessoParceiros_ChangeLog] ON [dbo].[COF_ProcessoParceiros_ChangeLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ProcessoParceiros_ChangeLog_IDProcesso_IDPartner] ON [dbo].[COF_ProcessoParceiros_ChangeLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoSiclid] ON [dbo].[COF_ProcessoSiclid]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_LogServicos] ON [dbo].[VG_LogServicos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__VG_Dossi__E5208997EA02B5BB] ON [dbo].[VG_DossierLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BancoPortugalCRC5GLogs] ON [dbo].[COF_BancoPortugalCRC5GLogs]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_idelemento_PCha_FO_090719_REC] ON [dbo].[COF_Memo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_PALCHAVE_IDPROCESSO_REC] ON [dbo].[COF_Memo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_LimitesDetalhes] ON [dbo].[TRA_LimitesDetalhes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_BancoPortugalNovaCRC_BCK]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_ProcessoFichaFine_ChangeLog] ON [dbo].[COF_ProcessoFichaFine_ChangeLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ProcessoFichaFine_ChangeLog_IDProcesso] ON [dbo].[COF_ProcessoFichaFine_ChangeLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteOrcamento] ON [dbo].[COF_ClienteOrcamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteOrcamento_26942_fo] ON [dbo].[COF_ClienteOrcamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_DossierE] ON [dbo].[VG_DossierE]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_FaseDossier] ON [dbo].[VG_FaseDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_FaseDossier_NumeroDossier] ON [dbo].[VG_FaseDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteComumHist] ON [dbo].[COF_ClienteComumHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteComumHist_231332_FO] ON [dbo].[COF_ClienteComumHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_FinanciamentosIncompletos] ON [dbo].[PAC_FinanciamentosIncompletos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_ListenID] ON [dbo].[TRA_ListenID]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CodControlAlocacao] ON [dbo].[VG_CodControlAlocacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Doss__3214EC07EDB4CDC7] ON [dbo].[COF_DossiersDesactivaSeguro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_LarRecuperacaoBck_nao_apagar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_VisitaRelatorio] ON [dbo].[VG_VisitaRelatorio]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ScorePosAAGEProcessoEstudo] ON [dbo].[COF_ScorePosAAGEProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_Rel_LarElementoBck_nao_apagar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ADG_AssinaturaOperacao] ON [dbo].[ADG_AssinaturaOperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_LotPagamento] ON [dbo].[TRA_LotPagamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ADG_AssinaturaDocumento] ON [dbo].[ADG_AssinaturaDocumento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__E080D4BFEA05784B] ON [dbo].[COF_ProcessoEstudoScorePosAA]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_Rel_LarDossierBck_nao_apagar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TPM_RISCO_Correccoes] ON [dbo].[TaskForceCorreccao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_TransaccoesTControl] ON [dbo].[COF_TransaccoesTControl]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Juri__3214EC277D227690] ON [dbo].[COF_JurisFlow_PERInsolv]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_logs_SSIS] ON [dbo].[COF_LOGS_SSIS]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoScorePRO] ON [dbo].[COF_ProcessoEstudoScorePRO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudoScorePRO_197_FO] ON [dbo].[COF_ProcessoEstudoScorePRO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudoScorePRO_483_FO] ON [dbo].[COF_ProcessoEstudoScorePRO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDIVR_Contactos] ON [dbo].[IVR_Contactos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20150213-165214_FO] ON [dbo].[IVR_Contactos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IVR_Contactos_3432_FO] ON [dbo].[IVR_Contactos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[SQL_Change_LOG]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COM_TAEGControlo_Dados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_AreaPrivadaUsers] ON [dbo].[COF_AreaPrivadaUsers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_Observacoes] ON [dbo].[TRA_Observacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__A333862A5A6B8ECE] ON [dbo].[COF_ProcessoEstudoScoreAuto2]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COM_TAEGControlo_Contratos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_Agendamentos] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_AGENDAMENTO_DESCACTTRAS_FO_08719] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Agendamentos_73] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [VG_Data_Descartado_Tratado] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_AgendamentosDossierActivo] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_AgendamentosData] ON [dbo].[VG_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__DLR_Cont__FF17E8A11B635FDD] ON [dbo].[DLR_ContactoLCM]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_PAR_Contact] ON [dbo].[PACPartnerContact]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COM_TAEGControlo_Validacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoContratosGuid] ON [dbo].[COF_ProcessoContratoGuid]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoContratoGuid_17792_FO] ON [dbo].[COF_ProcessoContratoGuid]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoContratoGuid_3240_FO] ON [dbo].[COF_ProcessoContratoGuid]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_WEBPAC_Alerta] ON [dbo].[WEBPAC_Alerta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_OnlineREC] ON [dbo].[TRA_OnlineREC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__F536FB528C81F086] ON [dbo].[COF_ClienteSegurancaSocial]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudo] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDPROC_CODDES_VAL] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ProcessoEstudo_23_1556916618__K2_K30_K1_18_19_21] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudo_39_FO] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20150416-134432FO] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudo_42608_FO] ON [dbo].[COF_ProcessoEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[tempVG_AgendamentoContactos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Reclamacao] ON [dbo].[COF_Reclamacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_DAHMIGRACAO_BaseRisco] ON [dbo].[DAHMIGRACAO_BaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[PACPartnerHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_PACPartnerHistorico_48199_FO] ON [dbo].[PACPartnerHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[TMP_RISCO_Comparacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Pedido] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_26939_fo] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_28164_FO] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_PEDIDO_IDPROC_DATACOMP_FO_02062019] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_31107_FO] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_189_FO] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_4505076] ON [dbo].[COF_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_Reembolsos] ON [dbo].[GE_Reembolsos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDPAGAMENTO] ON [dbo].[GE_Reembolsos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDXGE_ReembolsosNumDossier] ON [dbo].[GE_Reembolsos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_GE_Reembolsos_2075] ON [dbo].[GE_Reembolsos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__8A31FDF7E8E64B92] ON [dbo].[COF_ClienteCaixaGeralAposentacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC2778C616A1] ON [dbo].[COF_ProcessoEstudoScoreRUC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClientesInsolventes] ON [dbo].[COF_ClientesInsolventes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_OCR_Pedido] ON [dbo].[OCR_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_OCR_Pedido_Idestado] ON [dbo].[OCR_Pedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ReclamacaoAccao] ON [dbo].[COF_ReclamacaoAccao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PedidoGrupo] ON [dbo].[COF_PedidoGrupo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_Pagamento] ON [dbo].[TRA_Pagamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_LOG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__A375DE240AE49AC2] ON [dbo].[COF_ClienteSegurancaSocialEntidadeEmpregadora]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PedidoHist] ON [dbo].[COF_PedidoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_PagamentoDetalhe] ON [dbo].[TRA_PagamentoDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDPAGAMENTO_DTANUL_FO_040719] ON [dbo].[TRA_PagamentoDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_OCR_Resposta] ON [dbo].[OCR_Resposta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_OCR_RESPOSTA_FO] ON [dbo].[OCR_Resposta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_Ocr_resposta_idp_isr_st] ON [dbo].[OCR_Resposta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_InformacaoEmFaltaHist] ON [dbo].[COF_InformacaoEmFaltaHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_Retry] ON [dbo].[COM_Retry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoAccoes] ON [dbo].[COF_HistoricoAccoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PedidoOperacaoAE] ON [dbo].[COF_PedidoOperacaoAE]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoCredInformacoes] ON [dbo].[COF_ProcessoCredInformacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ProcessoCredInformacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoCredInformacoes_36941_FO] ON [dbo].[COF_ProcessoCredInformacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_PagamentoPag] ON [dbo].[TRA_PagamentoPag]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogRP] ON [dbo].[COF_LogRP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PedidoOperacaoAEDet] ON [dbo].[COF_PedidoOperacaoAEDet]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Docu__7868327D2F943EFA] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Documentacao_IDProcesso] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Documentacao_IDCliente] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Documentacao_IDOrigem] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_Documentacao_JB_29122020] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Documentacao_10550922] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Documentacao_46944] ON [dbo].[COF_Documentacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LOG_TarefasInterfaces] ON [dbo].[DIG_LOG_TarefasInterfaces]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Pedi__A68E2609B432646C] ON [dbo].[COF_PedidoInfSS]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_PedidoInfSS_8619170] ON [dbo].[COF_PedidoInfSS]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_PedidoInfSS_8622525] ON [dbo].[COF_PedidoInfSS]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_001] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_TAREFAS_FO_07062019] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_TAREFAS_FO_1_07062019] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Estado_Agendamento] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_Tarefas_67819_FO] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_idprocesso_estadotarefa_FO_01072019] ON [dbo].[VG_Tarefas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoCorrespondencia_BCK] ON [dbo].[VG_HistoricoCorrespondencia_BCK]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoAmortizacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_RefMB] ON [dbo].[TRA_RefMB]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC078BCED6FD] ON [dbo].[COF_ProcessoInfoServicoExterno]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_TarefaReclamacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PariProcessoCondicoes] ON [dbo].[COF_PariProcessoCondicoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_U_IncumpPersi_Hist] ON [dbo].[U_IncumpPersi_Hist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IIDX_U_IncumpPersi_Hist_NumDossier] ON [dbo].[U_IncumpPersi_Hist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Docu__7868327D2F943EFAHist] ON [dbo].[COF_DocumentacaoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoAvaliacao] ON [dbo].[COF_ProcessoAvaliacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NCIndex_IdProcessoGarantia] ON [dbo].[COF_ProcessoAvaliacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoAvaliacao_391148] ON [dbo].[COF_ProcessoAvaliacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_DocumentacaoInfoEAD] ON [dbo].[COF_DocumentacaoInfoEAD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_V_VG_PermissoesUtilizadorUPremissaoTab] ON [dbo].[V_VG_PermissoesUtilizadorUPremissaoTab]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_PersiProcessoCondicoes] ON [dbo].[COF_PersiProcessoCondicoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoIncompletos] ON [dbo].[COF_ProcessoIncompletos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_DocumentacaoTipologia] ON [dbo].[COF_DocumentacaoTipologia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_DocumentacaoTipologia_IDDocumentacao_Activo] ON [dbo].[COF_DocumentacaoTipologia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IDTipoDocumentoiActivo] ON [dbo].[COF_DocumentacaoTipologia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TRA_Transferencia] ON [dbo].[TRA_Transferencia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoDespesaDiversa] ON [dbo].[COF_ProcessoDespesaDiversa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_LarRecuperacao] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_LarRecuperacao_73275] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_TsT] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_LarRecuperacao_158008_FO] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_LarRecuperacao_COF_ControloGestaoLar_jteles_20171002] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_UPD_Transferir_Dossier_jteles_20150202] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_VG_LarRecuperacao_IdGeracaoTipoDossier] ON [dbo].[VG_LarRecuperacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoDtContrato] ON [dbo].[COF_ProcessoEstudoDtContrato]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoEstudoDtContrato_159] ON [dbo].[COF_ProcessoEstudoDtContrato]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__62D618BA763C9E5D] ON [dbo].[COF_ProcessoAdenda]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_Rel_DossierLar] ON [dbo].[VG_Rel_LarDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_IdLarRecuperacao] ON [dbo].[VG_Rel_LarDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoFinanceiraAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoFinanceiraAuto_54570_FO] ON [dbo].[COF_ProcessoFinanceiraAuto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__Site_Reg__085A1757BAAA8800] ON [dbo].[Site_RegistoEmCurso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Site_RegistoEmCurso_298_FO] ON [dbo].[Site_RegistoEmCurso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_SITE_REGISTOEMCURSO_IDREGistoemcurso] ON [dbo].[Site_RegistoEmCurso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LognibsColaborador] ON [dbo].[COF_LogNibsColaborador]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ADG_AssinaturaOperacaoLog] ON [dbo].[ADG_AssinaturaOperacaoLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_ADG_AssinaturaOperacaoLog_32146_FO] ON [dbo].[ADG_AssinaturaOperacaoLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_AnaliseScoreOnline] ON [dbo].[COF_AnaliseScoreOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_AnaliseScoreOnline_13820_FO] ON [dbo].[COF_AnaliseScoreOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_AnaliseScoreOnline_Prospeccao] ON [dbo].[COF_AnaliseScoreOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_AnaliseScoreOnline_44_fo] ON [dbo].[COF_AnaliseScoreOnline]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_CampanhaAumentoPlafond_1] ON [dbo].[OLD_CampanhaAumentoPlafond_MegaAccao_19]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_Log_Agendamentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDProcessoFinanceira] ON [dbo].[COF_ProcessoFinanceiraUElemento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_RecepcaoCorreio] ON [dbo].[GE_RecepcaoCorreio]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_LogAlocacaoDossier] ON [dbo].[VG_LogAlocacaoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_REL_LarElemento] ON [dbo].[VG_REL_LarElemento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_TE] ON [dbo].[VG_REL_LarElemento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_CodPostal] ON [dbo].[COF_CodigoPostalRua]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Dossier] ON [dbo].[COF_Note]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Note_32235_FO] ON [dbo].[COF_Note]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_AnaliseScoreOnlineErro] ON [dbo].[COF_AnaliseScoreOnlineErro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_7TL_DadosMigrados] ON [dbo].[7TL_DadosMigrados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoGarantias] ON [dbo].[COF_ProcessoGarantia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoGarantia_27299_fo] ON [dbo].[COF_ProcessoGarantia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NCIndex_IdProcesso] ON [dbo].[COF_ProcessoGarantia]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Erros_SSIS] ON [dbo].[COF_Erros_SSIS]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_BaseRiscoDAH_Hist_Dossier] ON [dbo].[COF_BaseRiscoDAH_Historico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoCriteriosNFinanciavelMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoContrato_IdProcessoContrato] ON [dbo].[COF_ProcessoContrato]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_DossierSinistros] ON [dbo].[VG_DossierSinistros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_CalcRegrasTipologiaLarLog] ON [dbo].[VG_CalcRegrasTipologiaLarLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_CalcRegrasTipologiaLarLog] ON [dbo].[VG_CalcRegrasTipologiaLarLog]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_CarteiraDossier_NCR]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Pedi__A359B881F8882A5B] ON [dbo].[COF_Pedido_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_ProcessoDadosBancarios_183_fo] ON [dbo].[COF_Pedido_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Pedido_ProcessoDadosBancarios_93] ON [dbo].[COF_Pedido_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_HistoricoSimulacaoPRD] ON [dbo].[VG_HistoricoSimulacaoPRD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[IDH_ProcessoDocImagem_Arquivo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IDH_ProcessoDocImagem_Arquivo] ON [dbo].[IDH_ProcessoDocImagem_Arquivo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteUProcesso] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ClienteUProcesso_23_1568724641__K4_K1_K2_K3_5_6] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ClienteUProcesso17] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ClienteUProcesso40] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_COF_ClienteUProcesso_CP] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_ClienteUProcesso_NIF_IDProcesso] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_DossierProspectNIF] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumPRospect] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_COF_CLi_UPROCESSO_Tit_Tip_iActivo] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_57498_FO] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_COF_ClienteUProcesso_NumCont_iactivo] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_74_FO] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_26967_FO] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_28975_FO] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_39241_FO] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_Cof_ClientUprocesso_IDP_IDCCL_iActivo] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteUProcesso_7562218] ON [dbo].[COF_ClienteUProcesso]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_IAD_FicheiroDados] ON [dbo].[IAD_FicheiroDados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_CRC_BPortugal] ON [dbo].[COF_BancoPortugalCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_nifpc] ON [dbo].[COF_BancoPortugalCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDFICHEIRO_FO] ON [dbo].[COF_BancoPortugalCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_nifpc_activo_BP_CRC] ON [dbo].[COF_BancoPortugalCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Pedi__BCD31E7246C9A0ED] ON [dbo].[COF_Pedido_DocumentacaoOriginal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_Cof_Ped_Doc_Original_id_pedido] ON [dbo].[COF_Pedido_DocumentacaoOriginal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_LarRecuperacao_NCR]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[VG_Planos_NCR]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoProdutoSuplementar] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementar_26903_FO] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementar_30933FO] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementar_33374_FO] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementar_34404_fo] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementar_36174_FO] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IdProcesso] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [ix_Cof_Pps_DtAnul] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX ['idx_COF_ProcessoProdutoSuplementar_CC_JB_11112020'] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX ['idx_COF_ProcessoProdutoSuplementar_CC_JB_11112020_02'] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX ['idx_COF_ProcessoProdutoSuplementar_CC_JB_11112020_03'] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_processo_produtoSup_idprocessocc_seg] ON [dbo].[COF_ProcessoProdutoSuplementar]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_HistoricoDossierGA] ON [dbo].[VG_HistoricoDossierGA]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoDossierSinistros] ON [dbo].[VG_HistoricoDossierSinistros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoIncompletos] ON [dbo].[COF_HistoricoIncompletos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_GET_HistoricoGestaoIncompletos_jteles_20150623] ON [dbo].[COF_HistoricoIncompletos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdProcesso] ON [dbo].[CTI_LogChamadasTelefonicas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CTI_LogChamadasTelefonicas_91712_FO] ON [dbo].[CTI_LogChamadasTelefonicas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_HistoricoDosConj]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteHistorico] ON [dbo].[COF_ClienteHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoSeguroCobertura] ON [dbo].[COF_ProcessoProdutoSuplementarCobertura]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoProdutoSuplementarCobertura_27782_FO] ON [dbo].[COF_ProcessoProdutoSuplementarCobertura]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__A362D37D4ACD15F4] ON [dbo].[COF_ClienteContatoMailHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_ClienteActive] ON [dbo].[COF_ClienteMorada]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ClienteMorada_23_1536724527__K2_K11_K1_K3_K5_K8_6_7] ON [dbo].[COF_ClienteMorada]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteMorada_335] ON [dbo].[COF_ClienteMorada]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoModalidade] ON [dbo].[COF_ProcessoModalidade]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteProfissao_693] ON [dbo].[COF_ClienteProfissao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ClienteProfissao_23_1552724584__K9_K2_K1_3_4_5_6_7_8] ON [dbo].[COF_ClienteProfissao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoDespesaDiversaDetalhe] ON [dbo].[COF_ProcessoProdutoSuplementarDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_LarRecuperacaoHist_IDLarRec] ON [dbo].[VG_LarRecuperacaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_VG_LARRECHIST_FO_02072022] ON [dbo].[VG_LarRecuperacaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ClienteUProcessoHist]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_SelecaoIncompletos_HISTORICO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoRelacaoElemento] ON [dbo].[COF_ProcessoRelacaoElemento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoRelacaoElemento_26944_FO] ON [dbo].[COF_ProcessoRelacaoElemento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Erros_SP] ON [dbo].[COF_Erros_SP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoSinistros] ON [dbo].[VG_HistoricoSinistros]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_ScoreCRCVariaveis] ON [dbo].[BASEL_ScoreCRCVariaveis]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoEstudoCriteriosNFinanciavel]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_DocumentacaoEntradaEAD] ON [dbo].[COF_DocumentacaoEntradaEAD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ComunicacaoMensagemIncompleto] ON [dbo].[COF_ComunicacaoMensagemIncompleto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoSimulacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_IdprocessoAtivo] ON [dbo].[COF_ProcessoSimulacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC2727F9CCA9] ON [dbo].[COF_ProcessoEstudoScoreDistribuicao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_DossierOrigemPRD] ON [dbo].[VG_DossierOrigemPRD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__7E93C97CC55A3FE8] ON [dbo].[COF_ClienteMoradaHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ClienteMoradaHistorico_IDCliente] ON [dbo].[COF_ClienteMoradaHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ContactoTelefonico] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDClienteActive] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumeroActive] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ContactoTelefonico_23_1648724926__K3_K2_K1_K8_4] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_JOB_IVR_IN_F1_jteles_20160216] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ContactoTelefonico31] ON [dbo].[COF_ContactoTelefonico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COM_ApplicationLetter] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_IdReferenciaComunicacao_Produto] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ApplicationLetter_13] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ApplicationLetter_17010_FO] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ApplicationLetter_29817_FO] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ApplicationLetter_1177526_FO] ON [dbo].[COM_ApplicationLetter_bkp]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__OFP_Tari__3214EC0746BBF4DC] ON [dbo].[OFP_TarificacaoParam]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ExtractoA4Tratamento] ON [dbo].[COF_ExtractoA4Tratamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[com_applicationletter_bck_CC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ComunicacaoAgendada] ON [dbo].[COF_ComunicacaoAgendada]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ComunicacaoAgendada]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_CredInformacoes] ON [dbo].[COF_CredInformacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COM_ComunicacaoProcessada_6_911342311__K13_K7_K1_K2] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdReferenciaComunicacao] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdProcesso] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ComunicacaoProcessada_29848] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ComunicacaoProcessada_10399] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ComunicacaoProcessada_2544] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_Idprocesso_com_processada] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ComunicacaoProcessada_492_FO] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [<Index_IDref_Lst_Chamadas_RRomano,>] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_GET_HistoricoContactoRec_jteles_20151001] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COM_ComunicacaoProcessada_27126_FO] ON [dbo].[com_ComunicacaoProcessada_Antiga]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ClienteHistoricoEmail]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteHistoricoEmail_1050] ON [dbo].[COF_ClienteHistoricoEmail]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoModalidadePagamento] ON [dbo].[COF_ProcessoModalidadePagamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_COF_ProcessoSimulacaoInfo] ON [dbo].[COF_ProcessoSimulacaoInfo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoSimulacaoInfo_63679_FO] ON [dbo].[COF_ProcessoSimulacaoInfo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ESC_PassagemPerdasProveitos] ON [dbo].[ESC_PassagemPerdasProveitos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Clie__8904ACAAC7D06A71] ON [dbo].[COF_ClienteProfissaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ClienteProfissaoHistorico_IDCliente] ON [dbo].[COF_ClienteProfissaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoPariPersi] ON [dbo].[COF_HistoricoPariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_HistoricoPariPersi_51_FO] ON [dbo].[COF_HistoricoPariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_HistoricoPariPersi_268_FO] ON [dbo].[COF_HistoricoPariPersi]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Proc__3214EC274A6DDC5E] ON [dbo].[COF_ProcessoEstudoScoreConsolidados]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_DecisaoCondicionalHistorico] ON [dbo].[COF_DecisaoCondicionalHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_DecisaoCondicionalHistorico] ON [dbo].[COF_DecisaoCondicionalHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_DecisaoCondicionalHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [pk_IDCodigoPostal] ON [dbo].[COF_CodigoPostal]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Cont__98620CFD887E6662] ON [dbo].[COF_ContatoTelefonicoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX__COF_ContatoTelefonicoHistorico_IDCliente] ON [dbo].[COF_ContatoTelefonicoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__VG_Varia__1C0479BF03135890] ON [dbo].[VG_VariavelDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VariavelNumDossier] ON [dbo].[VG_VariavelDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_PAR_PartnerCollaborator] ON [dbo].[PACPartnerCollaborator]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogProcessoDespesas] ON [dbo].[COF_LogProcessoDespesas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_LogProcessoDespesas_325] ON [dbo].[COF_LogProcessoDespesas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoResolucaoDossier] ON [dbo].[VG_HistoricoResolucaoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Dado__53E9746BA0745F67] ON [dbo].[COF_DadosHabitacaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NCIX_DBA_COF_DadosH_idcliente_active] ON [dbo].[COF_DadosHabitacaoHistorico]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogProcessoRendimentos] ON [dbo].[COF_LogProcessoRendimentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdProcesso] ON [dbo].[COF_LogProcessoRendimentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoPedido] ON [dbo].[COF_HistoricoPedido]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_ProcessoTitularPRD] ON [dbo].[VG_ProcessoTitularPRD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossierDataLinha] ON [dbo].[COF_Extracto]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_MensalidadesCalculadas] ON [dbo].[COF_MensalidadesCalculadas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20130703-182857] ON [dbo].[COF_MensalidadesCalculadas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_MensalidadesCalculadas_7_FO] ON [dbo].[COF_MensalidadesCalculadas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_MensalidadesCalculadas_226_FO] ON [dbo].[COF_MensalidadesCalculadas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_MensalidadesCalculadas_8906_FO] ON [dbo].[COF_MensalidadesCalculadas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_EquipamentoVersao] ON [dbo].[COF_EquipamentoVersao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_Cof_EquipamentoVersao_id_modelo] ON [dbo].[COF_EquipamentoVersao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[Webpac_ControloRP]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Cof_Processo_NumDossierIdProcesso] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Cof_Processo_NumDossierIdProcesso] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Cof_Processo_NumDossierIdProcesso] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Cof_Processo_NumDossierIdProcesso] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Cof_Processo_NumDossierIdProcesso] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumEvol] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumEvol] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumEvol] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumEvol] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumEvol] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodEstado_jteles_20140512] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodEstado_jteles_20140512] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodEstado_jteles_20140512] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodEstado_jteles_20140512] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodEstado_jteles_20140512] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_73302] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_73302] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_73302] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_73302] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_73302] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_67966_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_67966_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_67966_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_67966_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_67966_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_123097_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_123097_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_123097_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_123097_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_123097_FO] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_1783] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_1783] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_1783] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_1783] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_1783] ON [dbo].[COF_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_ScoreCRC] ON [dbo].[BASEL_ScoreCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_BASEL_ScoreCRC_66_FO] ON [dbo].[BASEL_ScoreCRC]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_DadosMotorDM] ON [dbo].[COF_DadosMotorDM]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_OTP_Processo] ON [dbo].[OTP_Processo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__PAC_Cred__3214EC2719B70DAC] ON [dbo].[PAC_CreditCaracteristics]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_HistoricoRelance] ON [dbo].[COF_HistoricoRelance]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[PAC_DocumentacaoParceiroURL]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoRendimentos] ON [dbo].[COF_ProcessoRendimentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ProcessoRendimentos_23_1892253846__K2_K3_K1_4_5_6_7_8_9] ON [dbo].[COF_ProcessoRendimentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoRendimentos_18] ON [dbo].[COF_ProcessoRendimentos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PACPartnerCreditCaracteristics] ON [dbo].[PACPartnerCreditCaracteristics]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdPartner] ON [dbo].[PACPartnerCreditCaracteristics]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_OTP_ProcessoAssinantes] ON [dbo].[OTP_ProcessoAssinantes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_OTP_ProcessoAssinantes_idp_ide] ON [dbo].[OTP_ProcessoAssinantes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogCredinformacoes] ON [dbo].[COF_LogCredinformacoes]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ProcessoMotivosEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoMotivosEstudo] ON [dbo].[COF_ProcessoMotivosEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Cliente_ID_Nome_NIF] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Cliente_NIF] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_Cliente26] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Cliente_305_FO] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [missing_index_5357_5356] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Cliente_215] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Cliente_948_FO] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Cliente_170748_Nome_FO] ON [dbo].[COF_Cliente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BaseRisco] ON [dbo].[COF_BaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_BaseRisco_23_1905441862__K21_K2_K15_3_4_5_6_7_8_9_10_11_12_13_14_16_17_18_19_20_23_24] ON [dbo].[COF_BaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [FK_NUMDOSSIER] ON [dbo].[COF_BaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_BaseRisco_23_1905441862__K3_K1_K21_K2_4_5_6_7_8_9_10_11_12_13_14_15_16_17_18_19_20_22_23_24] ON [dbo].[COF_BaseRisco]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_ADG_AssinaturaOperacaoData] ON [dbo].[ADG_AssinaturaOperacaoData]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_EurotaxAccaoValor] ON [dbo].[COF_EurotaxAccaoValor]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_EurotaxAccaoValor_27297_fo] ON [dbo].[COF_EurotaxAccaoValor]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_CodigointernoAnoMatricula] ON [dbo].[COF_EurotaxAccaoValor]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_HistoricoActualizacaoPendente]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_HistoricoDossierSinistros_Capgemini] ON [dbo].[VG_HistoricoDossierSinistros_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_TempInfoCarteiraMautic]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_Dossier] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_MsgErro] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [Idx_IdCampanhaActivada] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_CartasTarefasGE] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_CAMpanhaDossier_FO_201301111723] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_663_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_jteles_20042015_CAMP_UPD_MegaAccaoFinanciamentosBemSucedidos] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_CampanhasDossiers_ContactoCliente_estadoMIR_resultadoMR] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_44760] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_87] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_52] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_CAMPANHA_ACTIVADDA_!_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_70052] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_CAMPANHAS_ID_DATA_ERRO_1_FO_22052017] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_164381] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_campanhaDossiers_11_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_170180_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [jteles_20140311_CAMP_UPD_UtilGestaoEstadoCampanha3 ] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [jteles_20140311_CAMP_UPD_UtilGestaoEstadoCampanha2] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_1_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_47037_FO] ON [dbo].[COF_CampanhasDossiers]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[cof_scoreauttonif_FO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PACPartnerDocumentationKits] ON [dbo].[PACPartnerDocumentationKits]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo_Capgemini] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo_Capgemini] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo_Capgemini] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo_Capgemini] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_Processo_Capgemini] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_Pesquisas] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_COF_Processo_NumProsect] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_1911] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumClassment] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_179536_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cof_processo_21042017_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cof_processo_21042017_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cof_processo_21042017_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cof_processo_21042017_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [idx_cof_processo_21042017_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_Processo_12849_FO] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_jteles_20140716,>] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_adhoc_CodProduto_CodEstado_jteles_20140721] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_REFATM] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_Processo_23_1984726123__K11_K6_K1_K21] ON [dbo].[COF_Processo_Capgemini]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[RV_PacCaractOferta]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoScoreAcompanhamento] ON [dbo].[COF_ProcessoScoreAcompanhamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcessoCodRecusa] ON [dbo].[COF_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoMotivosRecusa] ON [dbo].[COF_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_ProcessoEstudoScoreAuto_FO]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoEstudoScoreFID_APFD] ON [dbo].[COF_ProcessoEstudoScoreFID_APFD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ClienteOpcaoBCFT] ON [dbo].[COF_ClienteOpcaoBCFT]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ClienteOpcaoBCFT_IDX] ON [dbo].[COF_ClienteOpcaoBCFT]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ClienteOpcaoBCFT_5417922] ON [dbo].[COF_ClienteOpcaoBCFT]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoDadosBancarios] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoDadosBancarios_13692] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoDadosBancarios_4129_FO] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ProcessoDadosBancarios_23_2016726237__K6_K2_K1_4] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoDadosBancarios_29_FO] ON [dbo].[COF_ProcessoDadosBancarios]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TTARScreen2] ON [dbo].[TTAR_Screen2]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_BASEL_ScoreComportamental_1] ON [dbo].[BASEL_ScoreComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_ScoreComportamental] ON [dbo].[BASEL_ScoreComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NumDossier] ON [dbo].[BASEL_ScoreComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NIF1] ON [dbo].[BASEL_ScoreComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_NIF2] ON [dbo].[BASEL_ScoreComportamental]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoFichaFine_Trace] ON [dbo].[COF_ProcessoFichaFine_TRACE]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoDespesas] ON [dbo].[COF_ProcessoDespesas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_ProcessoDespesas_IDProcesso_IDCliente] ON [dbo].[COF_ProcessoDespesas]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_EurotaxFichDetalhe] ON [dbo].[COF_EurotaxFichDetalhe]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_GarantiaAutoPRD] ON [dbo].[VG_GarantiaAutoPRD]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_AlocacaoDossier_7279] ON [dbo].[VG_AlocacaoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VG_aLocacaoDossier_dossier] ON [dbo].[VG_AlocacaoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BatchCRCProcessamento] ON [dbo].[COF_BatchScoreCRCProcessamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [NonClusteredIndex-20170126-103116_FO] ON [dbo].[COF_BatchScoreCRCProcessamento]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_CampanhasDossiers_20Agosto20_c_23_2061354508__K2_K5_K54_K52] ON [dbo].[COF_CampanhasDossiers_20Agosto2008]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_20Agosto2008] ON [dbo].[COF_CampanhasDossiers_20Agosto2008]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_COF_CampanhasDossiers_20Agosto2008_1] ON [dbo].[COF_CampanhasDossiers_20Agosto2008]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[cof_bancoportugalcrc_fo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_OfertaUAnuncio] ON [dbo].[COF_OfertaAnuncio]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_BancoPortugal__Test] ON [dbo].[COF_BancoPortugal__Test]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoOutrosCreditos] ON [dbo].[COF_ProcessoOutrosCreditos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdProcesso_Codproduto] ON [dbo].[COF_ProcessoOutrosCreditos]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_ProcessoProdutosSuplementares] ON [dbo].[COF_ProcessoProdutosSuplementares]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [COF_ProcessoProdutosSuplementares16] ON [dbo].[COF_ProcessoProdutosSuplementares]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [_dta_index_COF_ProcessoProdutosSuplementare_23_2096726522__K11_K2_K1_5] ON [dbo].[COF_ProcessoProdutosSuplementares]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcesso] ON [dbo].[GE_ProcessoMotivosEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_ProcessoMotivosEstudo] ON [dbo].[GE_ProcessoMotivosEstudo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TTAR_Screen3] ON [dbo].[TTAR_Screen3]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_COF_LogCartasTemp_2] ON [dbo].[Cof_LogCartasTemp_2]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_VG_HistoricoOperacaoDossier] ON [dbo].[VG_HistoricoOperacaoDossier]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_PAC_PartnerAddress] ON [dbo].[PAC_PartnerAddress]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__MT_Conta__3214EC072A7E6217] ON [dbo].[MT_Contact]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_WCO___3214EC271C296711] ON [dbo].[COF_WCO_Ficheiro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [wco_nome] ON [dbo].[COF_WCO_Ficheiro]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COF_BancoPortugalCRCpre5G]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[COM_QueryByRefHistory]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__VG_Varia__F52BA2E22B1E4E92] ON [dbo].[VG_VariavelDossier_Staging]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_VariavelNumDossier_Staging] ON [dbo].[VG_VariavelDossier_Staging]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__OCR_LogD__339A8736BC057F83] ON [dbo].[OCR_LogDocumentacaoCampo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__COF_Simu__A7DA49DDDD687156] ON [dbo].[COF_Simulacao]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER TABLE [dbo].[BASEL_ScoreFID]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_BASEL_ScoreFID] ON [dbo].[BASEL_ScoreFID]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_BASEL_ScoreFID_7615_FO] ON [dbo].[BASEL_ScoreFID]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IDProcessoCodRecusa] ON [dbo].[GE_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_GE_ProcessoMotivosRecusa] ON [dbo].[GE_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_IdFinanciamento] ON [dbo].[GE_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_GE_PROCESSOMOTIVOSRECUSA_FO] ON [dbo].[GE_ProcessoMotivosRecusa]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK_TG_ActividadeParametrizadaInfo] ON [dbo].[TG_ActividadeParametrizadaInfo]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );

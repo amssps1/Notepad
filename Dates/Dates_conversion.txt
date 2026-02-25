@@ -1,0 +1,34 @@
+SELECT GETDATE()
+
+SELECT getutcdate()
+SELECT SYSDATETIME()       AS 'DateAndTime';        -- return datetime2(7)       
+SELECT SYSDATETIMEOFFSET() AS 'DateAndTime+Offset'; -- datetimeoffset(7)
+SELECT SYSUTCDATETIME()    AS 'DateAndTimeInUtc';   -- returns datetime2(7)
+
+
+SELECT CONVERT (Time, GETDATE()) AS [Current Date]
+GO
+SELECT CONVERT (Time, CURRENT_TIMESTAMP) AS [Current Date]
+GO
+SELECT CONVERT (Time, SYSDATETIME()) AS [Current Date]
+GO
+
+SET DATEFORMAT dmy
+DECLARE @a VARCHAR(20) = '26-10-2022 11:11:12';
+SELECT CAST(@a AS DATETIME);
+
+
+
+SELECT @@LANGUAGE;
+EXEC sp_helplanguage;
+EXEC sp_helplanguage Spanish;
+
+ALTER LOGIN [COFIDIS2000\GRP_SQLENV_QA] WITH DEFAULT_LANGUAGE = us_english
+
+--combine them
+select * 
+from sys.configurations c inner join sys.syslanguages lang on c.[value] = lang.langid
+where c.[name] like '%language%';
+
+select name,type_desc,default_language_name,default_database_name from sys.server_principals  where type not in ('R','C')
+ORDER BY name

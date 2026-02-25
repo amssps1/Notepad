@@ -1,0 +1,10 @@
+-- My permissions
+
+SELECT * FROM fn_my_permissions('MalikAr', 'USER');  
+GO  
+--
+EXECUTE AS LOGIN = 'WanidaBenshoof';  
+SELECT * FROM fn_my_permissions('AdventureWorks2012.HumanResources.Employee', 'OBJECT')   
+    ORDER BY subentity_name, permission_name ;    
+REVERT;  
+GO  

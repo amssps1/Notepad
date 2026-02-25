@@ -1,0 +1,17 @@
+Temos um problema com o balanceador F5 que serve o Osiris no protocolo HTTPS.
+
+Relatorios que funcinam nos reporting servers 
+Relatórios que testei e que estavam referidos como problemáticos no https:
+
+https://janus.cofidis.pt/Reports/report/Backoffice/Rel_Dashboard_Operacional
+
+
+https://janus.cofidis.pt/Reports/excel/Reporting/Relatorios/Indicadores%20Atividade%20Covid19.xlsx
+
+ mas os mesmos reportes no balanceador dão timeout (erro 500):
+
+https://osiris.cofidis.pt/Reports/report/Backoffice/Rel_Dashboard_Operacional
+
+https://osiris.cofidis.pt/Reports/excel/Reporting/Relatorios/Indicadores%20Atividade%20Covid19.xlsx
+
+Obrigado

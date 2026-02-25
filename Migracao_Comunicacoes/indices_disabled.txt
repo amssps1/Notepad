@@ -1,0 +1,29 @@
+
+sp_helpindex ComunicacaoProcessada
+
+ALTER INDEX IX_ComunicacaoProcessada_IdAplicacao ON ComunicacaoProcessada  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessada_IdComunicacaoProcessadaMain ON ComunicacaoProcessada  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessada_IdEstado ON ComunicacaoProcessada  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessada_IdReferenciaComunicacaoTemplate ON ComunicacaoProcessada  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessada_IdTipoEntidadeComunicacao ON ComunicacaoProcessada  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessada_IdTipoEnvioComunicacao ON ComunicacaoProcessada  rebuild; 
+
+
+
+sp_helpindex ComunicacaoProcessadaProcesso
+ALTER INDEX IX_ComunicacaoProcessadaProcesso_IdComunicacaoProcessada ON ComunicacaoProcessadaProcesso  rebuild; 
+
+sp_helpindex ComunicacaoProcessadaTransferencia
+ALTER INDEX IX_ComunicacaoProcessadaTransferencia_IdComunicacaoProcessada ON ComunicacaoProcessadaTransferencia  rebuild; 
+ALTER INDEX IX_ComunicacaoProcessadaTransferencia_IdTipoEntidadeComunicacaoTransferencia ON ComunicacaoProcessadaTransferencia  rebuild; 
+
+sp_helpindex ComunicacaoAutomatica
+
+ALTER INDEX IX_ComunicacaoAutomatica_IdAplicacao ON ComunicacaoAutomatica  rebuild;
+ALTER INDEX IX_ComunicacaoAutomatica_IdComunicacaoProcessada ON ComunicacaoAutomatica  rebuild; 
+ALTER INDEX IX_ComunicacaoAutomatica_IdEstadoComunicacaoAutomatica ON ComunicacaoAutomatica  rebuild; 
+ALTER INDEX IX_ComunicacaoAutomatica_IdReferenciaComunicacao ON ComunicacaoAutomatica  rebuild; 
+
+
+
+

@@ -1,0 +1,148 @@
+/* 7.1  - ano 2022 */
+
+USE comunicacoes
+
+--rollback
+--commit
+--begin transaction
+
+DECLARE @sairLoop BIT = 0
+DECLARE @t1 DATETIME;
+DECLARE @t2 DATETIME;
+SET @fst = 40880088;
+SET @lst =41000000;
+
+/*Por Processo*/
+WHILE (@sairLoop = 0)
+BEGIN
+	SET @t1 = GETDATE();
+	print @t1
+	begin TRANSACTION
+    --SET STATISTICS TIME ON
+
+	SET IDENTITY_INSERT ComunicacaoProcessada ON
+
+	select top 50000 cp.Id, cp.XMLData, case when cp.Enviado in(0,5,11) then 1 when cp.Enviado = 1 then 3 when cp.Enviado in(2,6) then 2 when cp.Enviado in(3,12,13,15,9999) then 4 else 5 end as Enviado, 
+	isnull(a.AplicationId, 1) as Aplicacao, cp.LogProcessamento, cp.IdTarefa, cp.DataEnvio, case when cp.id = cp.IdComunicacaoProcessadaMain then null else cp.IdComunicacaoProcessadaMain end as IdComunicacaoProcessadaMain, 
+	case when cp.Enviado = 12 then concat(cp.log, ' - Devolvido DNM') when cp.Enviado = 13 then concat(cp.log, ' - Não Enviado por DNM') when cp.Enviado = 15 then concat(cp.log, ' - Falecido') else cp.Log end Log, cp.IdComAssociada, 
+	1 as EntidadeComunicacao, case when cp.IdTipoEnvio = 9 then 1 when cp.IdTipoEnvio = 0 then 2 else cp.IdTipoEnvio end as IdTipoEnvio, rct.IdReferenciaComunicacaoTemplate, cp.CreatedBy, cp.CreatedDate, cp.UpdatedBy, cp.UpdatedDate, cp.IdProcesso, cp.IdParceiro, cp.IdReclamacao, cp.IdCliente, cp.Titular
+	into #tempComunicacaoProcessadaProcesso
+	from idh.dbo.COM_ComunicacaoProcessada cp
+	inner join idh.dbo.cof_processo p on p.IDProcesso = cp.IdProcesso
+	inner join idh.dbo.COM_ReferenciaComunicacao rc on rc.IDReferenciaComunicacao = cp.IdReferenciaComunicacao
+	inner join idh.dbo.COM_tipoComunicacao tc on tc.IdTipo = rc.IdTipoComunicacao
+	inner join ReferenciaComunicacaoTemplate rct on rct.IdReferenciaComunicacao = cp.IdReferenciaComunicacao
+	left join idh.dbo.COM_aplication a on a.AplicationId = cp.Aplicacao
+	where cp.XMLData is not null
+	and exists(select 1 from template t 
+					where t.IdTemplate = rct.IdTemplate and concat('V', t.Versao) = upper(case when rc.IdTipoComunicacao = 1 then upper(cp.XMLData.value('(Carta/@Version)[1]', 'varchar(50)')) when rc.IdTipoComunicacao = 2 then upper(cp.XMLData.value('(SMS/@Version)[1]', 'varchar(50)'))
+					when rc.IdTipoComunicacao = 4 then upper(cp.XMLData.value('(EMAIL/@Version)[1]', 'varchar(50)')) when rc.IdTipoComunicacao = 7 then upper(cp.XMLData.value('(PDF/@Version)[1]', 'varchar(50)')) else '' end))
+	and exists(select 1 from idh.dbo.COM_ReferenciaComunicacao_Versoes rcv where rcv.IDReferenciaComunicacao = rc.IDReferenciaComunicacao)
+	and not exists(select 1 from ComunicacaoProcessada cp1 where cp1.IdComunicacaoProcessada = cp.id)
+	AND cp.id between @fst and @lst
+
+
+
+	insert into ComunicacaoProcessada  (IdComunicacaoProcessada, XMLData, IdEstado, IdAplicacao, LogProcessamento, IdTarefa, DataEnvio, IdComunicacaoProcessadaMain, Log, IdComAssociada, IdTipoEntidadeComunicacao, IdTipoEnvioComunicacao, 
+	IdReferenciaComunicacaoTemplate, CreatedByUser, CreatedDate,UpdatedByUser, UpdatedDate)  
+	select Id, XMLData, Enviado, Aplicacao, LogProcessamento, IdTarefa, DataEnvio, IdComunicacaoProcessadaMain, Log, IdComAssociada, EntidadeComunicacao, IdTipoEnvio, IdReferenciaComunicacaoTemplate, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate
+	from #tempComunicacaoProcessadaProcesso
+
+	INSERT INTO ComunicacaoProcessadaProcesso(IdComunicacaoProcessada, CreatedByUser, CreatedDate, UpdatedByUser, UpdatedDate, IdProcesso, IdParceiro, IdReclamacao, IdCliente)  
+	SELECT tempcp.Id, tempcp.CreatedBy, tempcp.CreatedDate, tempcp.UpdatedBy, tempcp.UpdatedDate, tempcp.IdProcesso, tempcp.IdParceiro, tempcp.IdReclamacao, CASE WHEN ISNULL(tempcp.IdCliente, 0) > 0 THEN tempcp.IdCliente WHEN cup2.IdCliente IS NOT NULL THEN cup2.IdCliente WHEN cup3.IdCliente IS NOT NULL THEN cup3.IdCliente ELSE cup4.IDCliente END AS IdCliente
+	FROM #tempComunicacaoProcessadaProcesso tempcp
+	INNER JOIN idh.dbo.cof_processo p ON p.IDProcesso = tempcp.IdProcesso
+	OUTER APPLY(SELECT TOP 1 cup2.idCliente
+			FROM idh.dbo.cof_clienteUProcesso cup2 
+			WHERE cup2.IDProcesso = tempcp.IdProcesso AND cup2.Ordem = tempcp.Titular
+			ORDER BY cup2.iAtivo DESC) cup2
+	OUTER APPLY(SELECT TOP 1 cup3.idCliente
+				FROM idh.dbo.cof_clienteUProcesso cup3 
+				WHERE cup3.IDProcesso = tempcp.IdProcesso AND cup3.Ordem = 1
+				ORDER BY cup3.iAtivo DESC) cup3
+	OUTER APPLY(SELECT TOP 1 cup4.idCliente
+				FROM idh.dbo.cof_clienteUProcesso cup4
+				WHERE cup4.IDProcesso = tempcp.IdProcesso
+				ORDER BY cup4.iAtivo DESC) cup4
+
+
+
+	IF EXISTS(SELECT TOP 1 1 FROM #tempComunicacaoProcessadaProcesso)
+		SET @sairLoop = 0
+	ELSE 
+		SET @sairLoop = 1
+	
+	DROP TABLE #tempComunicacaoProcessadaProcesso
+
+	SET IDENTITY_INSERT ComunicacaoProcessada OFF
+
+
+	--SET STATISTICS TIME OFF
+	COMMIT
+END
+
+
+/*Por transferencia ou Independente*/
+SET @sairLoop = 0
+
+WHILE (@sairLoop = 0)
+BEGIN
+    
+	BEGIN TRANSACTION
+    
+    --SET STATISTICS TIME ON
+	SET @t1 = GETDATE();
+	PRINT @t1
+	SET IDENTITY_INSERT ComunicacaoProcessada ON
+
+	SELECT TOP 50000 cp.Id, cp.XMLData, CASE WHEN cp.Enviado IN(0,5,11) THEN 1 WHEN cp.Enviado = 1 THEN 3 WHEN cp.Enviado IN(2,6) THEN 2 WHEN cp.Enviado IN(3,12,13,15,9999) THEN 4 ELSE 5 END AS Enviado, 
+	ISNULL(a.AplicationId, 1) AS Aplicacao, cp.LogProcessamento, cp.IdTarefa, cp.DataEnvio, CASE WHEN cp.id = cp.IdComunicacaoProcessadaMain THEN NULL ELSE cp.IdComunicacaoProcessadaMain END AS IdComunicacaoProcessadaMain, 
+	CASE WHEN cp.Enviado = 12 THEN CONCAT(cp.log, ' - Devolvido DNM') WHEN cp.Enviado = 13 THEN CONCAT(cp.log, ' - Não Enviado por DNM') WHEN cp.Enviado = 15 THEN CONCAT(cp.log, ' - Falecido') ELSE cp.Log END Log, cp.IdComAssociada, 
+	CASE WHEN ctd.IdComunicacaoTransferenciaDetalhe IS NOT NULL THEN 2 ELSE 4 END AS EntidadeComunicacao, CASE WHEN cp.IdTipoEnvio = 9 THEN 1 WHEN cp.IdTipoEnvio = 0 THEN 2 ELSE cp.IdTipoEnvio END AS IdTipoEnvio, rct.IdReferenciaComunicacaoTemplate, cp.CreatedBy, cp.CreatedDate, cp.UpdatedBy, cp.UpdatedDate, 
+	cp.idCliente, cp.IdParceiro 
+	INTO #tempComunicacaoProcessadaTransferenciaIndependente
+	FROM idh.dbo.COM_ComunicacaoProcessada cp
+	INNER JOIN idh.dbo.COM_ReferenciaComunicacao rc ON rc.IDReferenciaComunicacao = cp.IdReferenciaComunicacao
+	INNER JOIN idh.dbo.COM_tipoComunicacao tc ON tc.IdTipo = rc.IdTipoComunicacao
+	LEFT JOIN idh.dbo.COM_ComunicacaoTransferenciaDetalhe ctd ON ctd.IdComunicacaoProcessada = cp.ID
+	INNER JOIN ReferenciaComunicacaoTemplate rct ON rct.IdReferenciaComunicacao = cp.IdReferenciaComunicacao
+	LEFT JOIN idh.dbo.COM_aplication a ON a.AplicationId = cp.Aplicacao
+	WHERE cp.XMLData IS NOT NULL 
+	AND ISNULL(cp.IdProcesso, 0) = 0
+	AND EXISTS(SELECT 1 FROM template t 
+					WHERE t.IdTemplate = rct.IdTemplate AND CONCAT('V', t.Versao) = UPPER(CASE WHEN rc.IdTipoComunicacao = 1 THEN UPPER(cp.XMLData.value('(Carta/@Version)[1]', 'varchar(50)')) WHEN rc.IdTipoComunicacao = 2 THEN UPPER(cp.XMLData.value('(SMS/@Version)[1]', 'varchar(50)'))
+					WHEN rc.IdTipoComunicacao = 4 THEN UPPER(cp.XMLData.value('(EMAIL/@Version)[1]', 'varchar(50)')) WHEN rc.IdTipoComunicacao = 7 THEN UPPER(cp.XMLData.value('(PDF/@Version)[1]', 'varchar(50)')) ELSE '' END))
+	AND EXISTS(SELECT 1 FROM idh.dbo.COM_ReferenciaComunicacao_Versoes rcv
+				WHERE rcv.IDReferenciaComunicacao = rc.IDReferenciaComunicacao)
+	AND NOT EXISTS(SELECT 1 FROM ComunicacaoProcessada cp1 WHERE cp1.IdComunicacaoProcessada = cp.id)
+	AND cp.id BETWEEN @fst AND @lst
+		
+	INSERT INTO ComunicacaoProcessada  (IdComunicacaoProcessada, XMLData, IdEstado, IdAplicacao, LogProcessamento, IdTarefa, DataEnvio, IdComunicacaoProcessadaMain, Log, IdComAssociada, IdTipoEntidadeComunicacao, IdTipoEnvioComunicacao, 
+	IdReferenciaComunicacaoTemplate, CreatedByUser, CreatedDate,UpdatedByUser, UpdatedDate) 
+	SELECT Id, XMLData, Enviado, Aplicacao, LogProcessamento, IdTarefa, DataEnvio, IdComunicacaoProcessadaMain, Log, IdComAssociada, EntidadeComunicacao, IdTipoEnvio, IdReferenciaComunicacaoTemplate, CreatedBy, CreatedDate, UpdatedBy, UpdatedDate
+	FROM #tempComunicacaoProcessadaTransferenciaIndependente
+
+	INSERT INTO ComunicacaoProcessadaTransferencia  (IdTransferencia, IdEntidade, IdParceiro, IdComunicacaoProcessada, IdTipoEntidadeComunicacaoTransferencia, CreatedByUser, CreatedDate, UpdatedByUser, UpdatedDate) 
+	SELECT ctd.IdTransferencia, ISNULL(tempcp.idCliente, t.IdEntidadeDoc) AS idCliente, ISNULL(tempcp.IdParceiro, t.IdEntidadeDoc) AS IdParceiro, tempcp.id, CASE WHEN t.TipoEntidade = 'P' THEN 1 WHEN t.TipoEntidade = 'C' THEN 2 ELSE 3 END AS TipoEntidade, tempcp.CreatedBy, tempcp.CreatedDate, tempcp.UpdatedBy, tempcp.UpdatedDate
+	FROM #tempComunicacaoProcessadaTransferenciaIndependente tempcp
+	INNER JOIN idh.dbo.COM_ComunicacaoTransferenciaDetalhe ctd ON ctd.IdComunicacaoProcessada = tempcp.id
+	INNER JOIN idh.dbo.TRA_Transferencia t ON t.IdTransferencia = ctd.IdTransferencia
+	WHERE EXISTS(SELECT 1 FROM ComunicacaoProcessada cp1 WHERE cp1.IdComunicacaoProcessada = tempcp.id)
+	ORDER BY tempcp.id ASC
+	
+	IF EXISTS(SELECT TOP 1 1 FROM #tempComunicacaoProcessadaTransferenciaIndependente)
+		SET @sairLoop = 0
+	ELSE 
+		SET @sairLoop = 1
+	
+	DROP TABLE #tempComunicacaoProcessadaTransferenciaIndependente
+
+	SET IDENTITY_INSERT ComunicacaoProcessada OFF
+
+	
+    --SET STATISTICS TIME OFF
+	COMMIT
+    SET @t2 = GETDATE();
+	print @t2
+	SELECT DATEDIFF(millisecond,@t1,@t2) AS tempo_duracao_ms;
+end

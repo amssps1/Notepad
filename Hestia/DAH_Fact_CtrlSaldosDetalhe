@@ -1,0 +1,26 @@
+sp_spaceused DAH_Fact_CtrlSaldosDetalhe
+sp_spaceused VG_Fact_Pagamentos
+sp_helpindex DAH_Fact_CtrlSaldosDetalhe
+
+
+DROP TRIGGER IF EXISTS T_DAH_Fact_CtrlSaldosDetalhe;
+go
+
+CREATE VIEW [dbo].[vw_DAH_Fact_CtrlSaldosDetalhe] WITH SCHEMABINDING
+AS SELECT IdSaldoDetalhe, DtProcessamento
+FROM dbo.DAH_Fact_CtrlSaldosDetalhe
+GO
+
+CREATE UNIQUE CLUSTERED INDEX NCIX_DAH_Fact_CtrlSaldosDetalhe ON dbo.vw_DAH_Fact_CtrlSaldosDetalhe
+(IdSaldoDetalhe,DtProcessamento);
+GO
+--
+-- 2ª PARTE
+
+ALTER TABLE [dbo].[DAH_Fact_CtrlSaldosDetalhe] DROP CONSTRAINT [PK_COF_U_CtrlSaldosDetalhe] WITH ( ONLINE = OFF )
+GO
+
+--
+-- 3ª PARTE CRIAR O CLUSTERED COLUMNSTORE INDEX
+CREATE CLUSTERED COLUMNSTORE INDEX [CCIX_DAH_Fact_CtrlSaldosDetalhe] ON [dbo].[DAH_Fact_CtrlSaldosDetalhe] WITH (DROP_EXISTING = OFF, COMPRESSION_DELAY = 0)
+go

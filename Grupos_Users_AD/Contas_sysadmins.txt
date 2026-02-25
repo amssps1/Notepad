@@ -1,0 +1,108 @@
+Hestia Sysadmin users
+
+BUILTIN\Administrators
+COFIDIS2000\administrator
+COFIDIS2000\AGTSVC
+COFIDIS2000\cofptpsqldba01-mon
+COFIDIS2000\Domain Admins
+COFIDIS2000\Grp PrevencaoSD
+COFIDIS2000\Grp Sector Administracao Sistemas
+COFIDIS2000\Grp SQL_DBA_Prod
+COFIDIS2000\GrpBillingDecisional
+COFIDIS2000\PIRS_SVC_ADMIN
+COFIDIS2000\powershell
+COFIDIS2000\prismasas1
+COFIDIS2000\spadmin
+COFIDIS2000\sps_admin
+COFIDIS2000\SPServices_SRV
+COFIDIS2000\SPServices_SRV_DEV
+COFIDIS2000\SPServices_SRV_PROD
+COFIDIS2000\tfsrelease
+datazen
+Ilog_Defaut
+NT AUTHORITY\SYSTEM
+NT SERVICE\MSSQLSERVER
+NT SERVICE\SQLSERVERAGENT
+NT SERVICE\SQLWriter
+NT SERVICE\Winmgmt
+prismasas1
+sa
+sa_Runtime
+TESEUTOHESTIA
+WebPacAccount
+
+
+- Artemis
+
+BUILTIN\Administrators
+COFIDIS2000\administrator
+COFIDIS2000\AGTSVC    
+COFIDIS2000\cofptpsqldba01-mon
+COFIDIS2000\csimoes
+COFIDIS2000\Domain Admins
+COFIDIS2000\Grp Sector Administracao Sistemas
+COFIDIS2000\Grp SQL_DBA_Prod
+COFIDIS2000\icmadmin
+COFIDIS2000\IIS_APOLO
+COFIDIS2000\iis_ceyonic
+COFIDIS2000\iis_wscomunicacao
+COFIDIS2000\odmservice
+COFIDIS2000\vmwareservice
+DailyDefrag
+LinkedSQL
+NT AUTHORITY\SYSTEM
+NT SERVICE\MSSQLSERVER
+NT SERVICE\SQLSERVERAGENT
+NT SERVICE\SQLWriter
+NT SERVICE\Winmgmt
+Outsystems_admin
+sa
+sa_runtime
+WCFCofidis
+WCFPacMobile
+WebService
+WSComunicacao
+
+
+IIS_WSCOMUNICACAO@cofidis.pt
+
+--
+
+
+-- Acções da reunião
+
+Moreira: envia informação dos users entre cada grupo da instancia
+Esta conta é de onde ? COFIDIS2000\AGTSVC 
+Esta conta é de? COFIDIS2000\icmadmin
+Porquê DB_OWNER Role ?
+GRANT EXECUTE TO [MyDomain\MyUser]
+
+Junior , porque é que esta conta "COFIDIS2000\iis_wscomunicacao" existe ainda (GEIA) e a conta WSComunicacao ?
+
+Tiago Mendes - conta COFIDIS2000\odmservice que privilégios é que necessita do Artemis ?
+
+Cristiano, conta COFIDIS2000\vmwareservice que privilégios necessita em PRD e a vcenter ?
+
+DailyDefrag , que privilégios necessita ?
+
+LinkedSQL, deixou de ser Sysadmin em SIT
+
+Outsystems_admin que privilégios necessita ? DB_Owner no Outsystems, e na Outsystems_Log, e login OSRuntime ?
+
+Trace no "sa"
+
+Trace no "sa_runtime"
+
+WCFCofidis trace 
+
+WCFPacMobile trace
+
+
+
+
+
+
+
+
+
+

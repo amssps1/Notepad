@@ -1,0 +1,23 @@
+sp_spaceused VG_Fact_Pagamentos 
+
+
+
+
+CREATE VIEW [dbo].[vw_VG_Fact_Pagamentos] WITH SCHEMABINDING
+AS SELECT [IdPagamento]
+FROM dbo.VG_Fact_Pagamentos
+GO
+
+CREATE UNIQUE CLUSTERED INDEX NCIX_vw_VG_Fact_Pagamentos ON dbo.vw_VG_Fact_Pagamentos
+([IdPagamento]);
+GO
+--
+-- 2ª PARTE
+
+ALTER TABLE [dbo].VG_Fact_Pagamentos DROP CONSTRAINT [PK_VG_Fact_Pagamentos] WITH ( ONLINE = OFF )
+GO
+
+--
+-- 3ª PARTE CRIAR O CLUSTERED COLUMNSTORE INDEX
+CREATE CLUSTERED COLUMNSTORE INDEX [CCIX_VG_Fact_Pagamentos] ON [dbo].[VG_Fact_Pagamentos] WITH (DROP_EXISTING = OFF, COMPRESSION_DELAY = 0)
+go

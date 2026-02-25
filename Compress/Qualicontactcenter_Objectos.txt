@@ -1,0 +1,421 @@
+-- QualicontactCenter
+
+
+ALTER INDEX [PK__store__A2F2A30CB44CF21A] ON [dbo].[store]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__transcri__3213E83F422BCF24] ON [dbo].[transcript_chat]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_transcript_chat_796382] ON [dbo].[transcript_chat]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__usex__8D82AB86C2DF79F3] ON [dbo].[usex]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_name] ON [dbo].[usex]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__usex_cal__3AEA68E45423E72F] ON [dbo].[usex_call]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_subject] ON [dbo].[usex_call]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_preferredphone] ON [dbo].[usex_call]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_otherphone] ON [dbo].[usex_call]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_usex_call_3708] ON [dbo].[usex_call]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__usex_cli__15271216FEA5F802] ON [dbo].[usex_client]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_usex_client_3710_FO_06072021] ON [dbo].[usex_client]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__answer__3213E83FD958E35E] ON [dbo].[answer]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__chat_fil__3213E83F77597295] ON [dbo].[chat_file]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [UKsm3f791odygqs8a6c8488v0qq] ON [dbo].[chat_file]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__call_con__3213E83F0245C4E3] ON [dbo].[call_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_call_control] ON [dbo].[call_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_call_contact_entry_101] ON [dbo].[call_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__call_det__3213E83F2F4D537F] ON [dbo].[call_details]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_call_details_3704] ON [dbo].[call_details]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_call_details_3706] ON [dbo].[call_details]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_call_details_1917267_FO_06072021] ON [dbo].[call_details]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__chat_con__3213E83FA4BFF1C1] ON [dbo].[chat_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_chat_contact_entry] ON [dbo].[chat_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_chat_contact_entry_967857] ON [dbo].[chat_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__chat__3213E83F23B948AB] ON [dbo].[chat]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [ix_chart_FO_15072021] ON [dbo].[chat]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_chat_8660663] ON [dbo].[chat]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__contact__024E7A86FDBEAC1A] ON [dbo].[contact]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__contact___175E234919C16EE5] ON [dbo].[contact_contact_phone]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_contact_contact_phone_3702] ON [dbo].[contact_contact_phone]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__contact___666F731D2D943E14] ON [dbo].[contact_email]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [UK_5q44dxr9e4tor8vxe4sr75a22] ON [dbo].[contact_email]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__contact___51059CF0983E93DF] ON [dbo].[contact_phone]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [UK_jrwljt0n6mff6afjg6ox6p3i5] ON [dbo].[contact_phone]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__email_at__3213E83F3E06C27C] ON [dbo].[email_attachment]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [UK_bhfr1cyxnqf55fnw2w5m2fhfd] ON [dbo].[email_attachment]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_email_attachment_273] ON [dbo].[email_attachment]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__email_co__3213E83FA41B9FFB] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_email_contact_entry_4181774] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_email_contact_entry_103] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_EMAIL_CONTACT_ENTRY_email_type_FO] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IDX_EMAIL_CONTACT_ENTRY_FO_14072021] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_email_contact_entry_8349312_FO_06072021] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_ece] ON [dbo].[email_contact_entry]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__particip__3213E83F7B8EC687] ON [dbo].[participant]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [DBA_NCIX_participant_transcript_chat] ON [dbo].[participant]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [PK__register__3213E83FDE1DCFBE] ON [dbo].[register]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [index_register] ON [dbo].[register]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_register_7358478_FO_08072021] ON [dbo].[register]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_register_10704] ON [dbo].[register]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+ALTER INDEX [IX_register_647442] ON [dbo].[register]
+REBUILD WITH (
+      DATA_COMPRESSION = PAGE
+    , ONLINE = ON
+    , SORT_IN_TEMPDB = OFF
+    , MAXDOP = 0
+    );
+
+
+Completion time: 2023-01-19T12:55:21.1192862+00:00
