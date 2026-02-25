@@ -1,0 +1,64 @@
+
+
+CREATE or ALTER PROCEDURE sp_DBA_CreateDBUser
+    @LoginName_var NVARCHAR(100) -- Login name to create users for
+
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @DatabaseName NVARCHAR(100);
+    DECLARE @SQL NVARCHAR(MAX);
+
+    -- Cursor to iterate through all user databases
+    DECLARE db_cursor CURSOR FOR
+    SELECT name 
+    FROM sys.databases
+    WHERE database_id > 4 
+	and name NOT IN ('DataExperimental_DICV', 'DataExperimental_DOCP','dba_db','SandboxDigital');
+
+    OPEN db_cursor;
+    FETCH NEXT FROM db_cursor INTO @DatabaseName;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Construct the dynamic SQL for each database
+        SET @SQL = N'USE [' + @DatabaseName + N'];
+		            DROP USER IF EXISTS [' + @LoginName_var + N'];
+					IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = ''' + @LoginName_var + N''')
+                    BEGIN
+                        CREATE USER [' + @LoginName_var + N'] FOR LOGIN [' + @LoginName_var + N'];
+						PRINT '' Adicionar as permissões para o user ...''
+						GRANT CONNECT TO	[' + @LoginName_var + N'];
+					
+
+                    END;';
+
+
+        -- Execute the dynamic SQL in the context of the current database
+        EXEC sp_executesql @SQL;
+
+        -- Fetch the next database
+        FETCH NEXT FROM db_cursor INTO @DatabaseName;
+    END;
+
+    -- Close and deallocate the cursor
+    CLOSE db_cursor;
+    DEALLOCATE db_cursor;
+
+    SET NOCOUNT OFF;
+END;
+
+
+       -- Construct the dynamic SQL for each database
+      --  SET @SQL = N'USE [' + @DatabaseName + N'];
+		    --        DROP USER IF EXISTS [' + @LoginName_var + N'];
+      --              IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = ''' + @LoginName_var + N''')
+      --              BEGIN
+      --                  CREATE USER [' + @LoginName_var + N'] FOR LOGIN [' + @LoginName_var + N'];
+						--PRINT '' Adicionar as permissões para o user ...''
+						--GRANT CONNECT TO	[' + @LoginName_var + N'];
+						--GRANT SELECT TO		[' + @LoginName_var + N'];
+
+      --              END;';
+

@@ -1,0 +1,76 @@
+-- PRD - HESTIA
+--  Linked Server para Ligação do SHESTIA ao ARTEMIS
+--   nome do Login : LinkedHA  que vai sunbstitui o "LinkedSql"
+
+use master
+go
+IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'LinkedHA')
+     DROP LOGIN [LinkedHA];
+GO  
+
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'LinkedHA')
+ --    CREATE LOGIN [LinkedHA] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
+ --	 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '#{Cofidis.User.Webservice}#')
+     CREATE LOGIN [LinkedHA] WITH PASSWORD='iVD6W4aw8o1ZFTdqwLr%IC/' , DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+ Go
+    
+GO  
+
+
+EXEC sp_MSforeachdb '
+IF ''?'' IN (''ACCIPIENS'') 
+BEGIN 
+    USE [?]
+    PRINT ''?''
+	DROP SCHEMA IF EXISTS [LinkedHA];
+	DROP USER IF EXISTS [LinkedHA]
+
+    IF DATABASE_PRINCIPAL_ID(''LinkedHA'') IS NULL
+    BEGIN
+        PRINT '' Criando o Linked Server user.''
+        CREATE USER [LinkedHA] FROM LOGIN [LinkedHA];
+    END /*IF*/
+    PRINT '' Adicionar as permissões para o user ...''
+	GRANT CONNECT TO [LinkedHA]
+	GRANT SELECT TO [LinkedHA] 
+	GRANT EXECUTE TO [LinkedHA]
+	
+
+END /*IF*/
+'
+
+
+--Privilégios IDH
+
+USE [FM]
+GO
+DROP SCHEMA IF EXISTS [LinkedHA]
+DROP USER IF EXISTS [LinkedHA]
+go
+IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'LinkedHA') BEGIN CREATE USER  [LinkedHA] 
+   FOR LOGIN [LinkedHA] END ELSE ALTER USER  [LinkedHA] WITH LOGIN = [LinkedHA];
+IF DATABASE_PRINCIPAL_ID('LinkedHA') IS NOT NULL GRANT CONNECT TO [LinkedHA]
+  GRANT CONNECT TO [LinkedHA]
+  GRANT SELECT  TO [LinkedHA] 
+  GRANT EXECUTE TO [LinkedHA] 
+
+
+
+/*
+--Privilégios IDH
+
+USE [IDH]
+GO
+DROP SCHEMA IF EXISTS [LinkedHA]
+DROP USER IF EXISTS [LinkedHA]
+go
+IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'LinkedHA') BEGIN CREATE USER  [LinkedHA] 
+   FOR LOGIN [LinkedHA] END ELSE ALTER USER  [LinkedHA] WITH LOGIN = [LinkedHA];
+IF DATABASE_PRINCIPAL_ID('LinkedHA') IS NOT NULL GRANT CONNECT TO [LinkedHA]
+  GRANT CONNECT TO [LinkedHA]
+  GRANT SELECT  TO [LinkedHA] 
+  GRANT EXECUTE TO [LinkedHA] 
+  
+*/
+
+

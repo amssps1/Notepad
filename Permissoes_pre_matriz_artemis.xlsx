@@ -1,0 +1,39 @@
+-- PRD - (Linked Server LinkedPA)
+--  Linked Server do PERSEU para ARTEMIS
+--
+
+USE master
+GO
+IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'LinkedPA')
+     DROP LOGIN [LinkedPA] ;
+GO  
+
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'LinkedPA')
+ --    CREATE LOGIN [LinkedPA] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
+ --	 IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '#{Cofidis.User.Webservice}#')
+     CREATE LOGIN [LinkedPA] WITH PASSWORD='ZL>ER][3m]04xpUa)5qlEbW' , DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+ Go
+
+EXEC sp_MSforeachdb '
+IF ''?'' IN (''CobrancasDAH'',''DotNetNuke'',''DSTI'',''FileWatcher'',''FM'',''IDH'',''TControlDAH'',''db_cofidis_dah'',''RUP''
+,''RSK_Score'',''Comunicacoes''
+
+) 
+BEGIN 
+    USE [?]
+    PRINT ''?''
+	DROP SCHEMA IF EXISTS [LinkedPA];
+	DROP USER IF EXISTS [LinkedPA];
+
+    IF DATABASE_PRINCIPAL_ID(''LinkedPA'') IS NULL
+    BEGIN
+        PRINT '' Criando o user.''
+        CREATE USER [LinkedPA] FROM LOGIN [LinkedPA];
+    END /*IF*/
+    PRINT '' Adicionar as permissões para o user ...''
+	ALTER ROLE [db_owner] ADD MEMBER [LinkedPA]
+
+
+END /*IF*/
+'
+

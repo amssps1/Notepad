@@ -1,0 +1,101 @@
+-- PRD- ARTEMIS
+--  COFIDIS2000\GRP_SQL_EXT_PRD  (Moisés)
+--  
+
+use master
+go
+IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_EXT_PRD')
+     DROP LOGIN [COFIDIS2000\GRP_SQL_EXT_PRD];
+GO  
+
+IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_EXT_PRD')
+     CREATE LOGIN [COFIDIS2000\GRP_SQL_EXT_PRD] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
+GO    
+
+
+EXEC sp_MSforeachdb '
+IF ''?'' IN (''PaymentGateway'') 
+BEGIN 
+    USE [?]
+    PRINT ''?''
+	DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_EXT_PRD]
+
+    IF DATABASE_PRINCIPAL_ID(''COFIDIS2000\GRP_SQL_EXT_PRD'') IS NULL
+    BEGIN
+        PRINT '' Criando o user.''
+        CREATE USER [COFIDIS2000\GRP_SQL_EXT_PRD] FROM LOGIN [COFIDIS2000\GRP_SQL_EXT_PRD];
+    END /*IF*/
+    PRINT '' Adicionar as permissões para o user ...''
+    grant select  				TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+	GRANT view definition 		TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+
+END /*IF*/
+'
+
+-----
+
+USE IDH
+go
+grant select  dbo.COF_Cliente	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.COF_ClienteUProcesso	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.COF_Processo	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.Cof_baseriscoDAH	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.COF_ContactoTelefonico	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.DAH_Produto	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select  dbo.VG_CarteiraDossier	TO [COFIDIS2000\GRP_SQL_EXT_PRD]
+go
+
+
+
+USE IDH
+go
+
+
+
+
+grant select on COF_ProcessoCriteriosNFinanciavelMotivosEstudo  to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoDtContrato to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoHistorico to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreAuto2 to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreAuto3 to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreClassico to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreClassico2 to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreCofidisPay to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreConsolidados to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreDistribuicao to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreMoto to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScorePosAA to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreRUC to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudoScoreRUC2 to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoMotivosEstudo to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ScorePosAAGEProcessoEstudo to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ProcessoEstudo to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_DadosMotorDM to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_BancoPortugalCRC to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_BancoPortugalCRC5G to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_BancoPortugalCRC5GLogs to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_TipoReferencia to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ClienteSegurancaSocial to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_ClienteSegurancaSocialEntidadeEmpregadora to [COFIDIS2000\GRP_SQL_EXT_PRD]
+grant select on COF_Erros_APP (View) to [COFIDIS2000\GRP_SQL_EXT_PRD]
+
+
+
+
+
+•	COF_Cliente to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	Nome to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	Primeiro Nome to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	Ultimo Nome to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	NumContribuinte to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	COF_ClienteUProcesso to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	NIF to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	COF_Processo to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	Cof_baseriscoDAH to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	COF_Referencias to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	COF_ContactoTelefonico to [COFIDIS2000\GRP_SQL_EXT_PRD]
+		o	Numero to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	DAH_Produto to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	PERSEU.DB_Cofidis_DAH.dbo.Dossier to [COFIDIS2000\GRP_SQL_EXT_PRD]
+•	VG_CarteiraDossier to [COFIDIS2000\GRP_SQL_EXT_PRD]
+*/ to [COFIDIS2000\GRP_SQL_EXT_PRD]
