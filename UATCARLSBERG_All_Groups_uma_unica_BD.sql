@@ -13,23 +13,9 @@ IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP
 GO    
 
 
-
 EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''AdministracaoSistemas''
-
-,''cofcc_awdb''
-,''cofcc_hds''
-,''m-it2008''
-,''LCM''
-,''LCMReports''
-,''QUAContactCenter360''
-,''RH''
-
-
-
-) 
+IF ''?'' IN (''ComunicacaoParceiros ''
+)
 BEGIN 
     USE [?]
     PRINT ''?''
@@ -43,7 +29,7 @@ BEGIN
     END /*IF*/
     PRINT '' Adicionar as permissões para o user ...''
 	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_ARQUITECTOS]
-	GRANT SELECT, INSERT, UPDATE TO [COFIDIS2000\GRP_SQL_ARQUITECTOS] 
+	GRANT SELECT				TO [COFIDIS2000\GRP_SQL_ARQUITECTOS] 
 	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_ARQUITECTOS]
 	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_ARQUITECTOS]
 	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_ARQUITECTOS]
@@ -68,7 +54,6 @@ exec sp_addrolemember 'SQLAgentOperatorRole', 'COFIDIS2000\GRP_SQL_ARQUITECTOS'
 exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_ARQUITECTOS'
 exec sp_addrolemember 'db_ssisltduser', 'COFIDIS2000\GRP_SQL_ARQUITECTOS'
 exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_ARQUITECTOS'
-grant execute to [COFIDIS2000\GRP_SQL_ARQUITECTOS]
 
 /*
 --Privilégios SSISDB
@@ -85,20 +70,10 @@ ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_ARQUITECTOS]
 GO
 ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_ARQUITECTOS]
 GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_ARQUITECTOS]
-GO
-
----- 
--- Schema retencao na dba_db
-GRANT SELECT, INSERT, UPDATE
-ON SCHEMA::retencao
-TO [COFIDIS2000\GRP_SQL_ARQUITECTOS];
-GO
-
-
 
 ---
--- UAT - SENIORES
+
+-- UAT - GRP_SQL_DEV_SENIOR
 --  COFIDIS2000\GRP_SQL_DEV_SENIOR
 --
 
@@ -114,17 +89,8 @@ GO
 
 
 EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''AdministracaoSistemas''
-,''cofcc_awdb''
-,''cofcc_hds''
-,''m-it2008''
-,''LCM''
-,''LCMReports''
-,''QUAContactCenter360''
-,''RH''
-) 
+IF ''?'' IN (''ComunicacaoParceiros ''
+)
 BEGIN 
     USE [?]
     PRINT ''?''
@@ -138,7 +104,7 @@ BEGIN
     END /*IF*/
     PRINT '' Adicionar as permissões para o user ...''
 	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
-	GRANT SELECT TO [COFIDIS2000\GRP_SQL_DEV_SENIOR] 
+	GRANT SELECT				  TO [COFIDIS2000\GRP_SQL_DEV_SENIOR] 
 	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
 	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
 	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
@@ -158,6 +124,7 @@ go
 IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_DEV_SENIOR') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_DEV_SENIOR] 
    FOR LOGIN [COFIDIS2000\GRP_SQL_DEV_SENIOR] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_DEV_SENIOR] WITH LOGIN = [COFIDIS2000\GRP_SQL_DEV_SENIOR];
 IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_DEV_SENIOR') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
+
 
 exec sp_addrolemember 'SQLAgentOperatorRole', 'COFIDIS2000\GRP_SQL_DEV_SENIOR'
 exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_DEV_SENIOR'
@@ -179,21 +146,9 @@ ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_SENIOR]
 GO
 ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_SENIOR]
 GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_SENIOR]
-GO
 
-
-
--- Schema retencao na dba_db
-GRANT SELECT, INSERT, UPDATE
-ON SCHEMA::retencao
-TO [COFIDIS2000\GRP_SQL_DEV_SENIOR];
-GO
-
-
--- 	GRANT ALTER 				TO [COFIDIS2000\GRP_SQL_DEV_SENIOR]
 --
--- SIT - DEV Tecnico
+-- UAT - GRP_SQL_DEV_TECNICO
 --  COFIDIS2000\GRP_SQL_DEV_TECNICO
 --
 
@@ -209,19 +164,7 @@ GO
 
 
 EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-
-,''ACCIPIENS''
-,''AdministracaoSistemas''
-,''m-it2008''
-,''cofcc_awdb''
-,''cofcc_hds''
-,''LCM''
-,''LCMReports''
-,''QUAContactCenter360''
-,''RH''
-
-
+IF ''?'' IN (''ComunicacaoParceiros ''
 ) 
 BEGIN 
     USE [?]
@@ -235,8 +178,8 @@ BEGIN
         CREATE USER [COFIDIS2000\GRP_SQL_DEV_TECNICO] FROM LOGIN [COFIDIS2000\GRP_SQL_DEV_TECNICO];
     END /*IF*/
     PRINT '' Adicionar as permissões para o user ...''
-	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
-	GRANT SELECT  TO [COFIDIS2000\GRP_SQL_DEV_TECNICO] 
+	GRANT CONNECT 				TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
+	GRANT SELECT				TO [COFIDIS2000\GRP_SQL_DEV_TECNICO] 
 	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
 	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
 	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
@@ -262,26 +205,11 @@ exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_DEV_TECNICO'
 exec sp_addrolemember 'db_ssisltduser', 'COFIDIS2000\GRP_SQL_DEV_TECNICO'
 exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_DEV_TECNICO'
 
-/*
---Privilégios SSISDB
-*/
-USE [SSISDB]
-GO
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_DEV_TECNICO]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_DEV_TECNICO') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_DEV_TECNICO] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_DEV_TECNICO] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_DEV_TECNICO] WITH LOGIN = [COFIDIS2000\GRP_SQL_DEV_TECNICO];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_DEV_TECNICO') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_DEV_TECNICO]
 
-ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_TECNICO]
-GO
-ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_TECNICO]
-GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_DEV_TECNICO]
-GO
+
 
 --
--- UAT - Suporte aplicacional
+-- UAT - Suporte aplicacional 
 --  COFIDIS2000\GRP_SQL_SUPORTE_APP
 --
 
@@ -297,13 +225,8 @@ GO
 
 
 EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''LCM''
-,''LCMReports''
-,''QUAContactCenter360''
-,''RH''
-
-) 
+IF ''?'' IN (''ComunicacaoParceiros ''
+)
 BEGIN 
     USE [?]
     PRINT ''?''
@@ -317,7 +240,7 @@ BEGIN
     END /*IF*/
     PRINT '' Adicionar as permissões para o user ...''
 	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
-	GRANT SELECT, UPDATE,INSERT, ALTER  TO [COFIDIS2000\GRP_SQL_SUPORTE_APP] 
+	GRANT SELECT, UPDATE,INSERT  TO [COFIDIS2000\GRP_SQL_SUPORTE_APP] 
 	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
 	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
 	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
@@ -359,14 +282,8 @@ GO
 ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_SUPORTE_APP]
 GO
 
--- Exceçoes
-use IDH
-go
-GRANT DELETE ON TG_SectorNExecutante TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
-
-use DotnetNuke
-go
-GRANT DELETE ON UserRoles TO [COFIDIS2000\GRP_SQL_SUPORTE_APP]
+--
+--
 
 --
 -- Testers
@@ -388,18 +305,8 @@ GO
 
 
 EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-
-,''KPIMetrics''
-,''LCM''
-,''LCMReports''
-,''m-it2008''
-,''QUAContactCenter360''
-,''RH''
-,''SSISDB''
-,''StagingHestia''
-
-) 
+IF ''?'' IN (''ComunicacaoParceiros ''
+)
 BEGIN 
     USE [?]
     PRINT ''?''
@@ -418,8 +325,8 @@ BEGIN
 
 END /*IF*/
 '
-
-
+--
+--
 
 
 -- Factories -- SENIORES
@@ -445,29 +352,18 @@ GO
 
 EXEC sp_MSforeachdb '
 IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''ASPState''
-,''DB_KPI''
-,''DM_PAC''
-,''DotNetNuke''
-,''FM_reporting''
-,''GestaoEconomato''
-,''JurisFlow_Cofidis''
-,''KPIMetrics''
-,''LCM''
-,''LCMReports''
-,''m-it2008''
-,''NC''
-,''Oauth''
-,''ODMDSRDB''
-,''osSession''
-,''outsystemslog''
-,''QUAContactCenter360''
-,''RH''
-,''RUP''
-,''SSISDB''
-,''StagingHestia''
-,''TControl''
+,''ControlosPermanentes''
+,''db_cofidis_dah_interface''
+,''db_cofidis_dah_interface_aux''
+,''db_cofidis_dah_interface_histfase''
+,''db_cofidis_dah_transactionlog''
+,''ExtratoCofidis''
+,''FactCofidis''
+,''InterfacesDAH''
+,''Outsystems''
+,''ReconciliacaoBancaria''
+,''comunicacaoparceiros''
+
 
 ) 
 BEGIN 
@@ -524,8 +420,7 @@ ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES_SENIOR]
 GO
 ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES_SENIOR]
 GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES_SENIOR]
-GO
+
 
 --
 -- Factori4es 
@@ -548,19 +443,17 @@ GO
 
 EXEC sp_MSforeachdb '
 IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''LCM''
-,''LCMReports''
-
-,''m-it2008''
-,''NC''
-,''Oauth''
-,''ODMDSRDB''
-,''outsystemslog''
-,''QUAContactCenter360''
-,''RH''
-,''SSISDB''
-,''StagingHestia''
+,''ControlosPermanentes''
+,''db_cofidis_dah_interface''
+,''db_cofidis_dah_interface_aux''
+,''db_cofidis_dah_interface_histfase''
+,''db_cofidis_dah_transactionlog''
+,''ExtratoCofidis''
+,''FactCofidis''
+,''InterfacesDAH''
+,''Outsystems''
+,''ReconciliacaoBancaria''
+,''comunicacaoparceiros''
 
 
 ) 
@@ -602,391 +495,3 @@ exec sp_addrolemember 'SQLAgentOperatorRole', 'COFIDIS2000\GRP_SQL_COG_FACTORIES
 exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_COG_FACTORIES'
 exec sp_addrolemember 'db_ssisltduser', 'COFIDIS2000\GRP_SQL_COG_FACTORIES'
 exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_COG_FACTORIES'
-
-
-
-USE [SSISDB]
-GO
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_COG_FACTORIES') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_COG_FACTORIES] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_COG_FACTORIES] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_COG_FACTORIES] WITH LOGIN = [COFIDIS2000\GRP_SQL_COG_FACTORIES];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_COG_FACTORIES') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-
-ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-GO
-ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-GO
-
---
---
--- KPIs
-
---
--- Factori4es 
-
---
--- UAT - Factori4es
---  COFIDIS2000\GRP_SQL_KPIS
---
-
-use master
-go
-IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_KPIS')
-     DROP LOGIN [COFIDIS2000\GRP_SQL_KPIS];
-GO  
-
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_KPIS')
-     CREATE LOGIN [COFIDIS2000\GRP_SQL_KPIS] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
-GO    
-
-
-EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''AdministracaoSistemas''
-,''ASPState''
-,''CobrancasDAH''
-,''cofcc_awdb''
-,''cofcc_hds''
-,''Cofinet''
-,''Comunicacoes''
-,''db_cofidis_dah''
-,''DM_PAC''
-,''DotNetNuke''
-,''ExtraccaoTREC''
-,''ExtratoCofidis''
-,''FileWatcher''
-,''FM''
-,''FM_reporting''
-,''GestaoEconomato''
-,''Insurance''
-,''JurisFlow_Cofidis''
-,''LCM''
-,''LCMReports''
-,''LogginApp''
-,''Marketing''
-,''m-it2008''
-,''NC''
-,''Neptuno''
-,''Oauth''
-,''ODMDSRDB''
-,''osSession''
-,''outsystemslog''
-,''PaymentGateway''
-,''QUAContactCenter360''
-,''RH''
-,''RUP''
-,''SSISDB''
-,''StagingHestia''
-,''SymetriaFI''
-,''TControl''
-,''TcontrolDAH''
-
-) 
-BEGIN 
-    USE [?]
-    PRINT ''?''
-	DROP SCHEMA IF EXISTS [COFIDIS2000\GRP_SQL_KPIS]
-	DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_KPIS]
-
-    IF DATABASE_PRINCIPAL_ID(''COFIDIS2000\GRP_SQL_KPIS'') IS NULL
-    BEGIN
-        PRINT '' Criando o user.''
-        CREATE USER [COFIDIS2000\GRP_SQL_KPIS] FROM LOGIN [COFIDIS2000\GRP_SQL_KPIS];
-    END /*IF*/
-    PRINT '' Adicionar as permissões para o user ...''
-	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_KPIS]
-	GRANT SELECT				 TO [COFIDIS2000\GRP_SQL_KPIS] 
-	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_KPIS]
-	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_KPIS]
-	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_KPIS]
-
-END /*IF*/
-'
-
-
-/*
---Privilégios MSDB
-*/
-USE [msdb]
-GO
-DROP SCHEMA IF EXISTS [COFIDIS2000\GRP_SQL_KPIS]
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_KPIS]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_KPIS') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_KPIS] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_KPIS] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_KPIS] WITH LOGIN = [COFIDIS2000\GRP_SQL_KPIS];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_KPIS') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_KPIS]
-
-exec sp_addrolemember 'SQLAgentOperatorRole', 'COFIDIS2000\GRP_SQL_KPIS'
-exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_KPIS'
-exec sp_addrolemember 'db_ssisltduser', 'COFIDIS2000\GRP_SQL_KPIS'
-exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_KPIS'
-
-
--- UATCarlsberg
---  COFIDIS2000\GRP_SQL_COG_FACTORIES
---  HESTIA
-
-use master
-go
-IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_COG_FACTORIES')
-     DROP LOGIN [COFIDIS2000\GRP_SQL_COG_FACTORIES];
-GO  
-
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_COG_FACTORIES')
-     CREATE LOGIN [COFIDIS2000\GRP_SQL_COG_FACTORIES] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
-GO    
-
-
-EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-
-,''ACCIPIENS''
-,''cofcc_awdb''
-,''cofcc_hds''
-
-,''FM_reporting''
-,''LCM''
-,''LCMReports''
-,''GestaoEconomato''
-
-,''osSession''
-,''OutsystemsLOG''
-,''PaymentGateway''
-,''QUAContactCenter360''
-,''RH''
-,''RUP''
-,''SSISDB''
-
-
-
-
-) 
-BEGIN 
-    USE [?]
-    PRINT ''?''
-	DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-
-    IF DATABASE_PRINCIPAL_ID(''COFIDIS2000\GRP_SQL_COG_FACTORIES'') IS NULL
-    BEGIN
-        PRINT '' Criando o user.''
-        CREATE USER [COFIDIS2000\GRP_SQL_COG_FACTORIES] FROM LOGIN [COFIDIS2000\GRP_SQL_COG_FACTORIES];
-    END /*IF*/
-    PRINT '' Adicionar as permissões para o user ...''
-	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-	GRANT SELECT TO [COFIDIS2000\GRP_SQL_COG_FACTORIES] 
-	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_COG_FACTORIES]
-
-END /*IF*/
-'
-
-
-
--- UAT - ARQUITECTURA & ENGENHARIA
---  COFIDIS2000\GRP_SQL_AENG
---  HESTIA
-
-use master
-go
-IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_AENG')
-     DROP LOGIN [COFIDIS2000\GRP_SQL_AENG];
-GO  
-
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_AENG')
-     CREATE LOGIN [COFIDIS2000\GRP_SQL_AENG] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
-GO    
-
-
-EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-
-,''AdministracaoSistemas''
-,''LCM''
-,''LCMReports''
-
-
-) 
-BEGIN 
-    USE [?]
-    PRINT ''?''
-	DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_AENG]
-
-    IF DATABASE_PRINCIPAL_ID(''COFIDIS2000\GRP_SQL_AENG'') IS NULL
-    BEGIN
-        PRINT '' Criando o user.''
-        CREATE USER [COFIDIS2000\GRP_SQL_AENG] FROM LOGIN [COFIDIS2000\GRP_SQL_AENG];
-    END /*IF*/
-    PRINT '' Adicionar as permissões para o user ...''
-	GRANT CONNECT TO [COFIDIS2000\GRP_SQL_AENG]
-	GRANT SELECT TO [COFIDIS2000\GRP_SQL_AENG]  
-	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_AENG]
-	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_AENG]
-
-END /*IF*/
-'
-
-
-/*
---Privilégios MSDB
-*/
-USE [msdb]
-GO
-DROP SCHEMA IF EXISTS [COFIDIS2000\GRP_SQL_AENG]
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_AENG]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_AENG') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_AENG] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_AENG] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_AENG] WITH LOGIN = [COFIDIS2000\GRP_SQL_AENG];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_AENG') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_AENG]
-
-exec sp_addrolemember 'SQLAgentUserRole', 'COFIDIS2000\GRP_SQL_AENG'
-exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_AENG'
-exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_AENG'
-
-/*
---Privilégios SSISDB
-*/
-USE [SSISDB]
-GO
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_AENG]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_AENG') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_AENG] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_AENG] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_AENG] WITH LOGIN = [COFIDIS2000\GRP_SQL_AENG];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_AENG') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_AENG]
-
-ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_AENG]
-GO
-
---
-use EngMetricsDB
-go
-GRANT CONNECT TO [COFIDIS2000\GRP_SQL_AENG]
-GRANT SELECT,insert,update, view definition TO [COFIDIS2000\GRP_SQL_AENG]  
-GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_AENG]
-go
-
-
--- BILLING JUNIOR
-
---
--- PRD - 
---  COFIDIS2000\GRP_SQL_BILLING_SENIOR
---
-
-use master
-go
-IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR')
-     DROP LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR];
-GO  
-
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR')
-     CREATE LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
-GO    
-
-
-EXEC sp_MSforeachdb '
-IF ''?'' NOT IN (''master'', ''model'', ''msdb'', ''SSISDB'', ''tempdb''
-,''ACCIPIENS''
-,''ASPState''
-,''cofcc_awdb''
-,''cofcc_hds''
-,''Cofinet''
-,''ExtraccaoTREC''
-,''LCM''
-,''LCMReports''
-,''GestaoEconomato''
-,''LogginApp''
-,''Marketing''
-,''master''
-,''m-it2008''
-,''model''
-,''msdb''
-,''Neptuno''
-,''Oauth''
-,''osSession''
-,''OutsystemsLOG''
-,''PaymentGateway''
-,''RH''
-,''SSISDB''
-,''StagingHestia''
-,''SymetriaFI''
-
-
-
-) 
-BEGIN 
-    USE [?]
-    PRINT ''?''
-	DROP SCHEMA IF EXISTS [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-	DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-
-    IF DATABASE_PRINCIPAL_ID(''COFIDIS2000\GRP_SQL_BILLING_JUNIOR'') IS NULL
-    BEGIN
-        PRINT '' Criando o user.''
-        CREATE USER [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] FROM LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR];
-    END /*IF*/
-    PRINT '' Adicionar as permissões para o user ...''
-	GRANT CONNECT 				 TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-	GRANT SELECT				 TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] 
-	GRANT VIEW Definition 		TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-	GRANT SHOWPLAN 				TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-	GRANT EXECUTE 				TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-
-END /*IF*/
-'
-
-
-/*
---Privilégios MSDB
-*/
-USE [msdb]
-GO
-DROP SCHEMA IF EXISTS [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_BILLING_JUNIOR') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] WITH LOGIN = [COFIDIS2000\GRP_SQL_BILLING_JUNIOR];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_BILLING_JUNIOR') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-
-exec sp_addrolemember 'SQLAgentOperatorRole', 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR'
-exec sp_addrolemember 'db_ssisoperator', 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR'
-exec sp_addrolemember 'db_ssisltduser', 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR'
-exec sp_addrolemember 'db_datareader', 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR'
-
-USE [SSISDB]
-GO
-DROP USER IF EXISTS [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-go
-IF NOT EXISTS (SELECT NAME FROM sys.database_principals WHERE NAME =  'COFIDIS2000\GRP_SQL_BILLING_JUNIOR') BEGIN CREATE USER  [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] 
-   FOR LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] END ELSE ALTER USER  [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] WITH LOGIN = [COFIDIS2000\GRP_SQL_BILLING_JUNIOR];
-IF DATABASE_PRINCIPAL_ID('COFIDIS2000\GRP_SQL_BILLING_JUNIOR') IS NOT NULL GRANT CONNECT TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-
-ALTER ROLE [db_datareader] ADD MEMBER [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-GO
-ALTER ROLE [ssis_logreader] ADD MEMBER [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-GO
-ALTER ROLE [ssis_admin] ADD MEMBER [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-GO
-
-/* IDH
-use master
-go
-IF EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR')
-     DROP LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR];
-GO  
-
-IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = 'COFIDIS2000\GRP_SQL_BILLING_JUNIOR')
-     CREATE LOGIN [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english];
-GO    
-use TCONTROLDAH
-
-GRANT CONNECT 				 TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR]
-GRANT SELECT				 TO [COFIDIS2000\GRP_SQL_BILLING_JUNIOR] 
-go
-
-*/
-
