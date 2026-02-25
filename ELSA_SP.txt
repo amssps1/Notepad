@@ -1,0 +1,7 @@
+API_UPD_VG_LarGeracoesTipoDossier_NCR
+
+
+WHERE ISNULL(TBL_DADOS.DataIniTipodossierLarIni,'1900-01-01T00:00:00.000')='1900-01-01T00:00:00.000'
+
+é melhor alterar: Where TBL_DADOS.DataIniTipodossierLarIni = '1900-01-01T00:00:00.000' OR TBL_DADOS.DataIniTipodossierLarIni is null
+

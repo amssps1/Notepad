@@ -1,0 +1,15 @@
+@Fabio Domingos  , vamos avançar com os acessos em SIT e UAT, mas é necessário saber os seguintes detalhes sobre o esta Base de Dados:
+
+qual a dimensão inicial da BD , vazio ao inicio ou vai ter importação de dados de  outro local ? (VAI INICIAR VAZIA)
+qual o crescimento estimado a 6 meses, e a 1 ano? (VÃO ENVIAR)
+[‎17/‎03/‎2023 17:23]  MARQUES Marco:  
+- Previsões sobre o crescimento da base de dados nos próximos 6 meses / 1 ano; 
+cerca de 1.32M de registos a cada 6 meses
+- Politica de data purge
+de momento não está nada previsto
+ 
+
+possui dados Pessoais (nif, nomes, moradas, telefones, etc)  em algum das tabelas ?  (VAI EXISTIR DADOS PESSOAIS)
+Períodos de Retenção das maiores tabelas deverá estar definido , e o processo de data Purge deverá também ser desenvolvido por vocês, mesmo que necessite de algum acompanhamento nosso; (AGUARDA-SE REPOSTA FABIO/MERCO)
+Quais as contas de serviço que vão ter acesso ? (cofidis2000\WrkSrv_ComunicacaoParceiros)
+Quem não deverá ter acesso a esta BD ?  (não existe restrição)

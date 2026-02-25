@@ -1,0 +1,25 @@
+SELECT SERVERPROPERTY('MachineName')
+GO
+SELECT SERVERPROPERTY('InstanceName')
+GO
+SELECT SERVERPROPERTY('ServerName')
+GO
+
+/* Using In-Built Function Identify Nodes of SQL Server Failover Cluster */
+SELECT * FROM fn_virtualservernodes()
+GO
+
+/* Using DMV Identify Nodes of SQL Server Failover Cluster */
+SELECT * FROM sys.dm_os_cluster_nodes
+GO
+
+
+/* Using In-Built Function Identify Shared Drives Used by SQL Server Failover Cluster Instance */
+SELECT * FROM fn_servershareddrives()
+GO
+
+/* Using DMV Function Identify Shared Drives Used by SQL Server Failover Cluster Instance */
+SELECT * FROM sys.dm_io_cluster_shared_drives
+GO
+
+SELECT @@SERVERNAME

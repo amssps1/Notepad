@@ -1,0 +1,6 @@
+# Robocopy
+
+robocopy \\10.1.2.111\Users\admin\Documents C:\Users\admin\Documents /E /Z /ZB /R:5 /W:5 /TBD /NP /V /MT:16
+
+Robocopy C:\Folder1 C:\Folder2 /MT:32
+

@@ -1,0 +1,15 @@
+
+
+SELECT DISTINCT 
+	login_time,
+	host_name,
+	program_name,
+	login_name
+FROM (
+	SELECT 
+		sys.dm_exec_sessions.*,
+		RANK() OVER(PARTITION BY login_name ORDER BY login_time DESC) AS rnk
+FROM sys.dm_exec_sessions) l
+WHERE l.rnk = 1
+ORDER BY l.login_time DESC 
+ 

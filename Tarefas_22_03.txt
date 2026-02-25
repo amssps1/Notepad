@@ -1,0 +1,85 @@
+
+
+
+Contactcenter360 - Builtin dos Anexos  , 
+ver também os dados no Armada
+
+Comest -Comité Estratégico
+
+
+---------------
+
+To do para hoje:
+
+- Script do Garret (DONE)
+
+- Scripts do Zabbix nos Postgres (DONE)
+
+- Tabelas com maior Disk Latency (done)
+
+- Responder ao Ferreira sobre o SQL Agent (done)
+
+- Alert Script do Mit-2008, incluir se enviou nos segundos anteriores devem estar tudo ok, mesmo que tenha muitos em fila !!
+
+- pgBackupRestore
+
+- Catalogar IP's no IPAM - Postgresql, e listar os SQL's via queries do ASS
+
+- LogShipping ver status
+
+- TDE (Sample já está) (DONE)
+
+- Criar 2 Grupos para SQL - PRD para Matriz de Acessos (DONE)
+
+- Criar procedimento para Users contas de serviço SQL 
+
+- Remoção de BDs do Perseu (JFerreira)  (DONE)
+
+- Ver os patchs pendentes nos SQL PRD (já enviei email em 29/03) ao Pereira    -- - Patch Update em Todos os SQLs - PRD 
+
+- Objectivos: CMDB , documentar knowloadge base 
+
+- Colocar o Kamadeva e Shakti no SQL Monitor (DONE)
+
+- Backups das BDs - no CALA Cluster (DONE)
+
+
+
+- Actualização dos SSRS PBI em todos os ambientes - Efectuar a listagem das versões actuais
+
+
+- Bruno Bento (bentobr) - QueryReferenciaComunicacao privilgios comunicacao em sit
+
+- Retirar do Hestia a "DM_Imparidade" colocar como Read_Only
+
+- João Carlos, alterar o hhtps do Infante de Sagres no Portal
+
+
+-- Ver o blitz e correr em todas as máquinas de forma central
+
+exec sp_Blitz @IgnorePrioritiesAbove = 50-- Default
+
+
+EXEC sp_blitzIndex @GetAllDatabases = 1
+EXEC dbo.sp_BlitzIndex @DatabaseName='YourDatabase', @SchemaName='dbo', @TableName='tFoo';
+
+Tarefas com Arquitectos:
+- Listar os Indices Todos de cada Tabela
+- Enviar email com esses indices
+- Enviar email com indices que supostamente são redundantes
+
+
+
+- Script restore kamadeva / shakti with logs - já tenho algo feito...
+
+
+- Devsqlserver2012 - Filewatcher é para continuar ? Fernandes
+- SQLToolbelt01    - Falar com Francisco
+- DevSQLServer2019 - Falar com Fernandes para eliminar
+
+
+- Retirar BD DevContanctcenter (DONE)
+- Adicionar Junior como Backup do Palma (DONE)
+- Responder à Daniela  (DONE)
+
+

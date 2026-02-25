@@ -1,0 +1,22 @@
+Permissions
+
+
+    db_datareader
+    db_datawriter
+    db_ddladmin
+    db_executor
+	
+	
+	-- Create a db_executor role
+CREATE ROLE db_executor
+
+-- Grant execute rights to the new role
+GRANT EXECUTE TO db_executor
+
+EXEC sp_addrolemember 'db_executor','User'
+EXEC sp_addrolemember  'db_datareader',User'
+EXEC sp_addrolemember  'db_datawriter',User'
+EXEC sp_addrolemember  'db_ddladmin',User'
+
+
+GRANT EXECUTE TO

@@ -1,0 +1,20 @@
+-- Space Used
+
+CREATE TABLE #SpaceUsed_dba (
+	 TableName sysname
+	,NumRows BIGINT
+	,ReservedSpace VARCHAR(50)
+	,DataSpace VARCHAR(50)
+	,IndexSize VARCHAR(50)
+	,UnusedSpace VARCHAR(50)
+	) 
+
+DECLARE @str VARCHAR(500)
+SET @str =  'exec sp_spaceused ''?'''
+INSERT INTO #SpaceUsed_dba 
+EXEC sp_msforeachtable @command1=@str
+
+SELECT * FROM #SpaceUsed_dba 
+order by NumRows desc
+
+--drop table #SpaceUsed_dba

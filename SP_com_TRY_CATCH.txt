@@ -1,0 +1,33 @@
+
+
+-- =============================================
+-- Author: Wilian Martins
+-- Created date: 07/01/2022
+-- Description: Obtem dados OCR para um Dossier
+-- Projecto: Conferencia Doc. OCR
+-- Version: 0.001
+-- =============================================
+CREATE PROCEDURE [dbo].[API_GET_OCR_RespostaByIdProcessoTipo]
+	@IDProcesso DECIMAL,
+    @TipoDocumento VARCHAR(50)
+AS
+BEGIN TRY
+
+    SELECT COFD.IDDocumentacao IdDocumentacao, COFD.IDProcesso, CP.IDProcesso AS IDProcesso2, COFD.IDCliente, CP.IDCliente AS IDCliente2, 
+            CP.IDEstado, CP.ValidadoAutomaticamente, OCRP.IdPedido, r.IdResposta, r.Resposta, r.RespostaImediata
+    FROM dbo.OCR_Resposta r  WITH (NOLOCK)
+        RIGHT JOIN dbo.OCR_Pedido OCRP WITH (NOLOCK) ON OCRP.IdPedido = r.IdPedido
+        INNER JOIN dbo.COF_Documentacao COFD WITH (NOLOCK) ON COFD.IDDocumentacao = OCRP.IdDocumentacao
+        LEFT JOIN dbo.COF_Pedido_Documentacao CPD WITH (NOLOCK) ON CPD.IDDocumentacao = COFD.IDDocumentacao
+        LEFT JOIN dbo.COF_Pedido CP WITH (NOLOCK) ON CP.IDPedido = CPD.IDPedido
+    WHERE (CP.IDProcesso = @IDProcesso OR COFD.IDProcesso = @IDProcesso) AND r.Resposta LIKE '%document:class": "'+@TipoDocumento+'"%'
+    ORDER BY OCRP.CreatedDate DESC
+
+END TRY
+BEGIN CATCH
+    DECLARE @Erro AS VARCHAR(500)
+    SELECT  @Erro = ERROR_MESSAGE()
+    INSERT  INTO [dbo].[COF_Erros_SP]
+    VALUES  (ERROR_PROCEDURE(), @Erro, GETDATE())
+    RAISERROR(@Erro,11,1)
+END CATCH

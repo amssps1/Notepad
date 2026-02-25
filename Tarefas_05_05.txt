@@ -1,0 +1,43 @@
+delos - Navision
+
+Sp_
+
+Ver event log do Hestia
+N8N
+
+Trace à SP:
+select CreatedByUser, CreatedDate, UpdatedByUser, UpdatedDate, IdComunicacaoProcessada, IdReferenciaComunicacao, IdAplicacao, IdComExt, IdProcesso, IdComunicacaoAutomatica, DataAgendamento, IdCliente, IdEstadoComunicacaoAutomatica
+from ComunicacaoAutomatica ca with(updlock)
+where ca.IdEstadoComunicacaoAutomatica = @p0
+and ca.DataAgendamento < @p1
+and ca.IdComunicacaoProcessada is null
+and exists(select 1 from ReferenciaComunicacao rc
+            where ca.IdReferenciaComunicacao = rc.IdReferenciaComunicacao
+            and rc.IdTipoComunicacao = @p2)
+			
+			
+			
+select CreatedByUser, CreatedDate, UpdatedByUser, UpdatedDate, IdComunicacaoProcessada, IdReferenciaComunicacao, IdAplicacao, IdComExt, IdProcesso, IdComunicacaoAutomatica, DataAgendamento, IdCliente, IdEstadoComunicacaoAutomatica
+from ComunicacaoAutomatica ca with(updlock)
+where ca.IdEstadoComunicacaoAutomatica = @p0
+and ca.DataAgendamento < @p1
+and ca.IdComunicacaoProcessada is null
+and exists(select 1 from ReferenciaComunicacao rc
+            where ca.IdReferenciaComunicacao = rc.IdReferenciaComunicacao
+            and rc.IdTipoComunicacao = @p2)			
+			
+			
+- pgBackupRestore
+- Objectivos: CMDB , documentar knowloadge base 
+
+- Actualização dos SSRS PBI em todos os ambientes - Efectuar a listagem das versões actuais
+- João Carlos, alterar o hhtps do Infante de Sagres no Portal
+- Ver o blitz e correr em todas as máquinas de forma central
+- Alert Script do Mit-2008, incluir se enviou nos segundos anteriores devem estar tudo ok, mesmo que tenha muitos em fila !!
+
+
+- David Cavadias
+EXEC API_GET_ValidacaoPCD 7152366  GO
+
+
+- Actualizar SQL Monitor

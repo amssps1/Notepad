@@ -1,0 +1,53 @@
+
+
+4 cores		
+20 gb ram		
+c: 	SO	60
+d: 	dados	100 GB
+e:	log	40  GB
+t:	tempdb	40 GB
+		
+cofptpsqldba01	(10.134.201.46)
+	
+
+c:\slqlserver\sql2019
+
+
+Softwares da Casa:
+
+\\eldorado\software$\
+
+\\Uf38pu01\software_server 
+
+
+cofptpsqldba01-Srv
+oRySpUfYhDPXEe6dcdkr
+
+
+cofptpsqldba01-Mon 
+QXIuiF1j9FtIp5gpMDPJ
+ 
+
+
+
+
+A VM: 10.134.201.36
+
+
+sa   nvo7lmbg3YnUXUeGGSJl
+
+Sql Monitor
+Administrator  uoS8eYfnQbWjvEcW5zoe  http://cofptpsqldba01:8080/ 
+
+
+outgoing email server: smtprint-prod-si.e-i.net
+
+
+hestia - hidra
+
+
+
+
+
+
+

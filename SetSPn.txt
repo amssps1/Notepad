@@ -1,0 +1,57 @@
+
+SETSPN
+
+--Check
+setspn -l MYDOMAIN\mysqlserverserviceaccount 
+
+
+--Set
+setspn –a MSSQLSvc/<hostnameFQDN>:1433 <Domain\Service account>
+
+
+
+setspn -A MSSQLSvc/COFPTPSQLDBA01.cofidis.pt COFIDIS2000\COFPTPSQLDBA01-SRV
+setspn -A MSSQLSvc/COFPTPSQLDBA01.cofidis.pt:1433 COFIDIS2000\COFPTPSQLDBA01-SRV
+
+
+IAMUS
+-----
+
+cofidis2000\agtsvc_migrsql
+5wZlu0QjbuQwylCYw9nZ
+cofidis2000\sqlsvc_migrsql
+iVZxRFcJsVoMy5sRAYac
+
+cofidis2000\COFPTPSQLDBA01-SRV
+oRySpUfYhDPXEe6dcdkr
+
+
+setspn -A MSSQLSvc/iamus.cofidis.pt cofidis2000\sqlsvc_migrsql
+setspn -A MSSQLSvc/iamus.cofidis.pt:1433 cofidis2000\sqlsvc_migrsql
+
+
+setspn -L cofidis2000\sqlsvc_migrsql 
+
+
+setspn -L COFIDIS2000\SQLSVC
+
+
+
+
+    setspn -A MSSQLSvc/uatperseu.cofidis.pt domain\SQL Server Account
+    setspn -A MSSQLSvc/uatperseu.cofidis.pt domain\SQL Server Account
+
+
+
+
+
+----
+
+USE master
+GO
+
+SELECT auth_scheme FROM sys.dm_exec_connections 
+WHERE session_id = @@SPID;
+GO
+
+

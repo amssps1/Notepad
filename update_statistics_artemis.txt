@@ -1,0 +1,16 @@
+
+
+msdb.dbo.usp_AdaptiveIndexDefrag 
+
+EXECUTE msdb.dbo.usp_AdaptiveIndexDefrag @timeLimit = 480, @DefragDelay = '00:00:01';
+
+EXECUTE msdb.dbo.usp_AdaptiveIndexDefrag_PurgeLogs 30;
+
+update statistics	idh.dbo.	 DAH_Produto
+update statistics	idh.dbo.	 COF_BaseRiscoDah
+update statistics	idh.dbo.	 COF_Processo
+update statistics	idh.dbo.	 COF_Referencias
+update statistics	idh.dbo.	 GE_Financiamento
+update statistics	idh.dbo.	 cof_cliente
+update statistics	idh.dbo.	 COF_Oferta
+update statistics	idh.dbo.	 COF_Finalidade

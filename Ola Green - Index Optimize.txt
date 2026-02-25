@@ -1,0 +1,12 @@
+
+-- Ola Green
+
+EXECUTE dbo.IndexOptimize
+@Databases = 'SQLMonitor, msdb',
+@FragmentationLevel1 = 5,
+@FragmentationLevel2 = 30,
+@FragmentationLow = NULL,
+@FragmentationMedium = 'INDEX_REORGANIZE',
+@FragmentationHigh = 'INDEX_REBUILD_ONLINE,INDEX_REBUILD_OFFLINE',
+
+@TimeLimit = 3600

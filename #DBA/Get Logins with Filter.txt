@@ -1,0 +1,30 @@
+select sdest.DatabaseName
+    ,sdes.session_id
+    ,sdes.[host_name]
+    ,sdes.[program_name]
+    ,sdes.client_interface_name
+    ,sdes.login_name
+    ,sdes.login_time
+    ,sdes.nt_domain
+    ,sdes.nt_user_name
+    ,sdec.client_net_address
+    ,sdec.local_net_address
+    ,sdest.ObjName
+    ,sdest.Query
+from sys.dm_exec_sessions as sdes
+inner join sys.dm_exec_connections as sdec
+on (sdec.session_id = sdes.session_id)
+cross apply (
+    select db_name(dbid) as DatabaseName
+        ,object_id(objectid) as ObjName
+        ,isnull((
+                select text as [processing-instruction(definition)]
+                from sys.dm_exec_sql_text(sdec.most_recent_sql_handle)
+                for xml path('')
+                    ,type
+                ), '') as Query
+
+    from sys.dm_exec_sql_text(sdec.most_recent_sql_handle)
+    ) sdest
+where sdes.session_id <> @@spid  and sdes.nt_user_name like '%wcf%'
+order by sdec.session_id
