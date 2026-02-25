@@ -1,0 +1,45 @@
+
+Acitvar Backup do EOS com TranLog
+
+Ver a SP do Seragoça dos contactos telefonicos (IVR_UPD_Contactos)
+
+Always ON: 
+
+https://www.sqlservercentral.com/forums/topic/migrating-from-failover-cluster-to-alwayson
+
+https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/failover-clustering-and-always-on-availability-groups-sql-server?redirectedfrom=MSDN&view=sql-server-ver16
+
+https://www.sqlshack.com/add-a-new-node-into-existing-sql-server-always-on-availability-groups/
+
+
+Fase 1:
+Instalar o SQL 2019 (Medusa/Minotauro); Novo Storage(?)
+Instalar o SQL 2019 e redimensionar as VM's Priapo e EOS para suportarem todas as BDs
+
+Fase 2:
+Always ON - 
+Utilizar o AG existente no Artemis/Perseu, adicionar um Listener ao AG (ex.) "LTArtemis" , "LTPerseu"  ;
+Passar todas as BDs Locais para o AG ; 
+no Always On replicar todas as BDs para o Priapo / EOS ;
+Alterar Conection Strings das aplicações para redirecionarem os pedidos para o Listener ; 
+Capturar os pedidos que ainda vem directo ao Artemis e Perseu;
+Alterar connection strings até tudo não existir mais pedidos directos;
+Passado 2/3 semanas, alterar no DNS os aliases "Artemis/Perseu" e reencaminhar para os Listeners;
+
+Fase 3 (DR):
+Retirar Node 2 de cada Cluster do WSFC;
+Adicionar o Storage necessário para Replica a cada um destes Nos
+Instalar e criar instância de SQL 2019
+Restore de BDs
+Adicionar Instancia ao AG
+
+Failover de AG com interrupção efetivamente a zero !!!!! (Esperamos :) ).
+
+Dúvidas:
+a) Fase 1 pode passar para última fase para não existir interrupção de serviço ?
+
+
+Upgrade alwayus ON: https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/upgrading-always-on-availability-group-replica-instances?view=sql-server-ver15
+
+
+

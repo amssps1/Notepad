@@ -1,0 +1,89 @@
+Francisco: 
+
+
+Always ON
+
+Requisitos:
+
+Contas de Serviço: 
+
+
+
+Regras de Naming Convention
+
+Always-ON AZURE
+
+CALA (cluster) 
+
+
+SHAKTI      (10.164.2.50)
+KAMADEVA    10.164.2.51)
+KRONI   - vip (10.164.2.52)    (PAra o Listener, foi necessário criar um computer object na AD e View Advanced Features - security collocar o kamadeva e shakti com full control)
+
+
+Duas contas de serviço:
+
+- GRUPO  (cofidis2000\Grp_Sqleng_Azure)  
+  Conta: srv_ASql_AzEng (   ls6goFJ6X4RusRN9m0q7  ) 
+  
+   Conta: srv_ASql_AzAgt   ( 4hwXDRDwKfwc1ZsE9W1L )
+  
+
+
+
+- Agente  cofidis2000\Grp_Sqlagnt_Azure )
+
+
+
+(VISHNU)
+
+
+SQL_Latin1_General_CP1_CI_AS
+
+
+
+
+- contas de servico 
+- Full Backup (diario - sunday)
+- Log Backup (diario de 30 em 30 min)
+
+
+
+
+
+RDM / VMWARE
+
+
+
+Dúvidas sobre as BDs:
+
+BD_MIG_STG
+bd_mig_pointers
+bd_mig_destino_DAH
+bd_mig_destino
+bd_mig_controlo
+
+
+- Procedimento Logins
+- 
+
+
+Minha VM: 10.134.201.22
+
+Key SQL: HMWJ3-KY3J2-NMVD7-KG4JR-X2G8G
+
+
+setspn –A MSSQLSvc/KAMADEVA.cofidis.pt:1433 cofidis2000\srv_AcSql_AzEng
+
+   setspn -A MSSQLSvc/cala.cofidiss.pt:1433 cofidis2000\srv_AcSql_AzEng
+   SetSPN -A MSSQLSvc/cala:1433 cofidis2000\srv_AcSql_AzEng
+
+    setspn -A MSSQLSvc/KAMADEVA:1433 cofidis2000\srv_AcSql_AzEng
+	
+    setspn -A MSSQLSvc/KAMADEVA.cofidis.pt:1433 cofidis2000\srv_AcSql_AzEng
+	
+	
+	
+	
+IPAM - rever
+

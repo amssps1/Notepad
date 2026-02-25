@@ -1,0 +1,32 @@
+
+- Temas Reunião
+
+File Share Drive S: Artemis
+
+Apresentação da estrutura de Acessos SQL
+
+
+
+SCOM: 
+
+Artemis, Hestia e Perseu SQL
+
+- Infraestrutura 
+- 
+- Backups ?
+- CPU > 95%
+- Disk < 10%
+- Instance down
+- Database <> Online (excluir Read-Only)
+- Always ON - 
+
+
+cofptpsqlh01
+cofptpsqlh02
+
+cofptpsqla01
+cofptpsqla02
+
+cofptpsqlp01
+cofptpsqlp02
+

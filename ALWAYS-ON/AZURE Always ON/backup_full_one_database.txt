@@ -1,0 +1,8 @@
+
+
+BACKUP DATABASE bd_mig_destino_DAH TO DISK = N'S:\MSSQL15.MSSQLSERVER\Backup\big_mig_destino_dah.bak'
+WITH INIT,  STATS = 10
+Go
+BACKUP LOG bd_mig_destino_DAH TO DISK =  N'S:\MSSQL15.MSSQLSERVER\Backup\big_mig_destino_dah.trn'
+WITH INIT
+Go

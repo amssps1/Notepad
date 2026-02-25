@@ -1,0 +1,41 @@
+Always ON
+
+
+SQL Server Network Name
+
+
+https://n4stack.io/2018/10/30/checklist-sql-always-on-config/
+
+
+https://ramprasadtech.com/ms-sql-alwayson-availability-groups-implementation-step-by-step-process/
+
+
+Exemplo de pratica: https://dba.stackexchange.com/questions/306276/migrating-from-old-alwayson-availability-group-to-new-ag-cluster-but-keep-ip-add
+https://www.sqlservercentral.com/forums/topic/ag-vs-failover-clustering-instance
+
+
+
+Rename FCI SQL Name:
+
+https://www.mssqltips.com/sqlservertip/4208/how-to-rename-the-sql-server-network-name-of-a-failover-cluster/
+
+https://www.sqlservercentral.com/forums/topic/ag-vs-failover-clustering-instance
+
+
+Upgrade - Follow rules:
+
+https://learn.microsoft.com/en-us/sql/database-engine/availability-groups/windows/upgrading-always-on-availability-group-replica-instances?redirectedfrom=MSDN&view=sql-server-ver16
+
+
+GRANT SELECT ON IDH_DM_Cliente TO [COFIDIS2000\grpSQLSetorMarkIntelInov]
+
+
+COFIDIS2000\GRP_Diomedes-CC360
+
+
+
+Migrate FCI 2012 to FCI 2017 and maintain the same Virtual Network Name
+https://www.mssqltips.com/sqlservertip/5774/upgrade-or-migrate-a-sql-server-failover-clustered-instance-while-using-the-same-virtual-network-name-and-virtual-ip-address-option-1/
+
+
+

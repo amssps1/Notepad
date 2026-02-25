@@ -1,0 +1,59 @@
+/*
+-- Tarefas Always ON
+
+- Criar Operador SQLAdmins - email: ldf38admin@cofidis.pt
+- Criar Database Email Profile & DB (https://www.codeproject.com/Articles/485124/Configuring-Database-Mail-in-SQL-Server )
+
+
+- Copiar os JOBS todos para cada Nó
+- copiar os Logins Todos para cada Nó
+
+
+
+
+-- Additional PArameters on SSMS : ApplicationIntent=ReadOnly;
+*/
+ApplicationIntent=ReadOnly;
+
+----   TESTES -----
+
+- Queries no Secundario
+- 
+TCP://ARTEMIS.cofidis.pt:1433
+
+
+
+ALTER AVAILABILITY GROUP AG
+MODIFY REPLICA ON 'ARTEMIS'
+WITH (SECONDARY_ROLE (READ_ONLY_ROUTING_URL = 'TCP://ARTEMIS.cofidis.pt:1433'))
+GO
+ALTER AVAILABILITY GROUP AG
+MODIFY REPLICA ON 'SQLAO01'
+WITH (SECONDARY_ROLE (READ_ONLY_ROUTING_URL='TCP://SQLAO01.cofidis.pt:1433'))
+GO
+ALTER AVAILABILITY GROUP AG
+MODIFY REPLICA ON 'SQLAO02'
+WITH (SECONDARY_ROLE (READ_ONLY_ROUTING_URL='TCP://SQLAO02.cofidis.pt:1433'))
+GO
+
+
+ALTER AVAILABILITY GROUP [AG]
+MODIFY REPLICA ON
+N'SQLAO01' WITH
+(PRIMARY_ROLE (READ_ONLY_ROUTING_LIST=('ARTEMIS','SQLAO02')));
+
+ALTER AVAILABILITY GROUP [AG]
+MODIFY REPLICA ON
+N'ARTEMIS' WITH
+(PRIMARY_ROLE (READ_ONLY_ROUTING_LIST=('SQLAO01','SQLAO02')));
+
+ALTER AVAILABILITY GROUP [AG]
+MODIFY REPLICA ON
+N'SQLAO02' WITH
+(PRIMARY_ROLE (READ_ONLY_ROUTING_LIST=('ARTEMIS','SQLAO01')))
+
+-- Testar Read Only
+
+C:> SQLCMD -S listner -E -d IDH -K ReadOnly
+1> select @@servername
+2>go

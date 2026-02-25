@@ -1,0 +1,6 @@
+Always ON
+
+https://cofptpvc01.cofidis.pt/
+QA8_SDUTILS
+
+pass: csimoess

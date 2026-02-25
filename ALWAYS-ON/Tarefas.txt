@@ -1,0 +1,41 @@
+-- Duvidas ARTEMIS Always On
+/*
+# 3 - Nós (Primário + Secundário + Priapo)
+		(Availability Mode - Synchronous Commit no Primário e Secundário (with Automatic Failover))
+		
+1. Replicação de Logins -  (Resolvido – Já tenho preparado script que replica todos os logins com o mesmo SID (qualquer tipo de conta))
+2. JOBs correr só no Secundário(s) ou só no Primarios  - (Resolvido - já tenho script que adiciona um step a cada job para verificação se é primário ou secundário)
+3. SSISDB – Packages que arrancam via JOB (Resolvido – adicionar Step ao JOB)
+4. SSISDB – Packages que arrancam via Worker Service (Resolvido – connection string incluir nome do Listener ARTEMIS ou PERSEU)
+5. Backups  - Executar apenas Nó Secundário (Full + Transaction Logs de 30 em 30 mins) – (Resolvido – incluir step a validar se é primário ou secundário. Aqui é ao contrário de for Primário faz Raise Error e sai do JOB)
+
+6 - File Shares  - Create a File Share to use as a Quorum for the failover cluster. The file share must be network-accessible to all nodes of your cluster, and permissions must be configured to allow all nodes to read and write from the file share.
+  https://www.tintri.com/wp-content/uploads/2020/06/SQL_AlwaysOnAvailGrps_VMware-20151124.pdf
+
+
+
+
+
+
+
+	
+	Instalar:
+	https://woshub.com/configure-always-high-availability-groups-sql-server/
+	
+	Adicionar mais um Nó:
+	https://www.sqlshack.com/add-a-new-node-into-existing-sql-server-always-on-availability-groups/
+	
+	
+	Logins:
+	https://www.sqlshack.com/synchronize-logins-between-availability-replicas-in-sql-server-always-on-availability-group/
+	
+  
+
+   Criar SQL authentication Login on Secondary: 
+   On Primary:  SELECT N'CREATE LOGIN ['+sp.[name]+'] WITH PASSWORD=0x'+
+				CONVERT(nvarchar(max), l.password_hash, 2)+N' HASHED, '+
+				N'SID=0x'+CONVERT(nvarchar(max), sp.[sid], 2)+N';'
+				FROM master.sys.server_principals AS sp
+				INNER JOIN master.sys.sql_logins AS l ON sp.[sid]=l.[sid]
+				WHERE sp.name='SQLAG2User'
+*/

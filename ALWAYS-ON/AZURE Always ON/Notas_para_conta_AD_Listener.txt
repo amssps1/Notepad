@@ -1,0 +1,12 @@
+Criar objectos (computer) do listner na AD
+objectos (computer) listner permissões no DNS forworder e reverse
+servidores alwayson e cluster (computer) permissões no listener AD
+servidores alwayson (computer) permissões no cluster  AD
+servidor cluster (computer) permissões no maquina AlwaysOn na AD
+user de serviço SQL tem de ser administrator local na maquina AlwaysOn
+user serviço SQL tem de ser sysadmin (validar, na realidade deveria ter apenas connect)
+correr GRANT CONNECT ON ENDPOINT::hadr_endpoint TO [Domain\user]
+
+
+
+cofidis.pt/Administração de Sistemas/SQL/Azure/kroni

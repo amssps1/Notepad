@@ -1,0 +1,103 @@
+
+
+
+
+
+-- Script to create restore files
+
+DECLARE @databaseName sysname 
+DECLARE @backupStartDate datetime 
+DECLARE @backup_set_id_start INT 
+DECLARE @backup_set_id_end INT 
+
+-- set database to be used 
+SET @databaseName = 'db_cofidis_dah' 
+
+SELECT @backup_set_id_start = MAX(backup_set_id) 
+FROM msdb.dbo.backupset 
+WHERE database_name = @databaseName AND type = 'D' 
+
+SELECT @backup_set_id_end = MIN(backup_set_id) 
+FROM msdb.dbo.backupset 
+WHERE database_name = @databaseName AND type = 'D' 
+AND backup_set_id > @backup_set_id_start 
+
+IF @backup_set_id_end IS NULL SET @backup_set_id_end = 999999999 
+
+SELECT backup_set_id, 'RESTORE DATABASE ' + @databaseName + ' FROM DISK = ''' + mf.physical_device_name + ''' WITH NORECOVERY' 
+FROM msdb.dbo.backupset b, 
+msdb.dbo.backupmediafamily mf 
+WHERE b.media_set_id = mf.media_set_id 
+AND b.database_name = @databaseName 
+AND b.backup_set_id = @backup_set_id_start 
+UNION 
+SELECT backup_set_id, 'RESTORE LOG ' + @databaseName + ' FROM DISK = ''' + mf.physical_device_name + ''' WITH NORECOVERY' 
+FROM msdb.dbo.backupset b, 
+msdb.dbo.backupmediafamily mf 
+WHERE b.media_set_id = mf.media_set_id 
+AND b.database_name = @databaseName 
+AND b.backup_set_id >= @backup_set_id_start AND b.backup_set_id < @backup_set_id_end 
+AND b.type = 'L' 
+UNION 
+SELECT 999999999 AS backup_set_id, 'RESTORE DATABASE ' + @databaseName + ' WITH RECOVERY' 
+ORDER BY backup_set_id
+
+
+
+
+
+-- Restore Database with Tran Logs
+
+RESTORE FILELISTONLY FROM DISK='Y:\Backup_DAH\FULL\db_cofidis_dah_backup_2022_08_28_140001_0723905.bak'
+GO
+
+
+RESTORE DATABASE db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\FULL\db_cofidis_dah_backup_2022_08_28_140001_0723905.bak' 
+WITH 
+ MOVE 'db_cofidis_dah_DATA' TO 'z:\data\db_cofidis_dah_29_08.mdf',
+ MOVE 'db_cofidis_dah_INDEX' TO 'z:\data\db_cofidis_dah_29_08_idx.mdf',
+      MOVE 'db_cofidis_dah_LOG' TO 'Y:\LOG\db_cofidis_dah_29_08_log.ldf',
+
+NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_143001_4383584.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_150001_8293998.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_153000_9033571.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_160001_1774942.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_163001_8270845.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_170001_5895474.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_173000_9518997.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_180001_2542136.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_183001_2765842.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_190001_6839395.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_193001_0875434.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_200001_0615377.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_203001_1710484.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_210001_7860447.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_213001_7033284.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_220000_9142659.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_223001_6253010.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_230001_5177613.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_28_233001_7709311.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_000001_9124586.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_003001_3693004.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_010001_6794004.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_013001_8088359.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_020001_0432000.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_023001_0291547.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_030001_5133155.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_033001_7553132.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_040001_8991679.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_043001_0825284.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_050001_7969531.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_053001_7211289.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_060001_8716235.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_063001_2008365.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_070001_4172260.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_073001_6700955.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_080001_9011805.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_083001_0538969.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_090001_3696586.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_093001_3695981.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_100001_6910614.trn' WITH NORECOVERY
+RESTORE LOG db_cofidis_dah_29_08 FROM DISK = 'Y:\Backup_DAH\LOGS\db_cofidis_dah_backup_2022_08_29_103001_0669969.trn' WITH NORECOVERY
+RESTORE DATABASE db_cofidis_dah_29_08 WITH RECOVERY
