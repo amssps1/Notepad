@@ -1,0 +1,14 @@
+Conta "sa" 
+
+WcfCartaoCredito 
+WCFEntidadesExternas 
+AgenteCampanhas 
+WCFUploadDocument 
+FilasTrabalho 
+CofidisServices 
+WsCofidis 
+WSGestaoTarefa 
+AgenteTcontrolDAH
+FileWatcher (e este pode ter lá SSIS)
+Tudo o que são serviços VG_*
+

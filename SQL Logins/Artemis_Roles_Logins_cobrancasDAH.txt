@@ -1,0 +1,273 @@
+USE [CobrancasDAH]
+ 
+-- [-- DB USERS --] --
+ 
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdc') 
+         BEGIN CREATE USER [cdc] FOR LOGIN [cdc] WITH DEFAULT_SCHEMA = [cdc] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdc') ALTER USER [cdc] WITH LOGIN = [cdc] ELSE IF '[cdc]' NOT IN ('[dbo]','[guest]')  DROP USER [cdc] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\costael') 
+         BEGIN CREATE USER [cdm\costael] FOR LOGIN [cdm\costael] WITH DEFAULT_SCHEMA = [cdm\costael] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\costael') ALTER USER [cdm\costael] WITH LOGIN = [cdm\costael] ELSE IF '[cdm\costael]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\costael] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\FERREIOA') 
+         BEGIN CREATE USER [CDM\FERREIOA] FOR LOGIN [CDM\FERREIOA] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\FERREIOA') ALTER USER [CDM\FERREIOA] WITH LOGIN = [CDM\FERREIOA] ELSE IF '[CDM\FERREIOA]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\FERREIOA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\trindape') 
+         BEGIN CREATE USER [cdm\trindape] FOR LOGIN [cdm\trindape] WITH DEFAULT_SCHEMA = [cdm\trindape] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\trindape') ALTER USER [cdm\trindape] WITH LOGIN = [cdm\trindape] ELSE IF '[cdm\trindape]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\trindape] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\Administrator') 
+         BEGIN CREATE USER [COFIDIS2000\Administrator] FOR LOGIN [COFIDIS2000\Administrator] WITH DEFAULT_SCHEMA = [COFIDIS2000\Administrator] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\Administrator') ALTER USER [COFIDIS2000\Administrator] WITH LOGIN = [COFIDIS2000\Administrator] ELSE IF '[COFIDIS2000\Administrator]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\Administrator] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\AzureDevops_Arquitetos') 
+         BEGIN CREATE USER [COFIDIS2000\AzureDevops_Arquitetos] FOR LOGIN [COFIDIS2000\AzureDevops_Arquitetos] WITH DEFAULT_SCHEMA = [COFIDIS2000\AzureDevops_Arquitetos] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\AzureDevops_Arquitetos') ALTER USER [COFIDIS2000\AzureDevops_Arquitetos] WITH LOGIN = [COFIDIS2000\AzureDevops_Arquitetos] ELSE IF '[COFIDIS2000\AzureDevops_Arquitetos]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\AzureDevops_Arquitetos] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\AzureDevops_EquipaTecnica') 
+         BEGIN CREATE USER [COFIDIS2000\AzureDevops_EquipaTecnica] FOR LOGIN [COFIDIS2000\AzureDevops_EquipaTecnica] WITH DEFAULT_SCHEMA = [COFIDIS2000\AzureDevops_EquipaTecnica] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\AzureDevops_EquipaTecnica') ALTER USER [COFIDIS2000\AzureDevops_EquipaTecnica] WITH LOGIN = [COFIDIS2000\AzureDevops_EquipaTecnica] ELSE IF '[COFIDIS2000\AzureDevops_EquipaTecnica]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\AzureDevops_EquipaTecnica] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\comunicacoes') 
+         BEGIN CREATE USER [cofidis2000\comunicacoes] FOR LOGIN [cofidis2000\comunicacoes] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\comunicacoes') ALTER USER [cofidis2000\comunicacoes] WITH LOGIN = [cofidis2000\comunicacoes] ELSE IF '[cofidis2000\comunicacoes]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\comunicacoes] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\grpSQLArquitetosSDA') 
+         BEGIN CREATE USER [cofidis2000\grpSQLArquitetosSDA] FOR LOGIN [cofidis2000\grpSQLArquitetosSDA] WITH DEFAULT_SCHEMA = [cofidis2000\grpSQLArquitetosSDA] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\grpSQLArquitetosSDA') ALTER USER [cofidis2000\grpSQLArquitetosSDA] WITH LOGIN = [cofidis2000\grpSQLArquitetosSDA] ELSE IF '[cofidis2000\grpSQLArquitetosSDA]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\grpSQLArquitetosSDA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLServicedesk') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLServicedesk] FOR LOGIN [COFIDIS2000\grpSQLServicedesk] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLServicedesk] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLServicedesk') ALTER USER [COFIDIS2000\grpSQLServicedesk] WITH LOGIN = [COFIDIS2000\grpSQLServicedesk] ELSE IF '[COFIDIS2000\grpSQLServicedesk]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLServicedesk] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLSuporteAplicacional') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLSuporteAplicacional] FOR LOGIN [COFIDIS2000\grpSQLSuporteAplicacional] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLSuporteAplicacional] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLSuporteAplicacional') ALTER USER [COFIDIS2000\grpSQLSuporteAplicacional] WITH LOGIN = [COFIDIS2000\grpSQLSuporteAplicacional] ELSE IF '[COFIDIS2000\grpSQLSuporteAplicacional]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLSuporteAplicacional] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\iis_apoloapi') 
+         BEGIN CREATE USER [COFIDIS2000\iis_apoloapi] FOR LOGIN [COFIDIS2000\iis_apoloapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\iis_apoloapi') ALTER USER [COFIDIS2000\iis_apoloapi] WITH LOGIN = [COFIDIS2000\iis_apoloapi] ELSE IF '[COFIDIS2000\iis_apoloapi]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\iis_apoloapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\MigraAmostra') 
+         BEGIN CREATE USER [COFIDIS2000\MigraAmostra] FOR LOGIN [COFIDIS2000\MigraAmostra] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\MigraAmostra') ALTER USER [COFIDIS2000\MigraAmostra] WITH LOGIN = [COFIDIS2000\MigraAmostra] ELSE IF '[COFIDIS2000\MigraAmostra]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\MigraAmostra] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\nsantos') 
+         BEGIN CREATE USER [COFIDIS2000\nsantos] FOR LOGIN [COFIDIS2000\nsantos] WITH DEFAULT_SCHEMA = [COFIDIS2000\nsantos] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\nsantos') ALTER USER [COFIDIS2000\nsantos] WITH LOGIN = [COFIDIS2000\nsantos] ELSE IF '[COFIDIS2000\nsantos]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\nsantos] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\orchestrator') 
+         BEGIN CREATE USER [COFIDIS2000\orchestrator] FOR LOGIN [COFIDIS2000\orchestrator] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\orchestrator') ALTER USER [COFIDIS2000\orchestrator] WITH LOGIN = [COFIDIS2000\orchestrator] ELSE IF '[COFIDIS2000\orchestrator]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\orchestrator] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_distribncr') 
+         BEGIN CREATE USER [cofidis2000\prod_distribncr] FOR LOGIN [cofidis2000\prod_distribncr] WITH DEFAULT_SCHEMA = [cofidis2000\prod_distribncr] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_distribncr') ALTER USER [cofidis2000\prod_distribncr] WITH LOGIN = [cofidis2000\prod_distribncr] ELSE IF '[cofidis2000\prod_distribncr]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_distribncr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_mbwayapi') 
+         BEGIN CREATE USER [cofidis2000\prod_mbwayapi] FOR LOGIN [cofidis2000\prod_mbwayapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_mbwayapi') ALTER USER [cofidis2000\prod_mbwayapi] WITH LOGIN = [cofidis2000\prod_mbwayapi] ELSE IF '[cofidis2000\prod_mbwayapi]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_mbwayapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'dbo') 
+         BEGIN CREATE USER [dbo] FOR LOGIN [dbo] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'dbo') ALTER USER [dbo] WITH LOGIN = [dbo] ELSE IF '[dbo]' NOT IN ('[dbo]','[guest]')  DROP USER [dbo] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'guest') 
+         BEGIN CREATE USER [guest] FOR LOGIN [guest] WITH DEFAULT_SCHEMA = [guest] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'guest') ALTER USER [guest] WITH LOGIN = [guest] ELSE IF '[guest]' NOT IN ('[dbo]','[guest]')  DROP USER [guest] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_all') 
+         BEGIN CREATE USER [sa_all] FOR LOGIN [sa_all] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_all') ALTER USER [sa_all] WITH LOGIN = [sa_all] ELSE IF '[sa_all]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_all] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_dah') 
+         BEGIN CREATE USER [sa_dah] FOR LOGIN [sa_dah] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_dah') ALTER USER [sa_dah] WITH LOGIN = [sa_dah] ELSE IF '[sa_dah]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_dah] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_ge') 
+         BEGIN CREATE USER [sa_ge] FOR LOGIN [sa_ge] WITH DEFAULT_SCHEMA = [sa_ge] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_ge') ALTER USER [sa_ge] WITH LOGIN = [sa_ge] ELSE IF '[sa_ge]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_ge] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_idh') 
+         BEGIN CREATE USER [sa_idh] FOR LOGIN [sa_idh] WITH DEFAULT_SCHEMA = [sa_idh] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_idh') ALTER USER [sa_idh] WITH LOGIN = [sa_idh] ELSE IF '[sa_idh]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_idh] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Outsystems') 
+         BEGIN CREATE USER [sa_Outsystems] FOR LOGIN [sa_Outsystems] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Outsystems') ALTER USER [sa_Outsystems] WITH LOGIN = [sa_Outsystems] ELSE IF '[sa_Outsystems]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Outsystems] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Runtime') 
+         BEGIN CREATE USER [sa_Runtime] FOR LOGIN [sa_Runtime] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Runtime') ALTER USER [sa_Runtime] WITH LOGIN = [sa_Runtime] ELSE IF '[sa_Runtime]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Runtime] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_trans') 
+         BEGIN CREATE USER [sa_trans] FOR LOGIN [sa_trans] WITH DEFAULT_SCHEMA = [sa_trans] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_trans') ALTER USER [sa_trans] WITH LOGIN = [sa_trans] ELSE IF '[sa_trans]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_trans] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'saReadOnly') 
+         BEGIN CREATE USER [saReadOnly] FOR LOGIN [saReadOnly] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'saReadOnly') ALTER USER [saReadOnly] WITH LOGIN = [saReadOnly] ELSE IF '[saReadOnly]' NOT IN ('[dbo]','[guest]')  DROP USER [saReadOnly] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'tserver2') 
+         BEGIN CREATE USER [tserver2] FOR LOGIN [tserver2] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'tserver2') ALTER USER [tserver2] WITH LOGIN = [tserver2] ELSE IF '[tserver2]' NOT IN ('[dbo]','[guest]')  DROP USER [tserver2] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'UserArtemisPriapo') 
+         BEGIN CREATE USER [UserArtemisPriapo] FOR LOGIN [UserArtemisPriapo] WITH DEFAULT_SCHEMA = [UserArtemisPriapo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'UserArtemisPriapo') ALTER USER [UserArtemisPriapo] WITH LOGIN = [UserArtemisPriapo] ELSE IF '[UserArtemisPriapo]' NOT IN ('[dbo]','[guest]')  DROP USER [UserArtemisPriapo] END;
+-- [-- DB ROLES --] --
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'cofidis2000\comunicacoes'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\Grp SQL-SD-Outsourcing-RO'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\GrpBillingSqlNivel1'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLArquitetosCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLBillingCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\GrpSQLNegocioROCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLRecuperacaoCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\MigraAmostra'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\nsantos'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'saReadOnly'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'CDM\FERREIOA'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'COFIDIS2000\GrpBillingSqlNivel1'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'cdc'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\Administrator'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\iis_apoloapi'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\orchestrator'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_all'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_dah'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_ge'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_idh'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Outsystems'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Runtime'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_trans'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'tserver2'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'UserArtemisPriapo'
+ 
+-- [-- OBJECT LEVEL PERMISSIONS --] --
+DENY EXECUTE ON [dbo].[fn_diagramobjects] TO [guest]
+DENY EXECUTE ON [dbo].[sp_alterdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_creatediagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_dropdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagrams] TO [guest]
+DENY EXECUTE ON [dbo].[sp_renamediagram] TO [guest]
+GRANT CONTROL ON [dbo].[dtproperties] TO [public]
+GRANT DELETE ON [dbo].[dtproperties] TO [public]
+GRANT EXECUTE ON [dbo].[dt_addtosourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_addtosourcecontrol_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_adduserobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_adduserobject_vcs] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkinobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkinobject_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkoutobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkoutobject_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_displayoaerror] TO [public]
+GRANT EXECUTE ON [dbo].[dt_displayoaerror_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_droppropertiesbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_dropuserobjectbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_generateansiname] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getobjwithprop] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getobjwithprop_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_vcs] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_vcs_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_isundersourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_isundersourcecontrol_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_removefromsourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_setpropertybyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_setpropertybyid_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_validateloginparams] TO [public]
+GRANT EXECUTE ON [dbo].[dt_validateloginparams_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_vcsenabled] TO [public]
+GRANT EXECUTE ON [dbo].[dt_verstamp006] TO [public]
+GRANT EXECUTE ON [dbo].[dt_verstamp007] TO [public]
+GRANT EXECUTE ON [dbo].[dt_whocheckedout] TO [public]
+GRANT EXECUTE ON [dbo].[dt_whocheckedout_u] TO [public]
+GRANT EXECUTE ON [dbo].[fn_diagramobjects] TO [public]
+GRANT EXECUTE ON [dbo].[sp_alterdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_creatediagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_dropdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [public]
+GRANT EXECUTE ON [dbo].[sp_helpdiagrams] TO [public]
+GRANT EXECUTE ON [dbo].[sp_renamediagram] TO [public]
+GRANT INSERT ON [dbo].[ChangeLog] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[dtproperties] TO [public]
+GRANT INSERT ON [dbo].[HistoricoImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[ImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[ImportacaoCobrancasHistorico] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[MBW_Callback] TO [cofidis2000\prod_mbwayapi]
+GRANT INSERT ON [dbo].[MBW_Pedido] TO [cofidis2000\prod_mbwayapi]
+GRANT INSERT ON [dbo].[MBW_PedidoEnviado] TO [cofidis2000\prod_mbwayapi]
+GRANT REFERENCES ON [dbo].[dtproperties] TO [public]
+GRANT SELECT ON [cdc].[fn_cdc_get_all_changes_ ... ] TO [public]
+GRANT SELECT ON [cdc].[fn_cdc_get_all_changes_dbo_PAgamento] TO [public]
+GRANT SELECT ON [cdc].[fn_cdc_get_net_changes_ ... ] TO [public]
+GRANT SELECT ON [cdc].[fn_cdc_get_net_changes_dbo_PAgamento] TO [public]
+GRANT SELECT ON [cdc].[lsn_time_mapping] TO [public]
+GRANT SELECT ON [dbo].[dtproperties] TO [public]
+GRANT SELECT ON [dbo].[HistoricoImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[ImportacaoCobrancas] TO [cdm\costael]
+GRANT SELECT ON [dbo].[ImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[ImportacaoCobrancasHistorico] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[MBW_Callback] TO [cofidis2000\prod_mbwayapi]
+GRANT SELECT ON [dbo].[MBW_Pedido] TO [cofidis2000\prod_mbwayapi]
+GRANT SELECT ON [dbo].[MBW_PedidoEnviado] TO [cofidis2000\prod_mbwayapi]
+GRANT UPDATE ON [dbo].[dtproperties] TO [public]
+GRANT UPDATE ON [dbo].[HistoricoImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[ImportacaoCobrancas] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[ImportacaoCobrancasHistorico] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[MBW_Callback] TO [cofidis2000\prod_mbwayapi]
+GRANT UPDATE ON [dbo].[MBW_Pedido] TO [cofidis2000\prod_mbwayapi]
+GRANT UPDATE ON [dbo].[MBW_PedidoEnviado] TO [cofidis2000\prod_mbwayapi]
+ 
+-- [--DB LEVEL PERMISSIONS --] --
+GRANT CONNECT TO [cdc]
+GRANT CONNECT TO [cdm\costael]
+GRANT CONNECT TO [CDM\FERREIOA]
+GRANT CONNECT TO [cdm\trindape]
+GRANT CONNECT TO [COFIDIS2000\Administrator]
+GRANT CONNECT TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT CONNECT TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT CONNECT TO [cofidis2000\comunicacoes]
+GRANT CONNECT TO [COFIDIS2000\Grp SQL-SD-Outsourcing-RO]
+GRANT CONNECT TO [COFIDIS2000\GrpBillingSqlNivel1]
+GRANT CONNECT TO [COFIDIS2000\GrpSIuser]
+GRANT CONNECT TO [COFIDIS2000\grpSQLArquitetosCSA]
+GRANT CONNECT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLBillingCSA]
+GRANT CONNECT TO [COFIDIS2000\GrpSQLNegocioROCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLRecuperacaoCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT CONNECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT CONNECT TO [COFIDIS2000\iis_apoloapi]
+GRANT CONNECT TO [COFIDIS2000\MigraAmostra]
+GRANT CONNECT TO [COFIDIS2000\nsantos]
+GRANT CONNECT TO [COFIDIS2000\orchestrator]
+GRANT CONNECT TO [cofidis2000\prod_distribncr]
+GRANT CONNECT TO [cofidis2000\prod_mbwayapi]
+GRANT CONNECT TO [sa_all]
+GRANT CONNECT TO [sa_dah]
+GRANT CONNECT TO [sa_ge]
+GRANT CONNECT TO [sa_idh]
+GRANT CONNECT TO [sa_Outsystems]
+GRANT CONNECT TO [sa_Runtime]
+GRANT CONNECT TO [sa_trans]
+GRANT CONNECT TO [saReadOnly]
+GRANT CONNECT TO [tserver2]
+GRANT CONNECT TO [UserArtemisPriapo]
+GRANT CREATE TABLE TO [cofidis2000\prod_distribncr]
+GRANT EXECUTE TO [cofidis2000\comunicacoes]
+GRANT EXECUTE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT EXECUTE TO [COFIDIS2000\grpSQLServicedesk]
+GRANT EXECUTE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT EXECUTE TO [cofidis2000\prod_distribncr]
+GRANT INSERT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT INSERT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT INSERT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SELECT TO [cdm\trindape]
+GRANT SELECT TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT SELECT TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT SELECT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT SELECT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT SELECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SHOWPLAN TO [cdm\trindape]
+GRANT SHOWPLAN TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT SHOWPLAN TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT SHOWPLAN TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT SHOWPLAN TO [COFIDIS2000\grpSQLServicedesk]
+GRANT SHOWPLAN TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT UPDATE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT UPDATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DATABASE STATE TO [cdm\costael]
+GRANT VIEW DATABASE STATE TO [cdm\trindape]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT VIEW DATABASE STATE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\grpSQLServicedesk]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DEFINITION TO [cdm\costael]
+GRANT VIEW DEFINITION TO [cdm\trindape]
+GRANT VIEW DEFINITION TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT VIEW DEFINITION TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT VIEW DEFINITION TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLBillingCSA]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLServicedesk]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLSuporteAplicacional]
+ 
+-- [--DB LEVEL SCHEMA PERMISSIONS --] --
+GRANT EXECUTE ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLArquitetosCSA]
+GRANT VIEW DEFINITION ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLRecuperacaoCSA]

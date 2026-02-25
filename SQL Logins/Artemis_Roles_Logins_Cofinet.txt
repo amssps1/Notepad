@@ -1,0 +1,46 @@
+USE [Cofinet]
+ 
+-- [-- DB USERS --] --
+ 
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\andradri') 
+         BEGIN CREATE USER [CDM\andradri] FOR LOGIN [CDM\andradri] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\andradri') ALTER USER [CDM\andradri] WITH LOGIN = [CDM\andradri] ELSE IF '[CDM\andradri]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\andradri] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\IIS_COFINETAPI') 
+         BEGIN CREATE USER [COFIDIS2000\IIS_COFINETAPI] FOR LOGIN [COFIDIS2000\IIS_COFINETAPI] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\IIS_COFINETAPI') ALTER USER [COFIDIS2000\IIS_COFINETAPI] WITH LOGIN = [COFIDIS2000\IIS_COFINETAPI] ELSE IF '[COFIDIS2000\IIS_COFINETAPI]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\IIS_COFINETAPI] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\MigraAmostra') 
+         BEGIN CREATE USER [COFIDIS2000\MigraAmostra] FOR LOGIN [COFIDIS2000\MigraAmostra] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\MigraAmostra') ALTER USER [COFIDIS2000\MigraAmostra] WITH LOGIN = [COFIDIS2000\MigraAmostra] ELSE IF '[COFIDIS2000\MigraAmostra]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\MigraAmostra] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\rgpdsql') 
+         BEGIN CREATE USER [cofidis2000\rgpdsql] FOR LOGIN [cofidis2000\rgpdsql] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\rgpdsql') ALTER USER [cofidis2000\rgpdsql] WITH LOGIN = [cofidis2000\rgpdsql] ELSE IF '[cofidis2000\rgpdsql]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\rgpdsql] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'dbo') 
+         BEGIN CREATE USER [dbo] FOR LOGIN [dbo] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'dbo') ALTER USER [dbo] WITH LOGIN = [dbo] ELSE IF '[dbo]' NOT IN ('[dbo]','[guest]')  DROP USER [dbo] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'guest') 
+         BEGIN CREATE USER [guest] FOR LOGIN [guest] WITH DEFAULT_SCHEMA = [guest] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'guest') ALTER USER [guest] WITH LOGIN = [guest] ELSE IF '[guest]' NOT IN ('[dbo]','[guest]')  DROP USER [guest] END;
+-- [-- DB ROLES --] --
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\andradri'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\MigraAmostra'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\IIS_COFINETAPI'
+ 
+-- [-- OBJECT LEVEL PERMISSIONS --] --
+GRANT SELECT ON [dbo].[User] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[User] TO [cofidis2000\rgpdsql]
+ 
+-- [--DB LEVEL PERMISSIONS --] --
+GRANT CONNECT TO [CDM\andradri]
+GRANT CONNECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT CONNECT TO [COFIDIS2000\IIS_COFINETAPI]
+GRANT CONNECT TO [COFIDIS2000\MigraAmostra]
+GRANT CONNECT TO [cofidis2000\rgpdsql]
+GRANT SELECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SHOWPLAN TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT UPDATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLSuporteAplicacional]
+ 
+-- [--DB LEVEL SCHEMA PERMISSIONS --] --
+GRANT SELECT ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DEFINITION ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLSuporteAplicacional]

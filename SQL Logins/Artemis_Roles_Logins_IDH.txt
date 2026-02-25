@@ -1,0 +1,1304 @@
+-- [-- DB CONTEXT --] --
+USE [IDH]
+ 
+-- [-- DB USERS --] --
+ 
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\cardosrd') 
+         BEGIN CREATE USER [cdm\cardosrd] FOR LOGIN [cdm\cardosrd] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\cardosrd') ALTER USER [cdm\cardosrd] WITH LOGIN = [cdm\cardosrd] ELSE IF '[cdm\cardosrd]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\cardosrd] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\costaco') 
+         BEGIN CREATE USER [cdm\costaco] FOR LOGIN [cdm\costaco] WITH DEFAULT_SCHEMA = [cdm\costaco] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\costaco') ALTER USER [cdm\costaco] WITH LOGIN = [cdm\costaco] ELSE IF '[cdm\costaco]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\costaco] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\costael') 
+         BEGIN CREATE USER [cdm\costael] FOR LOGIN [cdm\costael] WITH DEFAULT_SCHEMA = [cdm\costael] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\costael') ALTER USER [cdm\costael] WITH LOGIN = [cdm\costael] ELSE IF '[cdm\costael]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\costael] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\diassn') 
+         BEGIN CREATE USER [CDM\diassn] FOR LOGIN [CDM\diassn] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\diassn') ALTER USER [CDM\diassn] WITH LOGIN = [CDM\diassn] ELSE IF '[CDM\diassn]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\diassn] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\FERREIOA') 
+         BEGIN CREATE USER [CDM\FERREIOA] FOR LOGIN [CDM\FERREIOA] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\FERREIOA') ALTER USER [CDM\FERREIOA] WITH LOGIN = [CDM\FERREIOA] ELSE IF '[CDM\FERREIOA]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\FERREIOA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\gomesja') 
+         BEGIN CREATE USER [CDM\gomesja] FOR LOGIN [CDM\gomesja] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\gomesja') ALTER USER [CDM\gomesja] WITH LOGIN = [CDM\gomesja] ELSE IF '[CDM\gomesja]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\gomesja] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\JORDAOLU') 
+         BEGIN CREATE USER [CDM\JORDAOLU] FOR LOGIN [CDM\JORDAOLU] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\JORDAOLU') ALTER USER [CDM\JORDAOLU] WITH LOGIN = [CDM\JORDAOLU] ELSE IF '[CDM\JORDAOLU]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\JORDAOLU] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\LEITAOHU') 
+         BEGIN CREATE USER [CDM\LEITAOHU] FOR LOGIN [CDM\LEITAOHU] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\LEITAOHU') ALTER USER [CDM\LEITAOHU] WITH LOGIN = [CDM\LEITAOHU] ELSE IF '[CDM\LEITAOHU]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\LEITAOHU] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\marquesr') 
+         BEGIN CREATE USER [CDM\marquesr] FOR LOGIN [CDM\marquesr] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\marquesr') ALTER USER [CDM\marquesr] WITH LOGIN = [CDM\marquesr] ELSE IF '[CDM\marquesr]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\marquesr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\MARTINOP') 
+         BEGIN CREATE USER [CDM\MARTINOP] FOR LOGIN [CDM\MARTINOP] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\MARTINOP') ALTER USER [CDM\MARTINOP] WITH LOGIN = [CDM\MARTINOP] ELSE IF '[CDM\MARTINOP]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\MARTINOP] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\MORGADAA') 
+         BEGIN CREATE USER [CDM\MORGADAA] FOR LOGIN [CDM\MORGADAA] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\MORGADAA') ALTER USER [CDM\MORGADAA] WITH LOGIN = [CDM\MORGADAA] ELSE IF '[CDM\MORGADAA]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\MORGADAA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\nicobr') 
+         BEGIN CREATE USER [CDM\nicobr] FOR LOGIN [CDM\nicobr] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\nicobr') ALTER USER [CDM\nicobr] WITH LOGIN = [CDM\nicobr] ELSE IF '[CDM\nicobr]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\nicobr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\OLIVEILU') 
+         BEGIN CREATE USER [CDM\OLIVEILU] FOR LOGIN [CDM\OLIVEILU] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\OLIVEILU') ALTER USER [CDM\OLIVEILU] WITH LOGIN = [CDM\OLIVEILU] ELSE IF '[CDM\OLIVEILU]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\OLIVEILU] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\pintonu') 
+         BEGIN CREATE USER [cdm\pintonu] FOR LOGIN [cdm\pintonu] WITH DEFAULT_SCHEMA = [cdm\pintonu] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\pintonu') ALTER USER [cdm\pintonu] WITH LOGIN = [cdm\pintonu] ELSE IF '[cdm\pintonu]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\pintonu] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\ramoscl') 
+         BEGIN CREATE USER [CDM\ramoscl] FOR LOGIN [CDM\ramoscl] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\ramoscl') ALTER USER [CDM\ramoscl] WITH LOGIN = [CDM\ramoscl] ELSE IF '[CDM\ramoscl]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\ramoscl] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\ricardmr') 
+         BEGIN CREATE USER [CDM\ricardmr] FOR LOGIN [CDM\ricardmr] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\ricardmr') ALTER USER [CDM\ricardmr] WITH LOGIN = [CDM\ricardmr] ELSE IF '[CDM\ricardmr]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\ricardmr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\RODRIGRI') 
+         BEGIN CREATE USER [CDM\RODRIGRI] FOR LOGIN [CDM\RODRIGRI] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\RODRIGRI') ALTER USER [CDM\RODRIGRI] WITH LOGIN = [CDM\RODRIGRI] ELSE IF '[CDM\RODRIGRI]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\RODRIGRI] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\SALGUEMI') 
+         BEGIN CREATE USER [CDM\SALGUEMI] FOR LOGIN [CDM\SALGUEMI] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\SALGUEMI') ALTER USER [CDM\SALGUEMI] WITH LOGIN = [CDM\SALGUEMI] ELSE IF '[CDM\SALGUEMI]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\SALGUEMI] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\SVC_COFIDIS_PT') 
+         BEGIN CREATE USER [CDM\SVC_COFIDIS_PT] FOR LOGIN [CDM\SVC_COFIDIS_PT] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\SVC_COFIDIS_PT') ALTER USER [CDM\SVC_COFIDIS_PT] WITH LOGIN = [CDM\SVC_COFIDIS_PT] ELSE IF '[CDM\SVC_COFIDIS_PT]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\SVC_COFIDIS_PT] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\teresaan') 
+         BEGIN CREATE USER [CDM\teresaan] FOR LOGIN [CDM\teresaan] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\teresaan') ALTER USER [CDM\teresaan] WITH LOGIN = [CDM\teresaan] ELSE IF '[CDM\teresaan]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\teresaan] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cdm\trindape') 
+         BEGIN CREATE USER [cdm\trindape] FOR LOGIN [cdm\trindape] WITH DEFAULT_SCHEMA = [cdm\trindape] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cdm\trindape') ALTER USER [cdm\trindape] WITH LOGIN = [cdm\trindape] ELSE IF '[cdm\trindape]' NOT IN ('[dbo]','[guest]')  DROP USER [cdm\trindape] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\VENANCTI') 
+         BEGIN CREATE USER [CDM\VENANCTI] FOR LOGIN [CDM\VENANCTI] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\VENANCTI') ALTER USER [CDM\VENANCTI] WITH LOGIN = [CDM\VENANCTI] ELSE IF '[CDM\VENANCTI]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\VENANCTI] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\vidaled') 
+         BEGIN CREATE USER [CDM\vidaled] FOR LOGIN [CDM\vidaled] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\vidaled') ALTER USER [CDM\vidaled] WITH LOGIN = [CDM\vidaled] ELSE IF '[CDM\vidaled]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\vidaled] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\VIEIRADV') 
+         BEGIN CREATE USER [CDM\VIEIRADV] FOR LOGIN [CDM\VIEIRADV] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\VIEIRADV') ALTER USER [CDM\VIEIRADV] WITH LOGIN = [CDM\VIEIRADV] ELSE IF '[CDM\VIEIRADV]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\VIEIRADV] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\api_simparceiro') 
+         BEGIN CREATE USER [COFIDIS2000\api_simparceiro] FOR LOGIN [COFIDIS2000\api_simparceiro] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\api_simparceiro') ALTER USER [COFIDIS2000\api_simparceiro] WITH LOGIN = [COFIDIS2000\api_simparceiro] ELSE IF '[COFIDIS2000\api_simparceiro]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\api_simparceiro] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\AzureDevops_Arquitetos') 
+         BEGIN CREATE USER [COFIDIS2000\AzureDevops_Arquitetos] FOR LOGIN [COFIDIS2000\AzureDevops_Arquitetos] WITH DEFAULT_SCHEMA = [COFIDIS2000\AzureDevops_Arquitetos] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\AzureDevops_Arquitetos') ALTER USER [COFIDIS2000\AzureDevops_Arquitetos] WITH LOGIN = [COFIDIS2000\AzureDevops_Arquitetos] ELSE IF '[COFIDIS2000\AzureDevops_Arquitetos]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\AzureDevops_Arquitetos] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\AzureDevops_EquipaTecnica') 
+         BEGIN CREATE USER [COFIDIS2000\AzureDevops_EquipaTecnica] FOR LOGIN [COFIDIS2000\AzureDevops_EquipaTecnica] WITH DEFAULT_SCHEMA = [COFIDIS2000\AzureDevops_EquipaTecnica] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\AzureDevops_EquipaTecnica') ALTER USER [COFIDIS2000\AzureDevops_EquipaTecnica] WITH LOGIN = [COFIDIS2000\AzureDevops_EquipaTecnica] ELSE IF '[COFIDIS2000\AzureDevops_EquipaTecnica]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\AzureDevops_EquipaTecnica] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\client') 
+         BEGIN CREATE USER [cofidis2000\client] FOR LOGIN [cofidis2000\client] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\client') ALTER USER [cofidis2000\client] WITH LOGIN = [cofidis2000\client] ELSE IF '[cofidis2000\client]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\client] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\clientearea') 
+         BEGIN CREATE USER [cofidis2000\clientearea] FOR LOGIN [cofidis2000\clientearea] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\clientearea') ALTER USER [cofidis2000\clientearea] WITH LOGIN = [cofidis2000\clientearea] ELSE IF '[cofidis2000\clientearea]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\clientearea] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\CofPedidosSS') 
+         BEGIN CREATE USER [COFIDIS2000\CofPedidosSS] FOR LOGIN [COFIDIS2000\CofPedidosSS] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\CofPedidosSS') ALTER USER [COFIDIS2000\CofPedidosSS] WITH LOGIN = [COFIDIS2000\CofPedidosSS] ELSE IF '[COFIDIS2000\CofPedidosSS]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\CofPedidosSS] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\Cofptpsqldba01-Agnt') 
+         BEGIN CREATE USER [COFIDIS2000\Cofptpsqldba01-Agnt] FOR LOGIN [COFIDIS2000\Cofptpsqldba01-Agnt] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\Cofptpsqldba01-Agnt') ALTER USER [COFIDIS2000\Cofptpsqldba01-Agnt] WITH LOGIN = [COFIDIS2000\Cofptpsqldba01-Agnt] ELSE IF '[COFIDIS2000\Cofptpsqldba01-Agnt]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\Cofptpsqldba01-Agnt] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\cofptpsqldba01-mon') 
+         BEGIN CREATE USER [COFIDIS2000\cofptpsqldba01-mon] FOR LOGIN [COFIDIS2000\cofptpsqldba01-mon] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\cofptpsqldba01-mon') ALTER USER [COFIDIS2000\cofptpsqldba01-mon] WITH LOGIN = [COFIDIS2000\cofptpsqldba01-mon] ELSE IF '[COFIDIS2000\cofptpsqldba01-mon]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\cofptpsqldba01-mon] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\COFPTPSQLDBA01-SRV') 
+         BEGIN CREATE USER [cofidis2000\COFPTPSQLDBA01-SRV] FOR LOGIN [cofidis2000\COFPTPSQLDBA01-SRV] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\COFPTPSQLDBA01-SRV') ALTER USER [cofidis2000\COFPTPSQLDBA01-SRV] WITH LOGIN = [cofidis2000\COFPTPSQLDBA01-SRV] ELSE IF '[cofidis2000\COFPTPSQLDBA01-SRV]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\COFPTPSQLDBA01-SRV] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\comunicacoes') 
+         BEGIN CREATE USER [cofidis2000\comunicacoes] FOR LOGIN [cofidis2000\comunicacoes] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\comunicacoes') ALTER USER [cofidis2000\comunicacoes] WITH LOGIN = [cofidis2000\comunicacoes] ELSE IF '[cofidis2000\comunicacoes]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\comunicacoes] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\docDigitizer') 
+         BEGIN CREATE USER [COFIDIS2000\docDigitizer] FOR LOGIN [COFIDIS2000\docDigitizer] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\docDigitizer') ALTER USER [COFIDIS2000\docDigitizer] WITH LOGIN = [COFIDIS2000\docDigitizer] ELSE IF '[COFIDIS2000\docDigitizer]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\docDigitizer] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\filewatcher') 
+         BEGIN CREATE USER [COFIDIS2000\filewatcher] FOR LOGIN [COFIDIS2000\filewatcher] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\filewatcher') ALTER USER [COFIDIS2000\filewatcher] WITH LOGIN = [COFIDIS2000\filewatcher] ELSE IF '[COFIDIS2000\filewatcher]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\filewatcher] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\FMExictos') 
+         BEGIN CREATE USER [COFIDIS2000\FMExictos] FOR LOGIN [COFIDIS2000\FMExictos] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\FMExictos') ALTER USER [COFIDIS2000\FMExictos] WITH LOGIN = [COFIDIS2000\FMExictos] ELSE IF '[COFIDIS2000\FMExictos]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\FMExictos] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\grpSQLArquitetosSDA') 
+         BEGIN CREATE USER [cofidis2000\grpSQLArquitetosSDA] FOR LOGIN [cofidis2000\grpSQLArquitetosSDA] WITH DEFAULT_SCHEMA = [cofidis2000\grpSQLArquitetosSDA] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\grpSQLArquitetosSDA') ALTER USER [cofidis2000\grpSQLArquitetosSDA] WITH LOGIN = [cofidis2000\grpSQLArquitetosSDA] ELSE IF '[cofidis2000\grpSQLArquitetosSDA]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\grpSQLArquitetosSDA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLServicedesk') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLServicedesk] FOR LOGIN [COFIDIS2000\grpSQLServicedesk] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLServicedesk] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLServicedesk') ALTER USER [COFIDIS2000\grpSQLServicedesk] WITH LOGIN = [COFIDIS2000\grpSQLServicedesk] ELSE IF '[COFIDIS2000\grpSQLServicedesk]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLServicedesk] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLSuporteAplicacional') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLSuporteAplicacional] FOR LOGIN [COFIDIS2000\grpSQLSuporteAplicacional] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLSuporteAplicacional] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLSuporteAplicacional') ALTER USER [COFIDIS2000\grpSQLSuporteAplicacional] WITH LOGIN = [COFIDIS2000\grpSQLSuporteAplicacional] ELSE IF '[COFIDIS2000\grpSQLSuporteAplicacional]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLSuporteAplicacional] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLtoTCT') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLtoTCT] FOR LOGIN [COFIDIS2000\grpSQLtoTCT] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLtoTCT] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLtoTCT') ALTER USER [COFIDIS2000\grpSQLtoTCT] WITH LOGIN = [COFIDIS2000\grpSQLtoTCT] ELSE IF '[COFIDIS2000\grpSQLtoTCT]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLtoTCT] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\grpSQLtoTCTro') 
+         BEGIN CREATE USER [COFIDIS2000\grpSQLtoTCTro] FOR LOGIN [COFIDIS2000\grpSQLtoTCTro] WITH DEFAULT_SCHEMA = [COFIDIS2000\grpSQLtoTCTro] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\grpSQLtoTCTro') ALTER USER [COFIDIS2000\grpSQLtoTCTro] WITH LOGIN = [COFIDIS2000\grpSQLtoTCTro] ELSE IF '[COFIDIS2000\grpSQLtoTCTro]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\grpSQLtoTCTro] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\icmadmin') 
+         BEGIN CREATE USER [COFIDIS2000\icmadmin] FOR LOGIN [COFIDIS2000\icmadmin] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\icmadmin') ALTER USER [COFIDIS2000\icmadmin] WITH LOGIN = [COFIDIS2000\icmadmin] ELSE IF '[COFIDIS2000\icmadmin]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\icmadmin] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\iis_apoloapi') 
+         BEGIN CREATE USER [COFIDIS2000\iis_apoloapi] FOR LOGIN [COFIDIS2000\iis_apoloapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\iis_apoloapi') ALTER USER [COFIDIS2000\iis_apoloapi] WITH LOGIN = [COFIDIS2000\iis_apoloapi] ELSE IF '[COFIDIS2000\iis_apoloapi]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\iis_apoloapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\jurisflanonim') 
+         BEGIN CREATE USER [cofidis2000\jurisflanonim] FOR LOGIN [cofidis2000\jurisflanonim] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\jurisflanonim') ALTER USER [cofidis2000\jurisflanonim] WITH LOGIN = [cofidis2000\jurisflanonim] ELSE IF '[cofidis2000\jurisflanonim]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\jurisflanonim] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\MigraAmostra') 
+         BEGIN CREATE USER [COFIDIS2000\MigraAmostra] FOR LOGIN [COFIDIS2000\MigraAmostra] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\MigraAmostra') ALTER USER [COFIDIS2000\MigraAmostra] WITH LOGIN = [COFIDIS2000\MigraAmostra] ELSE IF '[COFIDIS2000\MigraAmostra]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\MigraAmostra] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\orchestrator') 
+         BEGIN CREATE USER [COFIDIS2000\orchestrator] FOR LOGIN [COFIDIS2000\orchestrator] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\orchestrator') ALTER USER [COFIDIS2000\orchestrator] WITH LOGIN = [COFIDIS2000\orchestrator] ELSE IF '[COFIDIS2000\orchestrator]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\orchestrator] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\partners') 
+         BEGIN CREATE USER [cofidis2000\partners] FOR LOGIN [cofidis2000\partners] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\partners') ALTER USER [cofidis2000\partners] WITH LOGIN = [cofidis2000\partners] ELSE IF '[cofidis2000\partners]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\partners] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\PIRS_SVC_UNN') 
+         BEGIN CREATE USER [COFIDIS2000\PIRS_SVC_UNN] FOR LOGIN [COFIDIS2000\PIRS_SVC_UNN] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\PIRS_SVC_UNN') ALTER USER [COFIDIS2000\PIRS_SVC_UNN] WITH LOGIN = [COFIDIS2000\PIRS_SVC_UNN] ELSE IF '[COFIDIS2000\PIRS_SVC_UNN]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\PIRS_SVC_UNN] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\powershell') 
+         BEGIN CREATE USER [cofidis2000\powershell] FOR LOGIN [cofidis2000\powershell] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\powershell') ALTER USER [cofidis2000\powershell] WITH LOGIN = [cofidis2000\powershell] ELSE IF '[cofidis2000\powershell]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\powershell] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prd_apicontperm') 
+         BEGIN CREATE USER [cofidis2000\prd_apicontperm] FOR LOGIN [cofidis2000\prd_apicontperm] WITH DEFAULT_SCHEMA = [cofidis2000\prd_apicontperm] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prd_apicontperm') ALTER USER [cofidis2000\prd_apicontperm] WITH LOGIN = [cofidis2000\prd_apicontperm] ELSE IF '[cofidis2000\prd_apicontperm]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prd_apicontperm] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_apireference') 
+         BEGIN CREATE USER [cofidis2000\prod_apireference] FOR LOGIN [cofidis2000\prod_apireference] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_apireference') ALTER USER [cofidis2000\prod_apireference] WITH LOGIN = [cofidis2000\prod_apireference] ELSE IF '[cofidis2000\prod_apireference]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_apireference] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_apisitecof') 
+         BEGIN CREATE USER [cofidis2000\prod_apisitecof] FOR LOGIN [cofidis2000\prod_apisitecof] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_apisitecof') ALTER USER [cofidis2000\prod_apisitecof] WITH LOGIN = [cofidis2000\prod_apisitecof] ELSE IF '[cofidis2000\prod_apisitecof]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_apisitecof] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_apitarefasservi') 
+         BEGIN CREATE USER [cofidis2000\prod_apitarefasservi] FOR LOGIN [cofidis2000\prod_apitarefasservi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_apitarefasservi') ALTER USER [cofidis2000\prod_apitarefasservi] WITH LOGIN = [cofidis2000\prod_apitarefasservi] ELSE IF '[cofidis2000\prod_apitarefasservi]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_apitarefasservi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_brgpdapi') 
+         BEGIN CREATE USER [cofidis2000\prod_brgpdapi] FOR LOGIN [cofidis2000\prod_brgpdapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_brgpdapi') ALTER USER [cofidis2000\prod_brgpdapi] WITH LOGIN = [cofidis2000\prod_brgpdapi] ELSE IF '[cofidis2000\prod_brgpdapi]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_brgpdapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_dadosbancarios') 
+         BEGIN CREATE USER [cofidis2000\prod_dadosbancarios] FOR LOGIN [cofidis2000\prod_dadosbancarios] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_dadosbancarios') ALTER USER [cofidis2000\prod_dadosbancarios] WITH LOGIN = [cofidis2000\prod_dadosbancarios] ELSE IF '[cofidis2000\prod_dadosbancarios]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_dadosbancarios] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_distribncr') 
+         BEGIN CREATE USER [cofidis2000\prod_distribncr] FOR LOGIN [cofidis2000\prod_distribncr] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_distribncr') ALTER USER [cofidis2000\prod_distribncr] WITH LOGIN = [cofidis2000\prod_distribncr] ELSE IF '[cofidis2000\prod_distribncr]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_distribncr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_docconfocr') 
+         BEGIN CREATE USER [cofidis2000\prod_docconfocr] FOR LOGIN [cofidis2000\prod_docconfocr] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_docconfocr') ALTER USER [cofidis2000\prod_docconfocr] WITH LOGIN = [cofidis2000\prod_docconfocr] ELSE IF '[cofidis2000\prod_docconfocr]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_docconfocr] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_impmass') 
+         BEGIN CREATE USER [cofidis2000\prod_impmass] FOR LOGIN [cofidis2000\prod_impmass] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_impmass') ALTER USER [cofidis2000\prod_impmass] WITH LOGIN = [cofidis2000\prod_impmass] ELSE IF '[cofidis2000\prod_impmass]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_impmass] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_ocrdocumentos') 
+         BEGIN CREATE USER [cofidis2000\prod_ocrdocumentos] FOR LOGIN [cofidis2000\prod_ocrdocumentos] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_ocrdocumentos') ALTER USER [cofidis2000\prod_ocrdocumentos] WITH LOGIN = [cofidis2000\prod_ocrdocumentos] ELSE IF '[cofidis2000\prod_ocrdocumentos]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_ocrdocumentos] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_rgpdapi') 
+         BEGIN CREATE USER [cofidis2000\prod_rgpdapi] FOR LOGIN [cofidis2000\prod_rgpdapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_rgpdapi') ALTER USER [cofidis2000\prod_rgpdapi] WITH LOGIN = [cofidis2000\prod_rgpdapi] ELSE IF '[cofidis2000\prod_rgpdapi]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_rgpdapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\prod_selfcareapi') 
+         BEGIN CREATE USER [cofidis2000\prod_selfcareapi] FOR LOGIN [cofidis2000\prod_selfcareapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\prod_selfcareapi') ALTER USER [cofidis2000\prod_selfcareapi] WITH LOGIN = [cofidis2000\prod_selfcareapi] ELSE IF '[cofidis2000\prod_selfcareapi]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\prod_selfcareapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'cofidis2000\rgpdsql') 
+         BEGIN CREATE USER [cofidis2000\rgpdsql] FOR LOGIN [cofidis2000\rgpdsql] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'cofidis2000\rgpdsql') ALTER USER [cofidis2000\rgpdsql] WITH LOGIN = [cofidis2000\rgpdsql] ELSE IF '[cofidis2000\rgpdsql]' NOT IN ('[dbo]','[guest]')  DROP USER [cofidis2000\rgpdsql] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\SPServices_SRV_PROD') 
+         BEGIN CREATE USER [COFIDIS2000\SPServices_SRV_PROD] FOR LOGIN [COFIDIS2000\SPServices_SRV_PROD] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\SPServices_SRV_PROD') ALTER USER [COFIDIS2000\SPServices_SRV_PROD] WITH LOGIN = [COFIDIS2000\SPServices_SRV_PROD] ELSE IF '[COFIDIS2000\SPServices_SRV_PROD]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\SPServices_SRV_PROD] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\sqlsvc_migrsql') 
+         BEGIN CREATE USER [COFIDIS2000\sqlsvc_migrsql] FOR LOGIN [COFIDIS2000\sqlsvc_migrsql] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\sqlsvc_migrsql') ALTER USER [COFIDIS2000\sqlsvc_migrsql] WITH LOGIN = [COFIDIS2000\sqlsvc_migrsql] ELSE IF '[COFIDIS2000\sqlsvc_migrsql]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\sqlsvc_migrsql] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'credi') 
+         BEGIN CREATE USER [credi] FOR LOGIN [credi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'credi') ALTER USER [credi] WITH LOGIN = [credi] ELSE IF '[credi]' NOT IN ('[dbo]','[guest]')  DROP USER [credi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'dbo') 
+         BEGIN CREATE USER [dbo] FOR LOGIN [dbo] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'dbo') ALTER USER [dbo] WITH LOGIN = [dbo] ELSE IF '[dbo]' NOT IN ('[dbo]','[guest]')  DROP USER [dbo] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'deleteme') 
+         BEGIN CREATE USER [deleteme] FOR LOGIN [deleteme] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'deleteme') ALTER USER [deleteme] WITH LOGIN = [deleteme] ELSE IF '[deleteme]' NOT IN ('[dbo]','[guest]')  DROP USER [deleteme] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'Digitalizacao_Alcioneu') 
+         BEGIN CREATE USER [Digitalizacao_Alcioneu] FOR LOGIN [Digitalizacao_Alcioneu] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'Digitalizacao_Alcioneu') ALTER USER [Digitalizacao_Alcioneu] WITH LOGIN = [Digitalizacao_Alcioneu] ELSE IF '[Digitalizacao_Alcioneu]' NOT IN ('[dbo]','[guest]')  DROP USER [Digitalizacao_Alcioneu] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'grafana_readonly') 
+         BEGIN CREATE USER [grafana_readonly] FOR LOGIN [grafana_readonly] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'grafana_readonly') ALTER USER [grafana_readonly] WITH LOGIN = [grafana_readonly] ELSE IF '[grafana_readonly]' NOT IN ('[dbo]','[guest]')  DROP USER [grafana_readonly] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'guest') 
+         BEGIN CREATE USER [guest] FOR LOGIN [guest] WITH DEFAULT_SCHEMA = [guest] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'guest') ALTER USER [guest] WITH LOGIN = [guest] ELSE IF '[guest]' NOT IN ('[dbo]','[guest]')  DROP USER [guest] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'icmadmin') 
+         BEGIN CREATE USER [icmadmin] FOR LOGIN [icmadmin] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'icmadmin') ALTER USER [icmadmin] WITH LOGIN = [icmadmin] ELSE IF '[icmadmin]' NOT IN ('[dbo]','[guest]')  DROP USER [icmadmin] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'link_dba') 
+         BEGIN CREATE USER [link_dba] FOR LOGIN [link_dba] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'link_dba') ALTER USER [link_dba] WITH LOGIN = [link_dba] ELSE IF '[link_dba]' NOT IN ('[dbo]','[guest]')  DROP USER [link_dba] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'LinkedRGPD') 
+         BEGIN CREATE USER [LinkedRGPD] FOR LOGIN [LinkedRGPD] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'LinkedRGPD') ALTER USER [LinkedRGPD] WITH LOGIN = [LinkedRGPD] ELSE IF '[LinkedRGPD]' NOT IN ('[dbo]','[guest]')  DROP USER [LinkedRGPD] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'lnk_caliope_priapo') 
+         BEGIN CREATE USER [lnk_caliope_priapo] FOR LOGIN [lnk_caliope_priapo] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'lnk_caliope_priapo') ALTER USER [lnk_caliope_priapo] WITH LOGIN = [lnk_caliope_priapo] ELSE IF '[lnk_caliope_priapo]' NOT IN ('[dbo]','[guest]')  DROP USER [lnk_caliope_priapo] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'prod_ApiDataCheck') 
+         BEGIN CREATE USER [prod_ApiDataCheck] FOR LOGIN [prod_ApiDataCheck] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'prod_ApiDataCheck') ALTER USER [prod_ApiDataCheck] WITH LOGIN = [prod_ApiDataCheck] ELSE IF '[prod_ApiDataCheck]' NOT IN ('[dbo]','[guest]')  DROP USER [prod_ApiDataCheck] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'prod_ApiSiteBeneficios') 
+         BEGIN CREATE USER [prod_ApiSiteBeneficios] FOR LOGIN [prod_ApiSiteBeneficios] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'prod_ApiSiteBeneficios') ALTER USER [prod_ApiSiteBeneficios] WITH LOGIN = [prod_ApiSiteBeneficios] ELSE IF '[prod_ApiSiteBeneficios]' NOT IN ('[dbo]','[guest]')  DROP USER [prod_ApiSiteBeneficios] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'prod_mauticapi') 
+         BEGIN CREATE USER [prod_mauticapi] FOR LOGIN [prod_mauticapi] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'prod_mauticapi') ALTER USER [prod_mauticapi] WITH LOGIN = [prod_mauticapi] ELSE IF '[prod_mauticapi]' NOT IN ('[dbo]','[guest]')  DROP USER [prod_mauticapi] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_all') 
+         BEGIN CREATE USER [sa_all] FOR LOGIN [sa_all] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_all') ALTER USER [sa_all] WITH LOGIN = [sa_all] ELSE IF '[sa_all]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_all] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_ge') 
+         BEGIN CREATE USER [sa_ge] FOR LOGIN [sa_ge] WITH DEFAULT_SCHEMA = [sa_ge] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_ge') ALTER USER [sa_ge] WITH LOGIN = [sa_ge] ELSE IF '[sa_ge]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_ge] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_idh') 
+         BEGIN CREATE USER [sa_idh] FOR LOGIN [sa_idh] WITH DEFAULT_SCHEMA = [sa_idh] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_idh') ALTER USER [sa_idh] WITH LOGIN = [sa_idh] ELSE IF '[sa_idh]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_idh] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Log') 
+         BEGIN CREATE USER [sa_Log] FOR LOGIN [sa_Log] WITH DEFAULT_SCHEMA = [sa_Log] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Log') ALTER USER [sa_Log] WITH LOGIN = [sa_Log] ELSE IF '[sa_Log]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Log] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Outsystems') 
+         BEGIN CREATE USER [sa_Outsystems] FOR LOGIN [sa_Outsystems] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Outsystems') ALTER USER [sa_Outsystems] WITH LOGIN = [sa_Outsystems] ELSE IF '[sa_Outsystems]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Outsystems] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Runtime') 
+         BEGIN CREATE USER [sa_Runtime] FOR LOGIN [sa_Runtime] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Runtime') ALTER USER [sa_Runtime] WITH LOGIN = [sa_Runtime] ELSE IF '[sa_Runtime]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Runtime] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_Tcontrol') 
+         BEGIN CREATE USER [sa_Tcontrol] FOR LOGIN [sa_Tcontrol] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_Tcontrol') ALTER USER [sa_Tcontrol] WITH LOGIN = [sa_Tcontrol] ELSE IF '[sa_Tcontrol]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_Tcontrol] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'sa_trans') 
+         BEGIN CREATE USER [sa_trans] FOR LOGIN [sa_trans] WITH DEFAULT_SCHEMA = [sa_trans] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'sa_trans') ALTER USER [sa_trans] WITH LOGIN = [sa_trans] ELSE IF '[sa_trans]' NOT IN ('[dbo]','[guest]')  DROP USER [sa_trans] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'saReadOnly') 
+         BEGIN CREATE USER [saReadOnly] FOR LOGIN [saReadOnly] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'saReadOnly') ALTER USER [saReadOnly] WITH LOGIN = [saReadOnly] ELSE IF '[saReadOnly]' NOT IN ('[dbo]','[guest]')  DROP USER [saReadOnly] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'SQLSolva') 
+         BEGIN CREATE USER [SQLSolva] FOR LOGIN [SQLSolva] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'SQLSolva') ALTER USER [SQLSolva] WITH LOGIN = [SQLSolva] ELSE IF '[SQLSolva]' NOT IN ('[dbo]','[guest]')  DROP USER [SQLSolva] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'test') 
+         BEGIN CREATE USER [test] FOR LOGIN [test] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'test') ALTER USER [test] WITH LOGIN = [test] ELSE IF '[test]' NOT IN ('[dbo]','[guest]')  DROP USER [test] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'WebPac') 
+         BEGIN CREATE USER [WebPac] FOR LOGIN [WebPac] WITH DEFAULT_SCHEMA = [WebPac] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'WebPac') ALTER USER [WebPac] WITH LOGIN = [WebPac] ELSE IF '[WebPac]' NOT IN ('[dbo]','[guest]')  DROP USER [WebPac] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'WebService') 
+         BEGIN CREATE USER [WebService] FOR LOGIN [WebService] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'WebService') ALTER USER [WebService] WITH LOGIN = [WebService] ELSE IF '[WebService]' NOT IN ('[dbo]','[guest]')  DROP USER [WebService] END;
+-- [-- DB ROLES --] --
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'cdm\cardosrd'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\diassn'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\FERREIOA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\gomesja'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\marquesr'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\MARTINOP'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\nicobr'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\ramoscl'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\ricardmr'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\SALGUEMI'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\SVC_COFIDIS_PT'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\teresaan'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\VENANCTI'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\vidaled'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\VIEIRADV'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\CofPedidosSS'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\Cofptpsqldba01-Agnt'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\cofptpsqldba01-mon'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'cofidis2000\comunicacoes'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\FMExictos'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grp prevencaosp'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\GRP SQLSACA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\Grp SQL-SD-Outsourcing-RO'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\GrpBillingSqlNivel1'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLAnaliseCreditoCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLArquitetosCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLCaptacaoCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLGestaoCreditoCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\GrpSQLNegocioROCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLRecuperacaoCSA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLVertical_OnboardingComercial'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\MigraAmostra'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\PIRS_SVC_UNN'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'cofidis2000\powershell'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\SPServices_SRV_PROD'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\sqlsvc_migrsql'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'credi'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'deleteme'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'Digitalizacao_Alcioneu'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'grafana_readonly'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'link_dba'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'LinkedRGPD'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'lnk_caliope_priapo'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'saReadOnly'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'WebPac'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'CDM\SVC_COFIDIS_PT'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'COFIDIS2000\CofPedidosSS'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'COFIDIS2000\GrpBillingSqlNivel1'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'WebPac'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'CDM\LEITAOHU'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'CDM\RODRIGRI'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\docDigitizer'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\icmadmin'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\iis_apoloapi'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\orchestrator'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'icmadmin'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_all'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_ge'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_idh'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Log'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Outsystems'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Runtime'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_Tcontrol'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'sa_trans'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'WebPac'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'WebService'
+ 
+-- [-- OBJECT LEVEL PERMISSIONS --] --
+DENY EXECUTE ON [dbo].[fn_diagramobjects] TO [guest]
+DENY EXECUTE ON [dbo].[sp_alterdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_creatediagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_dropdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagrams] TO [guest]
+DENY EXECUTE ON [dbo].[sp_renamediagram] TO [guest]
+GRANT ALTER ON [dbo].[COF_Cliente] TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT ALTER ON [dbo].[DC_Document] TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT DELETE ON [dbo].[COF_HistoricoPariPersi] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[COF_HistoricoPariPersi] TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT DELETE ON [dbo].[COF_Memo_OLD] TO [CDM\MORGADAA]
+GRANT DELETE ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [CDM\MORGADAA]
+GRANT DELETE ON [dbo].[COF_TempInfoCarteiraMautic] TO [cdm\pintonu]
+GRANT DELETE ON [dbo].[COF_TempInfoCarteiraMautic] TO [prod_mauticapi]
+GRANT DELETE ON [dbo].[dtproperties] TO [public]
+GRANT DELETE ON [dbo].[PAC_ParceiroTipo] TO [cofidis2000\partners]
+GRANT DELETE ON [dbo].[PACPartnerManager] TO [cofidis2000\partners]
+GRANT DELETE ON [dbo].[PACPartnerProductsServices] TO [cofidis2000\partners]
+GRANT DELETE ON [dbo].[VCH_HistoricoVoucher] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[VCH_VoucherConsulta] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[VCH_VoucherLog] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[VCH_VoucherUtilizacao] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[VG_CarteiraUtilizador] TO [COFIDIS2000\grpSQLServicedesk]
+GRANT DELETE ON [dbo].[VG_CarteiraUtilizador] TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT DELETE ON [dbo].[VG_ProcessamentoNCR] TO [cofidis2000\prod_distribncr]
+GRANT DELETE ON [dbo].[VG_VariavelDossier] TO [cofidis2000\prod_distribncr]
+GRANT DELETE ON [dbo].[VG_VariavelDossier_Staging] TO [cofidis2000\prod_distribncr]
+GRANT EXECUTE ON [dbo].[API_ADD_COF_SiteBeneficiosReport] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_ADD_OCR_ComparisonRequestLog] TO [cofidis2000\prod_docconfocr]
+GRANT EXECUTE ON [dbo].[API_GET_ClienteById] TO [cofidis2000\client]
+GRANT EXECUTE ON [dbo].[API_GET_ClienteByNIF] TO [cofidis2000\client]
+GRANT EXECUTE ON [dbo].[API_GET_ClienteByNIF] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[API_GET_ClienteOpcaoBCFT] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Aplicacao] TO [cofidis2000\prod_apireference]
+GRANT EXECUTE ON [dbo].[API_GET_COF_BaseRiscoDAH] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[API_GET_COF_CacheUpdatedDates_V2] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_CodigoPostalRua] TO [cofidis2000\partners]
+GRANT EXECUTE ON [dbo].[API_GET_COF_DadosContacto] TO [cofidis2000\client]
+GRANT EXECUTE ON [dbo].[API_GET_COF_DadosContacto] TO [cofidis2000\clientearea]
+GRANT EXECUTE ON [dbo].[API_GET_COF_DadosContacto] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_DadosPessoaisCliente] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_DadosProfissao] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_EntidadesByIdProcesso] TO [cofidis2000\clientearea]
+GRANT EXECUTE ON [dbo].[API_GET_COF_EntidadesByIdProcesso] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_FinalidadeBem] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Finalidades] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_COF_FinalidadesSub] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_COF_InstituicoesFinanceirasCache] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_LimitesTarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_COF_MoradasDoElemento] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Oferta] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_COF_OrcamentoProposta] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Paises] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Paises] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Param] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Param] TO [cofidis2000\prod_apireference]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Processo_Diavencimento] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Profissao] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Referencias] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Referencias] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_Referencias] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_COF_ReferenciasByCodigoTipoReferencia] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_COF_ReferenciasByDescTipo] TO [cofidis2000\prod_apireference]
+GRANT EXECUTE ON [dbo].[API_GET_COF_RegiaoImposto] TO [cofidis2000\partners]
+GRANT EXECUTE ON [dbo].[API_GET_COF_SiteBeneficiosReport] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_COF_TipoReferencia] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_DadosBancariosAllNibsAvailableByIdProcesso] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_DNN_Users] TO [cofidis2000\prod_apireference]
+GRANT EXECUTE ON [dbo].[API_GET_DossiersByCliente] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[API_GET_InfoDossiersByNif] TO [cofidis2000\clientearea]
+GRANT EXECUTE ON [dbo].[API_GET_InfoDossiersByNif] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_OCR_Resposta] TO [cofidis2000\prod_docconfocr]
+GRANT EXECUTE ON [dbo].[API_GET_OCR_RespostaByIdProcessoTipo] TO [cofidis2000\prod_docconfocr]
+GRANT EXECUTE ON [dbo].[API_GET_OpcaoBCFT] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_OpcaoBCFT] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_PAC_CreditCaracteristicsByIdOTandIdPartner] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_ReferenciasById] TO [cofidis2000\prod_apireference]
+GRANT EXECUTE ON [dbo].[API_GET_SelfCare] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[API_GET_SITE_InfoSimulador] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[API_GET_SITE_InfoSimuladorBeneficios] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_SITE_MontantesFinalidadesBeneficios] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[API_GET_TAEGMaxima] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_TarificacaoIdByParceiroByIdot] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[API_GET_VerificaContactoSecurizado] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[API_UPD_COF_SiteBeneficiosReport] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[COF_ADD_BaseRiscoDAH] TO [COFIDIS2000\FMExictos]
+GRANT EXECUTE ON [dbo].[COF_ADD_ErrosAPP] TO [cofidis2000\prod_apisitecof]
+GRANT EXECUTE ON [dbo].[COF_ADD_JurisFlow_PERInsolv] TO [COFIDIS2000\filewatcher]
+GRANT EXECUTE ON [dbo].[COF_ADD_LitigioJudicial] TO [COFIDIS2000\filewatcher]
+GRANT EXECUTE ON [dbo].[COF_GET_BaseRiscoDAH] TO [COFIDIS2000\FMExictos]
+GRANT EXECUTE ON [dbo].[COF_GET_JurisFlow_IdFile] TO [COFIDIS2000\filewatcher]
+GRANT EXECUTE ON [dbo].[COF_GET_TempInfoCarteiraMautic] TO [prod_mauticapi]
+GRANT EXECUTE ON [dbo].[COF_UPD_JurisFlow_PERInsolv] TO [COFIDIS2000\filewatcher]
+GRANT EXECUTE ON [dbo].[COM_ADD_ComunicacaoAutomatica] TO [COFIDIS2000\FMExictos]
+GRANT EXECUTE ON [dbo].[COM_ADD_ComunicacaoAutomatica] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[CSD_ADD_AnaliseSolvabilidade] TO [SQLSolva]
+GRANT EXECUTE ON [dbo].[CSD_GET_UltimaAnalise] TO [SQLSolva]
+GRANT EXECUTE ON [dbo].[DAH_GET_ProdutosAll] TO [cofidis2000\prod_selfcareapi]
+GRANT EXECUTE ON [dbo].[dt_addtosourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_addtosourcecontrol_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_adduserobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_adduserobject_vcs] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkinobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkinobject_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkoutobject] TO [public]
+GRANT EXECUTE ON [dbo].[dt_checkoutobject_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_displayoaerror] TO [public]
+GRANT EXECUTE ON [dbo].[dt_displayoaerror_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_droppropertiesbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_dropuserobjectbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_generateansiname] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getobjwithprop] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getobjwithprop_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_vcs] TO [public]
+GRANT EXECUTE ON [dbo].[dt_getpropertiesbyid_vcs_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_isundersourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_isundersourcecontrol_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_removefromsourcecontrol] TO [public]
+GRANT EXECUTE ON [dbo].[dt_setpropertybyid] TO [public]
+GRANT EXECUTE ON [dbo].[dt_setpropertybyid_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_validateloginparams] TO [public]
+GRANT EXECUTE ON [dbo].[dt_validateloginparams_u] TO [public]
+GRANT EXECUTE ON [dbo].[dt_vcsenabled] TO [public]
+GRANT EXECUTE ON [dbo].[dt_verstamp006] TO [public]
+GRANT EXECUTE ON [dbo].[dt_verstamp007] TO [public]
+GRANT EXECUTE ON [dbo].[dt_whocheckedout] TO [public]
+GRANT EXECUTE ON [dbo].[dt_whocheckedout_u] TO [public]
+GRANT EXECUTE ON [dbo].[fcCOF_GET_DescReferenciaByCod] TO [COFIDIS2000\grpSQLCaptacaoCSA]
+GRANT EXECUTE ON [dbo].[fcCOF_GetCodigoReferenciaById] TO [COFIDIS2000\grpSQLCaptacaoCSA]
+GRANT EXECUTE ON [dbo].[fcVG_Get_DataFimAssignacaoPrevisao] TO [cdm\costael]
+GRANT EXECUTE ON [dbo].[fcVG_GetObsVisitaRelatorio] TO [COFIDIS2000\PIRS_SVC_UNN]
+GRANT EXECUTE ON [dbo].[fcVG_GetProximoDiaUtil] TO [COFIDIS2000\grpSQLRecuperacaoCSA]
+GRANT EXECUTE ON [dbo].[FM_GET_DossierInfo] TO [COFIDIS2000\FMExictos]
+GRANT EXECUTE ON [dbo].[fn_diagramobjects] TO [public]
+GRANT EXECUTE ON [dbo].[OFP_GET_Intervalo] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[OFP_GET_IntervalosExistentesTarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[OFP_GET_OT] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[OFP_GET_TarificacaoDetalhe] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[OFP_GET_TarificacaoValor] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[OFP_GET_TipoTarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[PAC_ADD_PartnerCollaborator] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[PAC_GET_ComissoesTarifByIdPartner] TO [COFIDIS2000\api_simparceiro]
+GRANT EXECUTE ON [dbo].[PAC_GET_UserNameCount] TO [cofidis2000\partners]
+GRANT EXECUTE ON [dbo].[PAC_GET_UserNameCount] TO [prod_ApiSiteBeneficios]
+GRANT EXECUTE ON [dbo].[PAC_PWD_Aleatoria] TO [cofidis2000\partners]
+GRANT EXECUTE ON [dbo].[rpt_CounterPerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_ErrorDetail] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetAvgCumlativeValueForInterval] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetAvgValue] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetCumulativeValue] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetLastComputedValue] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetMaxValue] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetSamplesForInstance] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_GetUserLevels] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_MachineCounterPerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_MachineCounterVsElapsedTime] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_MultipleCounterPerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_OverallResults] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_PageComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_PageDetailComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_PageVsElapsedTime] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_PerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_SummaryComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_SystemResourceComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TestcaseComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TestTimePerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TestTimeVsElapsedTime] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TransactionComparisonReport] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TransactionTimePerUserLevel] TO [public]
+GRANT EXECUTE ON [dbo].[rpt_TransactionVsElapsedTime] TO [public]
+GRANT EXECUTE ON [dbo].[sp_alterdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_creatediagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_dropdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[SP_GET_IdentificadoresPorValor] TO [COFIDIS2000\grpSQLtoTCT]
+GRANT EXECUTE ON [dbo].[SP_GET_IdentificadoresPorValor] TO [COFIDIS2000\grpSQLtoTCTro]
+GRANT EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [public]
+GRANT EXECUTE ON [dbo].[sp_helpdiagrams] TO [public]
+GRANT EXECUTE ON [dbo].[sp_renamediagram] TO [public]
+GRANT EXECUTE ON [dbo].[VG_UPD_Tarefa] TO [cofidis2000\prod_apitarefasservi]
+GRANT INSERT ON [dbo].[Cof_AlteracaoModoPagamentoHistorico] TO [cofidis2000\prod_dadosbancarios]
+GRANT INSERT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_ClienteCaixaGeralAposentacoes] TO [CDM\OLIVEILU]
+GRANT INSERT ON [dbo].[COF_ClienteCaixaGeralAposentacoes] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_ClienteCaixaGeralAposentacoesEntidadeEmpregadora] TO [CDM\OLIVEILU]
+GRANT INSERT ON [dbo].[COF_ClienteCaixaGeralAposentacoesEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_ClienteMorada] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_ClienteProfissao] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_ClienteSegurancaSocial] TO [CDM\OLIVEILU]
+GRANT INSERT ON [dbo].[COF_ClienteSegurancaSocial] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_ClienteSegurancaSocialEntidadeEmpregadora] TO [CDM\OLIVEILU]
+GRANT INSERT ON [dbo].[COF_ClienteSegurancaSocialEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_dadosbancarios]
+GRANT INSERT ON [dbo].[COF_DistrImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT INSERT ON [dbo].[COF_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_Documentos] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_ImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT INSERT ON [dbo].[COF_ImpressaoMassivaDocServicosDossiers] TO [cofidis2000\prod_impmass]
+GRANT INSERT ON [dbo].[COF_JurisFlow_PERInsolv] TO [COFIDIS2000\filewatcher]
+GRANT INSERT ON [dbo].[COF_LitigioJudicial] TO [COFIDIS2000\filewatcher]
+GRANT INSERT ON [dbo].[COF_Memo] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_Memo_Capgemini] TO [cofidis2000\powershell]
+GRANT INSERT ON [dbo].[COF_Memo_OLD] TO [CDM\MORGADAA]
+GRANT INSERT ON [dbo].[COF_Memo_OLD] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_Pedido_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_PedidoInfSS] TO [CDM\OLIVEILU]
+GRANT INSERT ON [dbo].[COF_PedidoInfSS] TO [COFIDIS2000\CofPedidosSS]
+GRANT INSERT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_dadosbancarios]
+GRANT INSERT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [CDM\MORGADAA]
+GRANT INSERT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[COF_SegurosDiversificacao] TO [COFIDIS2000\filewatcher]
+GRANT INSERT ON [dbo].[COF_TempInfoCarteiraMautic] TO [cdm\pintonu]
+GRANT INSERT ON [dbo].[COF_TempInfoCarteiraMautic] TO [prod_mauticapi]
+GRANT INSERT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[com_ComunicacaoAutomatica] TO [cofidis2000\prod_selfcareapi]
+GRANT INSERT ON [dbo].[com_ComunicacaoAutomatica_Antiga] TO [cofidis2000\prod_selfcareapi]
+GRANT INSERT ON [dbo].[dtproperties] TO [public]
+GRANT INSERT ON [dbo].[INTERFACES_ControloGestaoLar] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[MT_Contact] TO [prod_mauticapi]
+GRANT INSERT ON [dbo].[OCR_Documento] TO [cofidis2000\prod_ocrdocumentos]
+GRANT INSERT ON [dbo].[OCR_DocumentoProcessado] TO [cofidis2000\prod_ocrdocumentos]
+GRANT INSERT ON [dbo].[OCR_LogDocumentacao] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[OCR_LogDocumentacaoCampo] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_ocrdocumentos]
+GRANT INSERT ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_docconfocr]
+GRANT INSERT ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_ocrdocumentos]
+GRANT INSERT ON [dbo].[PAC_DocumentacaoParceiro] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PAC_ParceiroEstrutura] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PAC_ParceiroNivel] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PAC_ParceiroTipo] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PAC_PartnerAddress] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PAC_Tarificacao_Partner] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartner] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerBank] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerCollaborator] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerContact] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerManager] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerParticipatedCompany] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerProductsServices] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[PACPartnerStateHistory] TO [cofidis2000\partners]
+GRANT INSERT ON [dbo].[SQL_Change_LOG] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_CalcRegrasTipologiaLarLog] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Carteira] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_CarteiraDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ChampionChallenger] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ConselheirosColaborador] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ConselheirosGrandesContas] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ConselheirosPay] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ControloDistribuicaoCP] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_DossierIncontactavel] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_EventoDistribuicao] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ExclusaoTaskforce] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_FaseDossierFaseLar] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_HistoricoResolucaoDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Load_VariavelDossier_Log] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_LOG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_LogServicos] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ODM_Tipol_Request] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ODM_Tipol_Request_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ODM_Tipol_Response] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ODM_Tipol_Response_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_ProcessamentoNCR] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Rel_LarDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_REL_LarElemento] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_RulesDistribDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_RulesDistribVariablesValues] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_RulesDistribVariablesValuesDet] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Tarefas] TO [cofidis2000\prod_apitarefasservi]
+GRANT INSERT ON [dbo].[VG_TipoDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Tipologia_DistribParticionada] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_Tipologia_DossiersRetidos] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_TipologiaFase] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_UtilizadorTopologia] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_VariavelDossier] TO [cofidis2000\prod_distribncr]
+GRANT INSERT ON [dbo].[VG_VariavelDossier_Staging] TO [cofidis2000\prod_distribncr]
+GRANT REFERENCES ON [dbo].[dtproperties] TO [public]
+GRANT SELECT ON [dbo].[BASEL_ScoreComportamental] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[CMP_ComPack] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[CMP_ComPack_Tarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[Cof_AlteracaoModoPagamentoHistorico] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_AnaliseScoreOnline] TO [SQLSolva]
+GRANT SELECT ON [dbo].[COF_AnaliseScoreOnlineErro] TO [SQLSolva]
+GRANT SELECT ON [dbo].[COF_Aplicacao] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_Aplicacao] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_Banco] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_Banco] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Banco] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_BancoPortugal] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_BancoPortugalCRC] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_BancoPortugalCRC5G] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_BaseRiscoDAH] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_BaseRiscoDAH] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[COF_BemFinanciarReservaProp] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_CampanhasCaptacao] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_CampanhasDossiers] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_CategoriaCredito] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\jurisflanonim]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_rgpdapi]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_Cliente] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteCaixaGeralAposentacoes] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_ClienteCaixaGeralAposentacoesEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\prod_rgpdapi]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteContactoMail] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteContatoMailHistorico] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteDadoBancario] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteEmpresa] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_ClienteEmpresa] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ClienteEmpresa] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteHistorico] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteMorada] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteMorada] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_ClienteMorada] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteMorada] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteOpcaoBCFT] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteOrcamento] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteOrcamento] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteProfissao] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteProfissao] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_ClienteProfissao] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteSegurancaSocial] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_ClienteSegurancaSocialEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_ClientesInsolventes] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\jurisflanonim]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_brgpdapi]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_rgpdapi]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [prod_ApiDataCheck]
+GRANT SELECT ON [dbo].[COF_ClienteUProcesso] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ClienteUProcessoHist] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_CodigoPostalRua] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\prod_rgpdapi]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ContactoTelefonico] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_DecisaoCondicionalHistorico] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_DistrImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_Documentacao] TO [prod_ApiDataCheck]
+GRANT SELECT ON [dbo].[COF_DocumentacaoDesarquivo] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoEntradaEAD] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoHist] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoInfoEAD] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoMIGControlo] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoTipologia] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentacaoTipologiaCONV] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentoFooter] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_DocumentoFooter] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_Documentos] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_Documentos] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_Documentos] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_DOCUMENTOS_HISTORICO] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentosKit] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_DocumentosParceiro] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_EmpresaSocio] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_EmpresaSocio] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_EmpresaSocio] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_EmpresaSocioHistorico] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_EquipamentoCategoria] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_EquipamentoCategoriaDetalhe] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_EquipamentoMarca] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_EquipamentoModelo] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_EquipamentoVersao] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Erros_APP] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Erros_SP] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_Finalidade] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_Finalidade] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Finalidade] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_FinalidadeBem] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_FinalizacaoTarefa] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_HistoricoDosConj] TO [SQLSolva]
+GRANT SELECT ON [dbo].[COF_HistoricoFicheiroInsolvente] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ImpressaoMassivaDocServicosDossiers] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_InstituicoesFinanceiras] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_LitigioJudicial] TO [COFIDIS2000\filewatcher]
+GRANT SELECT ON [dbo].[COF_Loja] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_Loja] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_Memo] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_Memo] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Memo_OLD] TO [CDM\MORGADAA]
+GRANT SELECT ON [dbo].[COF_Memo_OLD] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_Memo_OLD] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ModoPagamento] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Oferta] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_Oferta] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_Oferta] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Oferta] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_OpcaoBCFT] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_OpcaoBCFT] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Paises] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_Paises] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Paises] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Param] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_Param] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_Param] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_ParamTipo] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_ParamTipo] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_ParamTipo] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_PariPersi] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_PariPersi] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_Pedido] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Pedido_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_PedidoInfSS] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_PedidoInfSS] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_Processo] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_Processo] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_Processo] TO [COFIDIS2000\filewatcher]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\jurisflanonim]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_brgpdapi]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_Processo] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[COF_Processo] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Processo_Capgemini] TO [SQLSolva]
+GRANT SELECT ON [dbo].[COF_ProcessoAdenda] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_ProcessoAdenda] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoAuto] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ProcessoAuto] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ProcessoEstudo] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ProcessoEstudo] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ProcessoFichaFine] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ProcessoFichaFine] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ProcessoFichaFine] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoFinanceiraAuto] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ProcessoGarantia] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COF_ProcessoModalidadePagamento] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoPacoteServicos] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoParceiros] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_ProcessoParceiros] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ProcessoParceiros] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoProdutoSuplementar] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ProcessoProdutoSuplementar] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ProcessoProdutoSuplementar] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ProcessoProdutoSuplementar] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProcessoProdutoSuplementarDetalhe] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ProcessoSimulacao] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [CDM\MORGADAA]
+GRANT SELECT ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [cofidis2000\prod_rgpdapi]
+GRANT SELECT ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_ProdutosCategoriaCredito] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_ProdutoSuplementar] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_ProdutoSuplementar] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_ProdutoSuplementar] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[COF_ProdutoSuplementar] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Profissao] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Profissao] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_apireference]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [guest]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [public]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [sa_ge]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [sa_idh]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [sa_Log]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [sa_Runtime]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [sa_trans]
+GRANT SELECT ON [dbo].[COF_Referencias] TO [SQLSolva]
+GRANT SELECT ON [dbo].[COF_RegiaoImposto] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_SegurosDiversificacao] TO [COFIDIS2000\filewatcher]
+GRANT SELECT ON [dbo].[COF_TarefaFlow] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_TempInfoCarteiraMautic] TO [cdm\pintonu]
+GRANT SELECT ON [dbo].[COF_TempInfoCarteiraMautic] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[COF_TipificacaoTarefa] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [CDM\OLIVEILU]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\client]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_apireference]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_dadosbancarios]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[com_ComunicacaoAutomatica] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[com_ComunicacaoAutomatica_Antiga] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[com_ComunicacaoProcessada] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[com_ComunicacaoProcessada_Antiga] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COM_Emissao_Doc] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[COM_ReferenciaComunicacao_Antiga] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[COM_ReferenciaComunicacao_DATA] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[DAH_DespesaDiversa] TO [cofidis2000\prod_impmass]
+GRANT SELECT ON [dbo].[DAH_Fee] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [cofidis2000\prod_selfcareapi]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[DAH_Produto] TO [SQLSolva]
+GRANT SELECT ON [dbo].[DAH_Seguro] TO [cofidis2000\clientearea]
+GRANT SELECT ON [dbo].[DAH_Seguro] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[dtproperties] TO [public]
+GRANT SELECT ON [dbo].[IDH_ProcessoDocImagem] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[INTERFACES_ControloGestaoLar] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[MT_Contact] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[OCR_Documento] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[OCR_DocumentoProcessado] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[OCR_LogDocumentacao] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[OCR_LogDocumentacaoCampo] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[OCR_LogDocumentacaoCampo] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[OCR_Pedido] TO [cdm\costaco]
+GRANT SELECT ON [dbo].[OCR_Pedido] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[OCR_Pedido] TO [prod_ApiDataCheck]
+GRANT SELECT ON [dbo].[OCR_Resposta] TO [cdm\costaco]
+GRANT SELECT ON [dbo].[OCR_Resposta] TO [COFIDIS2000\CofPedidosSS]
+GRANT SELECT ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_docconfocr]
+GRANT SELECT ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[OCR_Resposta] TO [prod_ApiDataCheck]
+GRANT SELECT ON [dbo].[OFP_Intervalo] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_Intervalo] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_IntervaloTipoTarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_OT] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_OT_Tarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_OTBemFinanciar] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_Pack] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_Pack_OT] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_SubIntervalo] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_SubIntervalo] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_Tarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_Tarificacao] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_TarificacaoParam] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_TarificacaoParam] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_TarificacaoValor] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_TarificacaoValor] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_TipoTarificacao] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_TipoTarificacao] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[OFP_TipoValor] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[OFP_TipoValor] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_COM_Partner] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[PAC_CreditCaracteristics] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[PAC_DocumentacaoParceiro] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_GestorConta] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_ParceiroEstrutura] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[PAC_ParceiroEstrutura] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_ParceiroNivel] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_ParceiroTipo] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_PartnerAddress] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAC_Tarificacao_Partner] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[PAC_Tarificacao_Partner] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACParameterization] TO [COFIDIS2000\api_simparceiro]
+GRANT SELECT ON [dbo].[PACParameterization] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACParameterization] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[PACParameterizationType] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartner] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartner] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[PACPartner] TO [prod_ApiSiteBeneficios]
+GRANT SELECT ON [dbo].[PACPartner] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[PACPartnerBank] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerCollaborator] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerContact] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerManager] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerParticipatedCompany] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerProductsServices] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerState] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PACPartnerStateHistory] TO [cofidis2000\partners]
+GRANT SELECT ON [dbo].[PAL_HistoricoOperacao] TO [COFIDIS2000\filewatcher]
+GRANT SELECT ON [dbo].[Site_RegistoEmCurso] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[Split] TO [cofidis2000\prod_apisitecof]
+GRANT SELECT ON [dbo].[TG_Actividade] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[TRA_RefMB] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[TRA_ReqTransferencia] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[TRA_Transferencia] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[TRA_TransferenciaIni] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_BancoSimulacaoPRD] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_CalcRegrasTipologiaLarLog] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Carteira] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_CarteiraDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_CarteiraUtilizador] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_ChampionChallenger] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ConselheirosColaborador] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ConselheirosGrandesContas] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ConselheirosPay] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Contactos] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_ControloDistribuicaoCP] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_DossierIncontactavel] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Entrega] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_EntregaAverbamento] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_EntregaVenda] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_EstadoTarefa] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_EventoDistribuicao] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ExclusaoTaskforce] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_FaseDossierFaseLar] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_GarantiaGeralPRD] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_HistoricoResolucaoDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_LOG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_LogServicos] TO [cofidis2000\prd_apicontperm]
+GRANT SELECT ON [dbo].[VG_LogServicos] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ODM_Tipol_Request] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ODM_Tipol_Request_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ODM_Tipol_Response] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_ODM_Tipol_Response_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Planos] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_ProcessamentoNCR] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Referencias] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_Referencias] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Rel_LarDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_REL_LarElemento] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_RulesDistribDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_RulesDistribVariablesValues] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_RulesDistribVariablesValuesDet] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_SimulacaoCTX] TO [cofidis2000\rgpdsql]
+GRANT SELECT ON [dbo].[VG_Tarefas] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_TipoDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Tipologia_DistribParticionada] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_Tipologia_DossiersRetidos] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_TipologiaFase] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_TipoReferencias] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_TipoTarefa] TO [cofidis2000\prod_apitarefasservi]
+GRANT SELECT ON [dbo].[VG_UtilizadorTopologia] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_VariavelDossier] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[VG_VariavelDossier_Staging] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[vw_COF_InfoBaseDossier] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[vw_COF_InfoNewCustomers] TO [prod_mauticapi]
+GRANT SELECT ON [dbo].[vw_COF_ProcessoColaborador] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[vw_COF_ProcessoColaborador_NCR] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[vw_OCR_COF_Documentacao] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[vw_OCR_PedidosSemResposta] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[vw_OCR_RespostasPendingComparison] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[vw_OCR_RespostasWithAiComparisonOk] TO [cofidis2000\prod_ocrdocumentos]
+GRANT SELECT ON [dbo].[vw_VG_CarteiraNumLares] TO [cofidis2000\prod_distribncr]
+GRANT SELECT ON [dbo].[WT_DOSSIER_WALLET] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[Cof_AlteracaoModoPagamentoHistorico] TO [cofidis2000\prod_dadosbancarios]
+GRANT UPDATE ON [dbo].[COF_BancoPortugal] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_BancoPortugalCRC] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_BancoPortugalCRC5G] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_CampanhasDossiers] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_Cliente] TO [CDM\OLIVEILU]
+GRANT UPDATE ON [dbo].[COF_Cliente] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_Cliente] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_Cliente] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteCaixaGeralAposentacoes] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_ClienteCaixaGeralAposentacoesEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_ClienteContactoMail] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteContatoMailHistorico] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteDadoBancario] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteHistorico] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteMorada] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_ClienteMorada] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteProfissao] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_ClienteSegurancaSocial] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_ClienteSegurancaSocialEntidadeEmpregadora] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_ClientesInsolventes] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteUProcesso] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ClienteUProcessoHist] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ContactoTelefonico] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_DistrImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT UPDATE ON [dbo].[COF_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_Documentacao] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_Documentos] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_EmpresaSocio] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_EmpresaSocioHistorico] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_HistoricoFicheiroInsolvente] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ImpressaoMassivaDocServicos] TO [cofidis2000\prod_impmass]
+GRANT UPDATE ON [dbo].[COF_ImpressaoMassivaDocServicosDossiers] TO [cofidis2000\prod_impmass]
+GRANT UPDATE ON [dbo].[COF_JurisFlow_PERInsolv] TO [COFIDIS2000\filewatcher]
+GRANT UPDATE ON [dbo].[COF_LitigioJudicial] TO [COFIDIS2000\filewatcher]
+GRANT UPDATE ON [dbo].[COF_Memo] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_Memo_OLD] TO [CDM\MORGADAA]
+GRANT UPDATE ON [dbo].[COF_Memo_OLD] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_Pedido_Documentacao] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_PedidoInfSS] TO [CDM\OLIVEILU]
+GRANT UPDATE ON [dbo].[COF_PedidoInfSS] TO [COFIDIS2000\CofPedidosSS]
+GRANT UPDATE ON [dbo].[COF_Processo] TO [cofidis2000\prod_dadosbancarios]
+GRANT UPDATE ON [dbo].[COF_ProcessoAuto] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_dadosbancarios]
+GRANT UPDATE ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_ProcessoDadosBancarios] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ProcessoFinanceiraAuto] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ProcessoGarantia] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [CDM\MORGADAA]
+GRANT UPDATE ON [dbo].[COF_ProcessoSituacoesAnomalas] TO [cofidis2000\prod_rgpdapi]
+GRANT UPDATE ON [dbo].[COF_Referencias] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[COF_SegurosDiversificacao] TO [COFIDIS2000\filewatcher]
+GRANT UPDATE ON [dbo].[COF_TempInfoCarteiraMautic] TO [cdm\pintonu]
+GRANT UPDATE ON [dbo].[COF_TempInfoCarteiraMautic] TO [prod_mauticapi]
+GRANT UPDATE ON [dbo].[COF_TipoReferencia] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[com_ComunicacaoAutomatica_Antiga] TO [cofidis2000\prod_selfcareapi]
+GRANT UPDATE ON [dbo].[com_ComunicacaoProcessada] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[com_ComunicacaoProcessada_Antiga] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COM_Emissao_Doc] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[COM_ReferenciaComunicacao_DATA] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[dtproperties] TO [public]
+GRANT UPDATE ON [dbo].[IDH_ProcessoDocImagem] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[INTERFACES_ControloGestaoLar] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[MT_Contact] TO [prod_mauticapi]
+GRANT UPDATE ON [dbo].[OCR_Documento] TO [cofidis2000\prod_ocrdocumentos]
+GRANT UPDATE ON [dbo].[OCR_DocumentoProcessado] TO [cofidis2000\prod_ocrdocumentos]
+GRANT UPDATE ON [dbo].[OCR_LogDocumentacao] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[OCR_LogDocumentacaoCampo] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[OCR_LogDocumentacaoCampo] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[OCR_Pedido] TO [cofidis2000\prod_ocrdocumentos]
+GRANT UPDATE ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_docconfocr]
+GRANT UPDATE ON [dbo].[OCR_Resposta] TO [cofidis2000\prod_ocrdocumentos]
+GRANT UPDATE ON [dbo].[PAC_DocumentacaoParceiro] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PAC_ParceiroEstrutura] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PAC_ParceiroNivel] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PAC_ParceiroTipo] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PAC_PartnerAddress] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PAC_Tarificacao_Partner] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartner] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerBank] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerCollaborator] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerContact] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerManager] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerProductsServices] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[PACPartnerStateHistory] TO [cofidis2000\partners]
+GRANT UPDATE ON [dbo].[Site_RegistoEmCurso] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[TRA_RefMB] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[TRA_ReqTransferencia] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[TRA_Transferencia] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[TRA_TransferenciaIni] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_BancoSimulacaoPRD] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_CalcRegrasTipologiaLarLog] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_Carteira] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_CarteiraDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ChampionChallenger] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ConselheirosColaborador] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ConselheirosGrandesContas] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ConselheirosPay] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ControloDistribuicaoCP] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_DossierIncontactavel] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_EntregaAverbamento] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_EntregaVenda] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_EventoDistribuicao] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ExclusaoTaskforce] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_FaseDossierFaseLar] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_GarantiaGeralPRD] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_HistoricoResolucaoDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_LOG_LarRecuperacao] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_LogServicos] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ODM_Tipol_Request] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ODM_Tipol_Request_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ODM_Tipol_Response] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_ODM_Tipol_Response_Dossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_Planos] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_ProcessamentoNCR] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_Rel_LarDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_REL_LarElemento] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_RulesDistribDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_RulesDistribVariablesValues] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_RulesDistribVariablesValuesDet] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_SimulacaoCTX] TO [cofidis2000\rgpdsql]
+GRANT UPDATE ON [dbo].[VG_Tarefas] TO [cofidis2000\prod_apitarefasservi]
+GRANT UPDATE ON [dbo].[VG_TipoDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_Tipologia_DistribParticionada] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_Tipologia_DossiersRetidos] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_TipologiaFase] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_UtilizadorTopologia] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_VariavelDossier] TO [cofidis2000\prod_distribncr]
+GRANT UPDATE ON [dbo].[VG_VariavelDossier_Staging] TO [cofidis2000\prod_distribncr]
+ 
+-- [--DB LEVEL PERMISSIONS --] --
+GRANT CONNECT TO [cdm\cardosrd]
+GRANT CONNECT TO [CDM\diassn]
+GRANT CONNECT TO [CDM\FERREIOA]
+GRANT CONNECT TO [CDM\gomesja]
+GRANT CONNECT TO [CDM\JORDAOLU]
+GRANT CONNECT TO [CDM\LEITAOHU]
+GRANT CONNECT TO [CDM\marquesr]
+GRANT CONNECT TO [CDM\MARTINOP]
+GRANT CONNECT TO [CDM\MORGADAA]
+GRANT CONNECT TO [CDM\nicobr]
+GRANT CONNECT TO [CDM\OLIVEILU]
+GRANT CONNECT TO [CDM\ramoscl]
+GRANT CONNECT TO [CDM\ricardmr]
+GRANT CONNECT TO [CDM\RODRIGRI]
+GRANT CONNECT TO [CDM\SALGUEMI]
+GRANT CONNECT TO [CDM\SVC_COFIDIS_PT]
+GRANT CONNECT TO [CDM\teresaan]
+GRANT CONNECT TO [cdm\trindape]
+GRANT CONNECT TO [CDM\VENANCTI]
+GRANT CONNECT TO [CDM\vidaled]
+GRANT CONNECT TO [CDM\VIEIRADV]
+GRANT CONNECT TO [COFIDIS2000\api_simparceiro]
+GRANT CONNECT TO [cofidis2000\client]
+GRANT CONNECT TO [cofidis2000\clientearea]
+GRANT CONNECT TO [COFIDIS2000\CofPedidosSS]
+GRANT CONNECT TO [COFIDIS2000\Cofptpsqldba01-Agnt]
+GRANT CONNECT TO [COFIDIS2000\cofptpsqldba01-mon]
+GRANT CONNECT TO [cofidis2000\COFPTPSQLDBA01-SRV]
+GRANT CONNECT TO [cofidis2000\comunicacoes]
+GRANT CONNECT TO [COFIDIS2000\docDigitizer]
+GRANT CONNECT TO [COFIDIS2000\filewatcher]
+GRANT CONNECT TO [COFIDIS2000\FMExictos]
+GRANT CONNECT TO [COFIDIS2000\grp prevencaosp]
+GRANT CONNECT TO [COFIDIS2000\GRP SQLSACA]
+GRANT CONNECT TO [COFIDIS2000\Grp SQL-SD-Outsourcing-RO]
+GRANT CONNECT TO [COFIDIS2000\GrpBillingSqlNivel1]
+GRANT CONNECT TO [COFIDIS2000\grpSQLAnaliseCreditoCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLArquitetosCSA]
+GRANT CONNECT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLCaptacaoCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLGestaoCreditoCSA]
+GRANT CONNECT TO [COFIDIS2000\GrpSQLNegocioROCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLRecuperacaoCSA]
+GRANT CONNECT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT CONNECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT CONNECT TO [COFIDIS2000\grpSQLtoTCT]
+GRANT CONNECT TO [COFIDIS2000\grpSQLtoTCTro]
+GRANT CONNECT TO [COFIDIS2000\grpSQLVertical_OnboardingComercial]
+GRANT CONNECT TO [COFIDIS2000\icmadmin]
+GRANT CONNECT TO [COFIDIS2000\iis_apoloapi]
+GRANT CONNECT TO [cofidis2000\jurisflanonim]
+GRANT CONNECT TO [COFIDIS2000\MigraAmostra]
+GRANT CONNECT TO [COFIDIS2000\orchestrator]
+GRANT CONNECT TO [cofidis2000\partners]
+GRANT CONNECT TO [COFIDIS2000\PIRS_SVC_UNN]
+GRANT CONNECT TO [cofidis2000\powershell]
+GRANT CONNECT TO [cofidis2000\prd_apicontperm]
+GRANT CONNECT TO [cofidis2000\prod_apireference]
+GRANT CONNECT TO [cofidis2000\prod_apisitecof]
+GRANT CONNECT TO [cofidis2000\prod_apitarefasservi]
+GRANT CONNECT TO [cofidis2000\prod_brgpdapi]
+GRANT CONNECT TO [cofidis2000\prod_dadosbancarios]
+GRANT CONNECT TO [cofidis2000\prod_distribncr]
+GRANT CONNECT TO [cofidis2000\prod_docconfocr]
+GRANT CONNECT TO [cofidis2000\prod_impmass]
+GRANT CONNECT TO [cofidis2000\prod_ocrdocumentos]
+GRANT CONNECT TO [cofidis2000\prod_rgpdapi]
+GRANT CONNECT TO [cofidis2000\prod_selfcareapi]
+GRANT CONNECT TO [cofidis2000\rgpdsql]
+GRANT CONNECT TO [COFIDIS2000\SPServices_SRV_PROD]
+GRANT CONNECT TO [COFIDIS2000\sqlsvc_migrsql]
+GRANT CONNECT TO [credi]
+GRANT CONNECT TO [deleteme]
+GRANT CONNECT TO [Digitalizacao_Alcioneu]
+GRANT CONNECT TO [grafana_readonly]
+GRANT CONNECT TO [icmadmin]
+GRANT CONNECT TO [link_dba]
+GRANT CONNECT TO [LinkedRGPD]
+GRANT CONNECT TO [lnk_caliope_priapo]
+GRANT CONNECT TO [prod_ApiDataCheck]
+GRANT CONNECT TO [prod_ApiSiteBeneficios]
+GRANT CONNECT TO [prod_mauticapi]
+GRANT CONNECT TO [sa_all]
+GRANT CONNECT TO [sa_ge]
+GRANT CONNECT TO [sa_idh]
+GRANT CONNECT TO [sa_Log]
+GRANT CONNECT TO [sa_Outsystems]
+GRANT CONNECT TO [sa_Runtime]
+GRANT CONNECT TO [sa_Tcontrol]
+GRANT CONNECT TO [sa_trans]
+GRANT CONNECT TO [saReadOnly]
+GRANT CONNECT TO [SQLSolva]
+GRANT CONNECT TO [test]
+GRANT CONNECT TO [WebPac]
+GRANT CONNECT TO [WebService]
+GRANT EXECUTE TO [cofidis2000\comunicacoes]
+GRANT EXECUTE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT EXECUTE TO [COFIDIS2000\grpSQLServicedesk]
+GRANT EXECUTE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT EXECUTE TO [cofidis2000\prod_dadosbancarios]
+GRANT EXECUTE TO [cofidis2000\prod_distribncr]
+GRANT INSERT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT INSERT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT INSERT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SELECT TO [cdm\trindape]
+GRANT SELECT TO [CDM\VIEIRADV]
+GRANT SELECT TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT SELECT TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT SELECT TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT SELECT TO [COFIDIS2000\grpSQLServicedesk]
+GRANT SELECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SELECT TO [COFIDIS2000\grpSQLtoTCT]
+GRANT SELECT TO [COFIDIS2000\grpSQLtoTCTro]
+GRANT SHOWPLAN TO [cdm\trindape]
+GRANT SHOWPLAN TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT SHOWPLAN TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT SHOWPLAN TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT SHOWPLAN TO [COFIDIS2000\grpSQLServicedesk]
+GRANT SHOWPLAN TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT SHOWPLAN TO [SQLSolva]
+GRANT UPDATE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT UPDATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT UPDATE TO [COFIDIS2000\grpSQLtoTCT]
+GRANT VIEW DATABASE STATE TO [cdm\trindape]
+GRANT VIEW DATABASE STATE TO [CDM\VENANCTI]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\AzureDevops_Arquitetos]
+GRANT VIEW DATABASE STATE TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\grpSQLServicedesk]
+GRANT VIEW DATABASE STATE TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DATABASE STATE TO [SQLSolva]
+GRANT VIEW DEFINITION TO [cdm\trindape]
+GRANT VIEW DEFINITION TO [CDM\VENANCTI]
+GRANT VIEW DEFINITION TO [COFIDIS2000\AzureDevops_EquipaTecnica]
+GRANT VIEW DEFINITION TO [cofidis2000\grpSQLArquitetosSDA]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLServicedesk]
+GRANT VIEW DEFINITION TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT VIEW DEFINITION TO [COFIDIS2000\MigraAmostra]
+GRANT VIEW DEFINITION TO [SQLSolva]
+ 
+-- [--DB LEVEL SCHEMA PERMISSIONS --] --
+GRANT EXECUTE ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLArquitetosCSA]
+GRANT VIEW DEFINITION ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLAnaliseCreditoCSA]
+GRANT VIEW DEFINITION ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLCaptacaoCSA]
+GRANT VIEW DEFINITION ON SCHEMA::[dbo] TO [COFIDIS2000\grpSQLRecuperacaoCSA]
+
+Completion time: 2022-07-22T15:51:09.0761780+01:00

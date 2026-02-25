@@ -1,0 +1,17 @@
+Setspn
+
+https://eitanblumin.com/2022/11/02/configuring-linked-server-with-delegation-step-by-step/
+
+
+https://github.com/microsoft/CSS_SQL_Networking_Tools/wiki/SQLCHECK
+
+setspn -A MSSQLSvc/<hostname>:1433 <SQL Server Engine account>
+setspn -A MSSQLSvc/<hostname> <SQL Server Engine account>
+
+
+SELECT net_transport, auth_scheme   
+FROM sys.dm_exec_connections   
+WHERE session_id = @@SPID;
+
+-- Tem que retornar Kerberos
+

@@ -1,0 +1,80 @@
+USE [ACCIPIENS]
+ 
+-- [-- DB USERS --] --
+ 
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\ALMEIDDA') 
+         BEGIN CREATE USER [CDM\ALMEIDDA] FOR LOGIN [CDM\ALMEIDDA] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\ALMEIDDA') ALTER USER [CDM\ALMEIDDA] WITH LOGIN = [CDM\ALMEIDDA] ELSE IF '[CDM\ALMEIDDA]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\ALMEIDDA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\FERREIOA') 
+         BEGIN CREATE USER [CDM\FERREIOA] FOR LOGIN [CDM\FERREIOA] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\FERREIOA') ALTER USER [CDM\FERREIOA] WITH LOGIN = [CDM\FERREIOA] ELSE IF '[CDM\FERREIOA]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\FERREIOA] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'CDM\ROCHAJO') 
+         BEGIN CREATE USER [CDM\ROCHAJO] FOR LOGIN [CDM\ROCHAJO] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'CDM\ROCHAJO') ALTER USER [CDM\ROCHAJO] WITH LOGIN = [CDM\ROCHAJO] ELSE IF '[CDM\ROCHAJO]' NOT IN ('[dbo]','[guest]')  DROP USER [CDM\ROCHAJO] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\accipiens') 
+         BEGIN CREATE USER [COFIDIS2000\accipiens] FOR LOGIN [COFIDIS2000\accipiens] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\accipiens') ALTER USER [COFIDIS2000\accipiens] WITH LOGIN = [COFIDIS2000\accipiens] ELSE IF '[COFIDIS2000\accipiens]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\accipiens] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\accipienspool') 
+         BEGIN CREATE USER [COFIDIS2000\accipienspool] FOR LOGIN [COFIDIS2000\accipienspool] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\accipienspool') ALTER USER [COFIDIS2000\accipienspool] WITH LOGIN = [COFIDIS2000\accipienspool] ELSE IF '[COFIDIS2000\accipienspool]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\accipienspool] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\AGTSVC') 
+         BEGIN CREATE USER [COFIDIS2000\AGTSVC] FOR LOGIN [COFIDIS2000\AGTSVC] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\AGTSVC') ALTER USER [COFIDIS2000\AGTSVC] WITH LOGIN = [COFIDIS2000\AGTSVC] ELSE IF '[COFIDIS2000\AGTSVC]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\AGTSVC] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\devaccipiens') 
+         BEGIN CREATE USER [COFIDIS2000\devaccipiens] FOR LOGIN [COFIDIS2000\devaccipiens] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\devaccipiens') ALTER USER [COFIDIS2000\devaccipiens] WITH LOGIN = [COFIDIS2000\devaccipiens] ELSE IF '[COFIDIS2000\devaccipiens]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\devaccipiens] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\MigraAmostra') 
+         BEGIN CREATE USER [COFIDIS2000\MigraAmostra] FOR LOGIN [COFIDIS2000\MigraAmostra] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\MigraAmostra') ALTER USER [COFIDIS2000\MigraAmostra] WITH LOGIN = [COFIDIS2000\MigraAmostra] ELSE IF '[COFIDIS2000\MigraAmostra]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\MigraAmostra] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'COFIDIS2000\PIRS_SVC_UNN') 
+         BEGIN CREATE USER [COFIDIS2000\PIRS_SVC_UNN] FOR LOGIN [COFIDIS2000\PIRS_SVC_UNN] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'COFIDIS2000\PIRS_SVC_UNN') ALTER USER [COFIDIS2000\PIRS_SVC_UNN] WITH LOGIN = [COFIDIS2000\PIRS_SVC_UNN] ELSE IF '[COFIDIS2000\PIRS_SVC_UNN]' NOT IN ('[dbo]','[guest]')  DROP USER [COFIDIS2000\PIRS_SVC_UNN] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'dbo') 
+         BEGIN CREATE USER [dbo] FOR LOGIN [dbo] WITH DEFAULT_SCHEMA = [dbo] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'dbo') ALTER USER [dbo] WITH LOGIN = [dbo] ELSE IF '[dbo]' NOT IN ('[dbo]','[guest]')  DROP USER [dbo] END;
+IF NOT EXISTS (SELECT [name] FROM sys.database_principals WHERE [name] =  'guest') 
+         BEGIN CREATE USER [guest] FOR LOGIN [guest] WITH DEFAULT_SCHEMA = [guest] END
+         ELSE BEGIN IF EXISTS (SELECT * from master.dbo.syslogins WHERE loginname =  'guest') ALTER USER [guest] WITH LOGIN = [guest] ELSE IF '[guest]' NOT IN ('[dbo]','[guest]')  DROP USER [guest] END;
+-- [-- DB ROLES --] --
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'CDM\ALMEIDDA'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\AGTSVC'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\devaccipiens'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\Grp SQL-SD-Outsourcing-RO'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\grpSQLSuporteAplicacional'
+EXEC sp_addrolemember @rolename = 'db_datareader', @membername = 'COFIDIS2000\MigraAmostra'
+EXEC sp_addrolemember @rolename = 'db_datawriter', @membername = 'COFIDIS2000\grpSQLSuporteAplicacional'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\accipiens'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\accipienspool'
+EXEC sp_addrolemember @rolename = 'db_owner', @membername = 'COFIDIS2000\PIRS_SVC_UNN'
+ 
+-- [-- OBJECT LEVEL PERMISSIONS --] --
+DENY EXECUTE ON [dbo].[fn_diagramobjects] TO [guest]
+DENY EXECUTE ON [dbo].[sp_alterdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_creatediagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_dropdiagram] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [guest]
+DENY EXECUTE ON [dbo].[sp_helpdiagrams] TO [guest]
+DENY EXECUTE ON [dbo].[sp_renamediagram] TO [guest]
+GRANT EXECUTE ON [dbo].[fn_diagramobjects] TO [public]
+GRANT EXECUTE ON [dbo].[sp_alterdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_creatediagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_dropdiagram] TO [public]
+GRANT EXECUTE ON [dbo].[sp_helpdiagramdefinition] TO [public]
+GRANT EXECUTE ON [dbo].[sp_helpdiagrams] TO [public]
+GRANT EXECUTE ON [dbo].[sp_renamediagram] TO [public]
+GRANT SELECT ON [dbo].[TaxAuditElement] TO [CDM\FERREIOA]
+GRANT SELECT ON [dbo].[TaxAuditElementOrigin] TO [CDM\FERREIOA]
+GRANT SELECT ON [dbo].[TaxAuditHeader] TO [CDM\FERREIOA]
+ 
+-- [--DB LEVEL PERMISSIONS --] --
+GRANT CONNECT TO [CDM\ALMEIDDA]
+GRANT CONNECT TO [CDM\FERREIOA]
+GRANT CONNECT TO [CDM\ROCHAJO]
+GRANT CONNECT TO [COFIDIS2000\accipiens]
+GRANT CONNECT TO [COFIDIS2000\accipienspool]
+GRANT CONNECT TO [COFIDIS2000\AGTSVC]
+GRANT CONNECT TO [COFIDIS2000\devaccipiens]
+GRANT CONNECT TO [COFIDIS2000\Grp SQL-SD-Outsourcing-RO]
+GRANT CONNECT TO [COFIDIS2000\grpSQLSuporteAplicacional]
+GRANT CONNECT TO [COFIDIS2000\MigraAmostra]
+GRANT CONNECT TO [COFIDIS2000\PIRS_SVC_UNN]
